@@ -1,21 +1,21 @@
 'use client'
 
-import { createContext, MouseEventHandler, Reducer, ReducerState, ReducerWithoutAction, useReducer } from "react"
+import { createContext, useReducer } from "react"
+import { Theme } from "./type"
 
-type Theme = 'dark' | 'light';
-
-const changeTheme = (prev: Theme, theme: Theme) => {
+const initialTheme: Theme['name'] = 'dark';
+const changeTheme: Theme['changeTheme'] = (prev, theme) => {
   return theme
 }
 
-export const ThemeContext = createContext<[Theme, any]>(['dark', changeTheme])
+export const ThemeContext = createContext([initialTheme, changeTheme])
 
 export default function ThemeProvider({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const [state, dispatch] = useReducer(changeTheme, 'dark')
+  const [state, dispatch] = useReducer(changeTheme, initialTheme)
 
   return <>
     <ThemeContext.Provider value={[state, dispatch]}>
