@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counter from './slice/counter'
+import globalScreen from './slice/globalScreen'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counter
+      counter,
+      globalScreen
     },
   })
 }

@@ -10,7 +10,6 @@ const ChangeTheme = (): React.ReactNode => {
     const newTheme = event.target.dataset.theme
     dispatch(newTheme)
   }
-  console.log('client');
   return <>
     <button onClick={changeTheme} data-theme="dark">dark</button>
     <button onClick={changeTheme} data-theme="light">light</button>
