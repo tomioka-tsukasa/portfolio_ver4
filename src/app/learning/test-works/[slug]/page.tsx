@@ -1,5 +1,5 @@
-import Modal from "@/app/components/Modal/Modal"
-import ModalWork from "@/app/components/Modal/templates/Work"
+import Modal from "../components/Modal/Modal"
+import ModalWork from "@/app/learning/test-works/components/Modal/templates/Work"
 import worksData from "@/data/works.json"
 import Link from "next/link"
 
@@ -8,7 +8,7 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
   return <>
     <Modal>
       <ModalWork data={currentWork}>
-        <Link href={`/learning/test-works/`}>
+        <Link href={`/learning/test-works/`} scroll={false}>
           一覧へ戻る
         </Link>
       </ModalWork>

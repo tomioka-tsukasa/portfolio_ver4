@@ -9,14 +9,92 @@ export default function Works({
 }) {
   return <>
     {children}
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
     <ul>
       {worksData.map( work => {
         return <li key={work.slug}>
-          <Link href={`${work.slug}`}>
+          <Link href={`${work.slug}`} scroll={false}>
             {work.title}
           </Link>
         </li>
       })}
     </ul>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
+    <p>
+      Dummy.
+    </p>
   </>
 }
