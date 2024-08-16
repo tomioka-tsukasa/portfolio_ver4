@@ -1,12 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counter from './slice/counter'
-import clientObject from './slice/clientObject'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counter,
-      clientObject
     },
   })
 }
