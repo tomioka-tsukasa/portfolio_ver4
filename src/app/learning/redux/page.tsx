@@ -5,7 +5,6 @@ import { increment } from "@/lib/store/slice/counter"
 import Counted from "./components/Counted/Counted";
 
 export default function Redux() {
-
   const dispatch = useAppDispatch();
   const clickHandler = () => {
     dispatch(increment())

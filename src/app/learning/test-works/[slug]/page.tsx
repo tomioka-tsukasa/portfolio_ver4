@@ -3,8 +3,12 @@ import ModalWork from "@/app/learning/test-works/components/Modal/templates/Work
 import worksData from "@/data/works.json"
 import Link from "next/link"
 
-export default function WorkDetail({ params }: { params: { slug: string } }) {
-  const currentWork = worksData.filter( work => work.slug === params.slug)[0]
+export default function WorkDetail({ 
+  params 
+}: { 
+  params: {slug: string} 
+}) {
+  const currentWork = worksData.filter(work => work.slug === params.slug)[0]
   return <>
     <Modal>
       <ModalWork data={currentWork}>
@@ -17,7 +21,5 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
 }
 
 export async function generateStaticParams() {
-  return worksData.map( work => {
-    return {slug: work.slug}
-  })
+  return worksData.map( work => ({slug: work.slug}))
 }
