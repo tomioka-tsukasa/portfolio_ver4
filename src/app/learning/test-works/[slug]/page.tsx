@@ -21,5 +21,7 @@ export default function WorkDetail({
 }
 
 export async function generateStaticParams() {
-  return worksData.map( work => ({slug: work.slug}))
+  return worksData.map( work => ({
+    slug: work.slug
+  }))
 }
