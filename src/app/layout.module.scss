@@ -1,12 +1,38 @@
-.html {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
+@use "sass:map";
+@use "@setting" as *;
 
 .body {
-  position: relative;
-  background: linear-gradient(217deg, rgba(#b1221a, 1), rgba(#b1221a, 0) 70.71%),
-    linear-gradient(127deg, rgba(#1ab060, 1), rgba(#1ab060, 0) 70.71%),
-    linear-gradient(336deg, rgba(#221ab0, 1), rgba(#221ab0, 0) 70.71%);
+  background-color: #000000;
+  color: map.get($mainColor, "index");
+}
+
+.globalBg {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+
+  @include bgGradient();
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000000, 0.78);
+  }
+}
+
+.head {
+  @include textShadow();
+  font-size: 48px;
+}
+
+.test {
+  @include consoleText();
+  font-weight: 700;
 }

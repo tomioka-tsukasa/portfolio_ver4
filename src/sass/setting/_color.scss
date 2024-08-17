@@ -1,0 +1,61 @@
+@use "sass:map";
+
+$baseColor: (
+  "index": #000000,
+);
+
+$mainColor: (
+  "index": #ffffff,
+  "L95": rgba(#ffffff, 0.95),
+  "L90": rgba(#ffffff, 0.9),
+  "L85": rgba(#ffffff, 0.85),
+  "L80": rgba(#ffffff, 0.8),
+  "L75": rgba(#ffffff, 0.75),
+  "L70": rgba(#ffffff, 0.7),
+  "L65": rgba(#ffffff, 0.65),
+  "L60": rgba(#ffffff, 0.6),
+  "L55": rgba(#ffffff, 0.55),
+  "L50": rgba(#ffffff, 0.5),
+  "L45": rgba(#ffffff, 0.45),
+  "L40": rgba(#ffffff, 0.4),
+  "L35": rgba(#ffffff, 0.35),
+  "L30": rgba(#ffffff, 0.3),
+  "L25": rgba(#ffffff, 0.25),
+  "L20": rgba(#ffffff, 0.2),
+  "L15": rgba(#ffffff, 0.15),
+  "L10": rgba(#ffffff, 0.1),
+);
+
+$infoColor: (
+  "red": #ed695e,
+  "yellow": #f4bf4e,
+  "green": #61c554,
+);
+
+$consoleColor: #079e20;
+
+@mixin textShadow() {
+  color: map.get($mainColor, "index");
+  text-shadow: 0 0 0.3em map.get($mainColor, "L75");
+}
+
+@mixin labelColor($type) {
+  @if $type == "warning" {
+    background-color: #fab9b3;
+    color: map.get($baseColor, "index");
+  } @else if $type == "progress" {
+    background-color: #fcd6a5;
+    color: map.get($baseColor, "index");
+  }
+}
+
+@mixin consoleText() {
+  color: $consoleColor;
+  text-shadow: 0 0 4px map.get($mainColor, "L65");
+}
+
+@mixin bgGradient() {
+  background: linear-gradient(217deg, rgba(#b1221a, 1), rgba(#b1221a, 0) 70.71%),
+    linear-gradient(336deg, rgba(#1ab060, 0.76), rgba(#1ab060, 0) 70.71%),
+    linear-gradient(127deg, rgba(#221ab0, 1), rgba(#221ab0, 0) 70.71%);
+}
