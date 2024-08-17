@@ -1,26 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio ver4
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ルール
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### コミットルール
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+* fix: バグ修正
+* hotfix: 緊急のバグ修正
+* add: 新規追加
+* update: ニュース更新など機能変更ががない更新
+* style: ソースのフォーマット調整
+* refactor: 仕様に影響がないコード改善(リファクタ)
+* change: 仕様変更
+* disable: 無効化（コメントアウト等）
+* remove: 削除
+* revert: 変更取り消し
+* env: 開発環境の追加・調整
+* docs: ドキュメントの作成・調整
+* upgrade: バージョンアップ
 
-## Learn More
+### ブランチルール
+
+| ブランチ名 | 役割 | チェックアウト元 |
+| --- |  --- |  --- | 
+| main | 公開ブランチ | - |
+| develop | 開発ブランチ | main |
+| feature/* | 新規開発・調整ブランチ | develop |
+| hotfix-* | 公開中のバグ修正 | main
+| store/* | ソース保存用ブランチ | develop, feature |
+
+## Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -29,7 +44,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## デプロイ
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
