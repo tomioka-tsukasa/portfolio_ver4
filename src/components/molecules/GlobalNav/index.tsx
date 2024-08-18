@@ -19,7 +19,7 @@ export default function GlobalNav({
           {nav.name}
         </Link>
       ))}
-      <SpecialButton href={unilab[0].slug}>
+      <SpecialButton href={`/${unilab[0].slug}/`}>
         {unilab[0].name}
       </SpecialButton>
     </div>

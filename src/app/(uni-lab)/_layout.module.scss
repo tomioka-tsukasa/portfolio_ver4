@@ -10,14 +10,6 @@
 .container {
   container-type: inline-size;
   margin-left: 64px;
-
-  @include pc {
-    padding: 120px 0 200px;
-  }
-
-  @include sp {
-    padding: 80px 0 120px;
-  }
 }
 
 .globalBg {
