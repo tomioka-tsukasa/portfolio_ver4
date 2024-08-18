@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1072px;
+}
+
+@container (max-width: 1180px) {
+  .root {
+    flex-direction: column;
+    gap: 80px 0;
+  }
+
+  .main {
+    padding: 0 30px;
+  }
+}

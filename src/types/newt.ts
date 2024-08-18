@@ -9,16 +9,25 @@ export interface NewtArticle {
     }
   };
   slug: string;
-  title?: string;
-  body?: string;
-  thumbnail?: {
-    type: string;
-    value: string;
-  };
+  title: string;
+  pickup: boolean;
+  body: string;
+  thumbnail: NewtThumbnail;
   categorys: Array<NewtCategory>
 }
 
 export interface NewtCategory {
+  _id: string;
+  _sys: {
+    createdAt: string;
+    updatedAt: string;
+    customOrder: number;
+  },
   name: string;
   slug: string;
+}
+
+export interface NewtThumbnail {
+  type: string;
+  value: string;
 }

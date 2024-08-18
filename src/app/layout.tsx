@@ -15,12 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={`${styles.html}`}>
       <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
         <div className={`${styles.globalBg}`}></div>
-        <StoreProvider>
-          {children}
-        </StoreProvider>
+        <div className={`${styles.container}`}>
+          <StoreProvider>
+            {children}
+          </StoreProvider>
+        </div>
       </body>
     </html>
   )

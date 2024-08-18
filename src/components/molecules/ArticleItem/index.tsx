@@ -5,22 +5,25 @@ import styles from "./_index.module.scss";
 import { zenKakuGothicNew_w700 } from "@/lib/fonts";
 import Categorys from "@/components/molecules/Categorys/";
 import UpdateDate from "@/components/molecules/UpdateDate";
+import ThumbnailIcon from "@/components/atoms/ThumbnailIcon";
 
 export default function ArticleItem({
-  article
+  article,
+  rootPath = '/blog/'
 }: {
-  article: NewtArticle
+  article: NewtArticle,
+  rootPath?: string
 }) {
   return <>
     <li key={article.slug} className={styles.root}>
-      <Link href={article.slug} className={styles.inner}>
+      <Link href={`${rootPath}${article.slug}`} className={styles.inner}>
         <div className={styles.thumbnail}>
-          {article.thumbnail?.value}
+          <ThumbnailIcon thumbnail={article.thumbnail} />
         </div>
-        <div className={styles.content}>
-          <p className={`${styles.title} ${zenKakuGothicNew_w700.className}`}>
-            {article.title}
-          </p>
+        <p className={`${styles.title} ${zenKakuGothicNew_w700.className}`}>
+          {article.title}
+        </p>
+        <div className={styles.info}>
           <div className={styles.date}>
             <UpdateDate updateTime={article._sys.raw.updatedAt} />
           </div>

@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 13px 15px 13px;
+  border-radius: 9px;
+  background-color: #ffffff;
+  font-size: 38px;
+  line-height: 1;
+}
