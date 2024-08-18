@@ -3,6 +3,7 @@ import "@/sass/globals.scss";
 import StoreProvider from "@/lib/store/provider";
 import styles from "./_layout.module.scss";
 import { zenKakuGothicNew_w400 } from "@/lib/fonts";
+import Header from "@/components/organisms/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,12 +18,13 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${styles.html}`}>
       <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
-        <div className={`${styles.globalBg}`}></div>
+        <Header />
         <div className={`${styles.container}`}>
           <StoreProvider>
             {children}
           </StoreProvider>
         </div>
+        <div className={`${styles.globalBg}`}></div>
       </body>
     </html>
   )

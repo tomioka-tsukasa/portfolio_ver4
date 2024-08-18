@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  align-items: center;
+
+  @include pc {
+    gap: 24px 40px;
+  }
+
+  @include sp {
+    gap: 24px;
+    justify-content: space-around;
+  }
+}
+
+.nav {
+  @include pc {
+    font-size: 18px;
+  }
+
+  @include sp {
+    color: #000000;
+    font-size: 14px;
+  }
+}

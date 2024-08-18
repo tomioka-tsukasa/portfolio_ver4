@@ -8,12 +8,18 @@
   max-width: 1072px;
 }
 
-@container (max-width: 1180px) {
-  .root {
-    flex-direction: column;
-    gap: 80px 0;
+.pickup,
+.contents {
+  & + * {
+    margin-top: 120px;
   }
 
+  > * + * {
+    margin-top: 40px;
+  }
+}
+
+@container (max-width: 1180px) {
   .main {
     padding: 0 30px;
   }
