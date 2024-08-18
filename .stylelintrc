@@ -3,6 +3,14 @@
     "stylelint-config-property-sort-order-smacss"
   ],
   "rules": {
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "after-same-name"
+        ]
+      }
+    ],
     "color-hex-length": "long",
     "comment-no-empty": true,
     "declaration-block-no-duplicate-properties": true,

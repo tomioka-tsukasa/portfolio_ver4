@@ -13,7 +13,7 @@ export const getArticles = async () => {
     appUid: process.env.NEWT_APP_UID_TECH_BLOG + '',
     modelUid: process.env.NEWT_APP_UID_TECH_BLOG_ARTICLE + '',
     query: {
-      select: ['_id', 'slug', 'title', 'body'],
+      select: ['_id', '_sys', 'slug', 'title', 'body', 'thumbnail', 'categorys'],
     },
   })
   return items

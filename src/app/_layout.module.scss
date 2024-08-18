@@ -28,11 +28,13 @@
 }
 
 .head {
-  @include textShadow();
   font-size: 48px;
+
+  @include textShadow();
 }
 
 .test {
-  @include consoleText();
   font-weight: 700;
+
+  @include consoleText();
 }

@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  container-type: inline-size;
+}

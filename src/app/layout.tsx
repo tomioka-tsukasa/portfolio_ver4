@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "@/sass/globals.scss";
 import StoreProvider from "@/lib/store/provider";
-import styles from "./layout.module.scss";
-import { roboto, zenOldMincho_w400, zenOldMincho_w900 } from "@/lib/fonts";
+import styles from "./_layout.module.scss";
+import { zenKakuGothicNew_w400 } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,17 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${styles.body} ${zenOldMincho_w400.className}`}>
+      <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
         <div className={`${styles.globalBg}`}></div>
         <StoreProvider>
           {children}
-          <h1 className={`${styles.head} ${zenOldMincho_w900.className}`}>
-            Hello
-          </h1>
-          <p className={`${styles.test} ${roboto.className}`}>
-            Last login: Tue Aug 13 21:27:01 on console<br />
-            Plese Select App...
-          </p>
         </StoreProvider>
       </body>
     </html>
