@@ -54,8 +54,22 @@ $consoleColor: #079e20;
   text-shadow: 0 0 4px map.get($mainColor, "L65");
 }
 
-@mixin bgGradient() {
-  background: linear-gradient(217deg, rgba(#b1221a, 1), rgba(#b1221a, 0) 70.71%),
-    linear-gradient(336deg, rgba(#1ab060, 0.76), rgba(#1ab060, 0) 70.71%),
-    linear-gradient(127deg, rgba(#221ab0, 1), rgba(#221ab0, 0) 70.71%);
+@mixin bgGradient($type: "base") {
+  @if $type == "unilab" {
+    background: linear-gradient(
+        217deg,
+        rgba(#71100b, 1),
+        rgba(#71100b, 0) 70.71%
+      ),
+      linear-gradient(336deg, rgba(#7c11a7, 0.76), rgba(#7c11a7, 0) 70.71%),
+      linear-gradient(127deg, rgba(#221ab0, 1), rgba(#221ab0, 0) 70.71%);
+  } @else {
+    background: linear-gradient(
+        217deg,
+        rgba(#b1221a, 1),
+        rgba(#b1221a, 0) 70.71%
+      ),
+      linear-gradient(336deg, rgba(#1ab060, 0.76), rgba(#1ab060, 0) 70.71%),
+      linear-gradient(127deg, rgba(#221ab0, 1), rgba(#221ab0, 0) 70.71%);
+  }
 }

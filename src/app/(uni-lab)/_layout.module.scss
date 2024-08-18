@@ -1,9 +1,6 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.html {
-}
-
 .body {
   background-color: #000000;
   color: map.get($mainColor, "index");
@@ -12,6 +9,7 @@
 
 .container {
   container-type: inline-size;
+  margin-left: 64px;
 
   @include pc {
     padding: 120px 0 200px;
@@ -32,7 +30,7 @@
   height: 100%;
   opacity: 0.6;
 
-  @include bgGradient();
+  @include bgGradient($type: "unilab");
 
   &:before {
     content: "";
@@ -41,16 +39,4 @@
     height: 100%;
     background-color: rgba(#000000, 0.78);
   }
-}
-
-.head {
-  font-size: 48px;
-
-  @include textShadow();
-}
-
-.test {
-  font-weight: 700;
-
-  @include consoleText();
 }

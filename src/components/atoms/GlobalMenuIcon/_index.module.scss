@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  width: 48px;
+}
+
+.link {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 4px 0;
+}
+
+.item {
+  width: 100%;
+  height: 5px;
+  background-color: map.get($mainColor, "L80");
+
+  &:last-child {
+    width: calc(32 / 48 * 100%);
+  }
+}
