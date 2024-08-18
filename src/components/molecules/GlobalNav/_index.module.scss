@@ -10,7 +10,7 @@
   }
 
   @include sp {
-    gap: 24px;
+    gap: 24px 18px;
     justify-content: space-around;
   }
 }
@@ -21,7 +21,8 @@
   }
 
   @include sp {
-    color: #000000;
+    padding: 3px 6px 4px;
+    background-color: map.get($mainColor, "L20");
     font-size: 14px;
   }
 }

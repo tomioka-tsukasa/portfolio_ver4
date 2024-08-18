@@ -4,6 +4,7 @@ import StoreProvider from "@/lib/store/provider";
 import styles from "./_layout.module.scss";
 import { zenKakuGothicNew_w400 } from "@/lib/fonts";
 import Header from "@/components/organisms/Header";
+import Footer from "@/components/organisms/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
             {children}
           </StoreProvider>
         </div>
+        <Footer />
         <div className={`${styles.globalBg}`}></div>
       </body>
     </html>
