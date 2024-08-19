@@ -12,7 +12,7 @@ export interface NewtArticle {
   title: string;
   pickup: boolean;
   body: string;
-  thumbnail: NewtThumbnail;
+  thumbnail: NewtEmoji;
   categorys: Array<NewtCategory>
 }
 
@@ -27,12 +27,28 @@ export interface NewtCategory {
   slug: string;
 }
 
-export interface NewtThumbnail {
+export interface NewtEmoji {
   type: string;
   value: string;
 }
 
-export interface NewtLabItem {
+export interface NewtThumbnail {
+  _id: string;
+  src: string;
+  fileName: string;
+  fileType: string;
+  fileSize: number;
+  width: number;
+  height: number;
+  title: string;
+  altText: string;
+  description: string;
+  metadata: {};
+}
+
+export type NewtLabLabel = 'progress' | 'task'
+
+export interface NewtLabSubject {
   _id: string;
   _sys: {
     raw: {
@@ -44,11 +60,11 @@ export interface NewtLabItem {
   };
   slug: string;
   title: string;
-  status: Array<string>;
+  status: Array<NewtLabLabel>;
   pickup: boolean;
   body: string;
   thumbnail: NewtThumbnail;
-  group: Array<NewtCategory>;
+  groups: Array<NewtLabGroup>;
   'dev-note': {
     title: string;
     body: string;
@@ -59,4 +75,12 @@ export interface NewtLabItem {
     body: string;
     'url-type': boolean
   };
+}
+
+export interface NewtLabGroup {
+  title: string;
+  slug: string;
+  pickup: boolean;
+  thumbnail: NewtThumbnail;
+  body: string;
 }

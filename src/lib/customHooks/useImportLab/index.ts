@@ -55,7 +55,7 @@ export default function useImportLab ({
         }
       } catch(err) {
         console.error(
-          '\`@/src/app/lab\`内に「Newt」のLabアプリで管理している記事が見つかりません。',
+          'iframeの読み込みに失敗しました。\`/src/app/lab\`に現在のURL末尾のスラッグと同じディレクトリを設置してください。',
           err);
       }
     }

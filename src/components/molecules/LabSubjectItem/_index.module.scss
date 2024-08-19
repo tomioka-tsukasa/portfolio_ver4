@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px 16px 20px;
+  border-radius: 9px;
+  background-color: map.get($mainColor, "L25");
+}
+
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9px;
+  aspect-ratio: 288 / 180;
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+* + .head {
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px 16px;
+}
+
+* + .info {
+  margin-top: 9px;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  gap: 6px 12px;
+}
+
+* + .cont {
+  margin-top: 20px;
+}
+
+.excerpt {
+  line-height: 1.2;
+  p {
+    display: inline;
+    font-size: 12px;
+  }
+}

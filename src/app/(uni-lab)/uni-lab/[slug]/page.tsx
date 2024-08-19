@@ -1,5 +1,5 @@
 import LabScreen from "@/components/molecules/LabScreen";
-import { getLabItems } from "@/lib/newt";
+import { getLabSubjects } from "@/lib/newt";
 
 type Props = {
   params: {
@@ -13,12 +13,11 @@ export default async function ULItem({
   const { slug } = params
   return <>
     <LabScreen slug={slug} />
-    {slug}
   </>
 }
 
 export async function generateStaticParams() {
-  const items = await getLabItems()
+  const items = await getLabSubjects()
   return items.map( item => (
     {
       slug: item.slug

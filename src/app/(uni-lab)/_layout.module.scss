@@ -5,11 +5,18 @@
   background-color: #000000;
   color: map.get($mainColor, "index");
   letter-spacing: 0.04em;
+
+  @include pc {
+    margin-left: 64px;
+  }
+
+  @include sp {
+    margin-bottom: 80px;
+  }
 }
 
 .container {
   container-type: inline-size;
-  margin-left: 64px;
 }
 
 .globalBg {

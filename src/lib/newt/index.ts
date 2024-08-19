@@ -1,7 +1,7 @@
 import 'server-only'
 
 import { createClient } from 'newt-client-js'
-import { NewtArticle, NewtCategory, NewtLabItem } from '../../types/newt'
+import { NewtArticle, NewtCategory, NewtLabGroup, NewtLabItem } from '../../types/newt'
 
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + '',
@@ -43,13 +43,36 @@ export const getArticleBySlug = async (slug: string) => {
   return article
 }
 
-export const getLabItems = async () => {
+export const getLabSubjects = async () => {
   const { items } = await client.getContents<NewtLabItem>({
     appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
     modelUid: process.env.NEWT_APP_UID_TECH_LAB_SUBJECT + '',
     query: {
-      select: ['_id', '_sys', 'slug', 'title', 'status', 'pickup', 'body', 'thumbnail', 'group', 'dev-note', 'ui-note'],
+      select: ['_id', '_sys', 'slug', 'title', 'status', 'pickup', 'body', 'thumbnail', 'groups', 'dev-note', 'ui-note'],
     }
   })
   return items
+}
+
+export const getLabGroup = async () => {
+  const { items } = await client.getContents<NewtLabGroup>({
+    appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
+    modelUid: process.env.NEWT_APP_UID_TECH_LAB_GROUP + '', 
+    query: {
+      select: ['_id', '_sys', 'title', 'slug', 'pickup', 'thumbnail', 'body']
+    }
+  })
+  return items
+}
+
+export const getLabGroupBySlug = async (slug: string) => {
+  const item = await client.getFirstContent<NewtLabGroup>({
+    appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
+    modelUid: process.env.NEWT_APP_UID_TECH_LAB_GROUP + '', 
+    query: {
+      slug,
+      select: ['_id', '_sys', 'title', 'slug', 'pickup', 'thumbnail', 'body']
+    },
+  })
+  return item
 }
