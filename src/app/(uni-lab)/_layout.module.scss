@@ -17,6 +17,15 @@
 
 .container {
   container-type: inline-size;
+
+  @include pc {
+    width: 1072px;
+    margin: 0 auto;
+  }
+
+  @include sp {
+    padding: 0 30px;
+  }
 }
 
 .globalBg {

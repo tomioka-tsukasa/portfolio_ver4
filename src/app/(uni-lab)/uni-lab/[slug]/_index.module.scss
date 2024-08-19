@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  margin: 32px auto auto;
+}
+
+* + .screen {
+  margin-top: 32px;
+}

@@ -1,3 +1,5 @@
+import Draft_CtrlButton from "@/components/molecules/Draft_CtrlButton";
+import styles from "./_index.module.scss"
 import LabScreen from "@/components/molecules/LabScreen";
 import { getLabSubjects } from "@/lib/newt";
 
@@ -12,7 +14,14 @@ export default async function ULItem({
 }: Props ) {
   const { slug } = params
   return <>
-    <LabScreen slug={slug} />
+    <div className={styles.root}>
+      <div className={styles.ctrl}>
+        <Draft_CtrlButton />
+      </div>
+      <div className={styles.screen}>
+        <LabScreen slug={slug} />
+      </div>
+    </div>
   </>
 }
 

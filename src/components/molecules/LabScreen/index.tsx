@@ -12,7 +12,6 @@ export default function LabScreen({
 }: Props ) {
   useImportLab({slug})
   return <>
-    <div className={styles.root} id="lab-screen">
-    </div>
+    <div className={styles.root} id="lab-screen"></div>
   </>
 }

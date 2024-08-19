@@ -2,9 +2,6 @@
 @use "@setting" as *;
 
 .root {
-  width: 100%;
-  max-width: 1062px;
-
   @include pc {
     margin: 120px auto;
   }
