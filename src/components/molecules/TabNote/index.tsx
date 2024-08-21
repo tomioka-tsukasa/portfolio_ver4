@@ -21,7 +21,7 @@ export default function TabNote({
   const printTitle = (title: string) => {
     if (!title) title = '[Newt Bot] タイトルを入力してね！'
     const print = isUrl 
-      ? <a className={styles.link} href={title}>{title}</a> 
+      ? <a className={styles.link} href={title} target="_blank">{title}</a> 
       : title
     return print
   }
