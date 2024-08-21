@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  align-items: center;
+
+  @include pc {
+    gap: 24px 40px;
+  }
+
+  @include sp {
+    gap: 24px 18px;
+    justify-content: space-around;
+  }
+}
+
+.nav {
+  @include pc {
+    font-size: 18px;
+  }
+
+  @include sp {
+    padding: 3px 6px 4px;
+    background-color: map.get($mainColor, "L20");
+    font-size: 14px;
+  }
+}

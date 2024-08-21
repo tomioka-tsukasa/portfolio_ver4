@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 0 16px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0 6px;
+  transition: all 0.5s ease 0s;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.arrow {
+  transform: rotate(180deg);
+}
+
+.text {
+  font-size: 16px;
+}

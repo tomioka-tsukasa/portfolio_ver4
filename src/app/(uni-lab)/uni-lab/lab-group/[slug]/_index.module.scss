@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  @include pc {
+    margin: 120px auto;
+  }
+
+  @include sp {
+    margin: 70px auto;
+    padding: 0 30px;
+  }
+}
+
+* + .subjects {
+  margin-top: 96px;
+}

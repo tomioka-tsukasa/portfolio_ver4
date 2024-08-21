@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  width: 260px;
+  max-width: 720px;
+  margin: 0 auto;
+
+  > * + * {
+    margin-top: 80px;
+  }
+}
+
+.pickup,
+.categorys {
+  > * + * {
+    margin-top: 32px;
+  }
+}
+
+@container (max-width: 1180px) {
+  .root {
+    width: 100%;
+  }
+}
+
+@container (max-width: 768px) {
+  .root {
+    padding: 0 30px;
+  }
+}

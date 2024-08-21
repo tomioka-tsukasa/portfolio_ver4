@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: inline-block;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: map.get($mainColor, "L25");
+  box-shadow: 0 0 12px map.get($mainColor, "L25");
+}
+
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(26 / 38 * 100%);
+  height: calc(26 / 38 * 100%);
+  transform: translate(-50%, -50%);
+  border: 2px solid map.get($mainColor, "L80");
+  border-radius: 50%;
+  box-shadow: 0 0 12px map.get($mainColor, "L25");
+  backdrop-filter: blur(24px) invert(30%) brightness(2);
+}

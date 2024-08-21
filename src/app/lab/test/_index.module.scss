@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  * + * {
+    margin-top: 16px;
+  }
+}
+
+.canvas {
+  padding: 32px;
+}

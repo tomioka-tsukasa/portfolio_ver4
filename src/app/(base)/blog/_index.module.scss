@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1072px;
+}
+
+.pickup,
+.contents {
+  & + * {
+    margin-top: 120px;
+  }
+
+  > * + * {
+    margin-top: 40px;
+  }
+}
+
+@container (max-width: 1180px) {
+  .main {
+    padding: 0 30px;
+  }
+}

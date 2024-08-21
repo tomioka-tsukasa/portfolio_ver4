@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "@setting" as *;
+
+* + .root {
+  margin-top: 200px;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.copyright {
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-align: center;
+}

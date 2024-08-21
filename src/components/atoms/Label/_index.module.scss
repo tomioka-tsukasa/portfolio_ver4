@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 12px 4px;
+  background-color: map.get($baseColor, "index");
+  font-size: 11px;
+
+  &.progress {
+    @include labelColor($type: progress);
+  }
+
+  &.task {
+    @include labelColor($type: task);
+  }
+}

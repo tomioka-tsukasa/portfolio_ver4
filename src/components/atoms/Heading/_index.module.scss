@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  font-size: 26px;
+  @include textShadow();
+}
+
+.border {
+  padding-bottom: 12px;
+  border-bottom: 1px solid map.get($mainColor, "L30");
+}
+
+.large {
+  font-size: 32px;
+}
+
+.middle {
+  font-size: 26px;
+}
+
+.small {
+  font-size: 20px;
+}

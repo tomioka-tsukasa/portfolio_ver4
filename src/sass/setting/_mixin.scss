@@ -1,7 +1,13 @@
-$breakPoint: 768px;
+@use "./variable" as *;
+
+@mixin container($breakPoint) {
+  @container (max-width: $breakPoint) {
+    @content;
+  }
+}
 
 @mixin pc() {
-  @media screen and (min-width: ($breakPoint + 1px)) {
+  @media screen and (min-width: $breakPoint + 1px) {
     @content;
   }
 }

@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  padding: 24px;
+  border-radius: 9px;
+  background-color: map.get($mainColor, "L95");
+  color: map.get($baseColor, "index");
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  font-size: 32px;
+}
+
+.title {
+  width: 100%;
+
+  .link {
+    color: map.get($infoColor, "link");
+  }
+}
+
+.arrow {
+  svg {
+    transform: rotate(90deg);
+  }
+}
+
+* + .title,
+* + .arrow {
+  margin-left: 20px;
+}
+
+* + .cont {
+  margin-top: 20px;
+  padding-top: 24px;
+  border-top: 1px solid map.get($baseColor, "L50");
+}
