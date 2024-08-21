@@ -1,7 +1,7 @@
 import 'server-only'
 
 import { createClient } from 'newt-client-js'
-import { NewtArticle, NewtCategory, NewtLabGroup, NewtLabItem } from '../../types/newt'
+import { NewtArticle, NewtCategory, NewtLabGroup, NewtLabItem, NewtLabSubject } from '../../types/newt'
 
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + '',
@@ -52,6 +52,18 @@ export const getLabSubjects = async () => {
     }
   })
   return items
+}
+
+export const getLabSubject = async (slug: string) => {
+  const item = await client.getFirstContent<NewtLabSubject>({
+    appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
+    modelUid: process.env.NEWT_APP_UID_TECH_LAB_SUBJECT + '', 
+    query: {
+      slug,
+      select: ['_id', '_sys', 'slug', 'title', 'status', 'pickup', 'body', 'thumbnail', 'groups', 'dev-note', 'ui-note'],
+    },
+  })
+  return item
 }
 
 export const getLabGroup = async () => {

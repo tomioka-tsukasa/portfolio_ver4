@@ -1,6 +1,6 @@
 import { Svg } from "@/types/svg";
 
-type Color = 'white';
+type Color = 'white' | 'black';
 type Props = Svg<Color>
 
 export default function Arrow({

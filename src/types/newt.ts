@@ -65,16 +65,15 @@ export interface NewtLabSubject {
   body: string;
   thumbnail: NewtThumbnail;
   groups: Array<NewtLabGroup>;
-  'dev-note': {
-    title: string;
-    body: string;
-    'url-type': boolean
-  };
-  'ui-note': {
-    title: string;
-    body: string;
-    'url-type': boolean
-  };
+  'dev-note': Array<NewtNote>;
+  'ui-note': Array<NewtNote>;
+}
+
+export interface NewtNote {
+  title: string;
+  body: string;
+  'url-type': boolean;
+  thumbnail: NewtEmoji;
 }
 
 export interface NewtLabGroup {

@@ -11,4 +11,11 @@ namespace Unilab {
       icon?: React.ReactNode
     }>
   }
+
+  export interface TabItem {
+    slug: 'body' | 'dev' | 'design',
+    name: '概要' | '開発メモ' | 'デザインメモ',
+  }
+
+  export type TabList = Array<TabItem>
 }
