@@ -3,6 +3,7 @@ import styles from "./_index.module.scss"
 import LabScreen from "@/components/molecules/LabScreen";
 import { getLabSubjectBySlug, getLabSubjects } from "@/lib/newt";
 import ULTabArea from "@/components/organisms/ULTabArea";
+import Link from "next/link";
 
 type Props = {
   params: {
@@ -20,6 +21,9 @@ export default async function ULSubject({
     <div className={styles.root}>
       <div className={styles.ctrl}>
         <Draft_CtrlButton />
+      </div>
+      <div className={styles.github}>
+        <Link href={`https://github.com/tsukasa-tomioka/portfolio_ver4/tree/main/src/app/lab/${slug}`}>GitHubの研究ファイルページへ</Link>
       </div>
       <div className={styles.screen}>
         <LabScreen slug={slug} />
