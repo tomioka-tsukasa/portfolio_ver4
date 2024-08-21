@@ -49,7 +49,7 @@ export default function ULTabArea({
       <TabList list={tabList} />
       <div id={tabContentId} className={`${styles.contentWrapper} is-${state.ULTabArea?.active ?? 'default'}`}>
         <div className={`${styles.content} ${state.ULTabArea?.active === 'body' ? styles.isActive : ''}`}>
-          <ULTabContentBody body={parse(subject.body)} />
+          <ULTabContentBody body={parse(subject?.body + '')} />
         </div>
         <div className={`${styles.content} ${state.ULTabArea?.active === 'dev' ? styles.isActive : ''}`}>
           <ULTabContentNotes notes={subject["dev-note"]} />

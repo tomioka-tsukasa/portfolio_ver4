@@ -3,7 +3,7 @@ import styles from "./_index.module.scss"
 import TabNote from "@/components/molecules/TabNote"
 
 type Props = {
-  notes: Array<NewtNote>
+  notes: Array<NewtNote> | null
 }
 
 export default function ULTabContentNotes({
@@ -11,7 +11,7 @@ export default function ULTabContentNotes({
 }: Props ) {
   return <>
     <div className={styles.root}>
-      {notes.map( note => <TabNote note={note} />)}
+      {notes?.map( note => <TabNote key={note.slug} note={note} />)}
     </div>
   </>
 }

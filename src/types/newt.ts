@@ -74,6 +74,7 @@ export interface NewtNote {
   body: string;
   'url-type': boolean;
   thumbnail: NewtEmoji;
+  slug: string;
 }
 
 export interface NewtLabGroup {
