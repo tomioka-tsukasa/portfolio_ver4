@@ -6,19 +6,23 @@ import { Navs } from "@/types/nav";
 const navs: Navs = [
   {
     name: 'Works.',
-    slug: 'works'
+    slug: 'works',
+    active: false,
   },
   {
     name: 'Blog.',
-    slug: 'blog'
+    slug: 'blog',
+    active: true,
   },
   {
     name: 'TalkMe!',
-    slug: 'about'
+    slug: 'about',
+    active: false,
   },
   {
     name: 'Uni Lab.',
-    slug: 'uni-lab'
+    slug: 'uni-lab',
+    active: true,
   }
 ]
 
