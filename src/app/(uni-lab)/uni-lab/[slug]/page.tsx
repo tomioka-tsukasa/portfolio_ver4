@@ -15,6 +15,7 @@ export default async function ULSubject({
 }: Props ) {
   const { slug } = params
   const subject = await getLabSubjectBySlug(slug)
+  if (!subject) return
   return <>
     <div className={styles.root}>
       <div className={styles.ctrl}>

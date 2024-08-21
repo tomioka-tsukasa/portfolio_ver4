@@ -5,7 +5,7 @@ import styles from "./_index.module.scss";
 import { zenKakuGothicNew_w700 } from "@/lib/fonts";
 import Categorys from "@/components/molecules/Categorys/";
 import UpdateDate from "@/components/molecules/UpdateDate";
-import ThumbnailIcon from "@/components/atoms/ThumbnailIcon";
+import EmojiIcon from "@/components/atoms/EmojiIcon";
 
 export default function ArticleItem({
   article,
@@ -18,7 +18,7 @@ export default function ArticleItem({
     <li key={article.slug} className={styles.root}>
       <Link href={`${rootPath}${article.slug}`} className={styles.inner}>
         <div className={styles.thumbnail}>
-          <ThumbnailIcon thumbnail={article.thumbnail} />
+          <EmojiIcon emoji={article.thumbnail} />
         </div>
         <p className={`${styles.title} ${zenKakuGothicNew_w700.className}`}>
           {article.title}
