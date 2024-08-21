@@ -1,8 +1,6 @@
 {
   "css.validate": false,
   "scss.validate": false,
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false,
   "stylelint.validate": ["css", "html", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",

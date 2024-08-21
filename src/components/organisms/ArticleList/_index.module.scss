@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 40px;
+  container-type: inline-size;
+}
+
+@container (max-width: 910px) {
+  .root {
+    justify-content: center;
+  }
+}

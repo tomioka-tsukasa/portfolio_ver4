@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 0 6px;
+}
+
+.icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+.text {
+  display: inline-block;
+  font-size: 12px;
+}

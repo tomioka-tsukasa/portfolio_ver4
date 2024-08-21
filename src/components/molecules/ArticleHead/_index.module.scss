@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 60px;
+  gap: 24px 0;
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.head {
+  @include textShadow();
+
+  @include pc {
+    font-size: 32px;
+  }
+
+  @include sp {
+    font-size: 22px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px 0;
+}
+
+@container (max-width: 1180px) {
+  .root {
+    padding: 0 30px;
+  }
+}
