@@ -5,6 +5,7 @@
   margin: 32px auto auto;
 }
 
-* + .screen {
+* + .screen,
+* + .notes {
   margin-top: 32px;
 }

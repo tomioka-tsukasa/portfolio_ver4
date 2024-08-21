@@ -11,7 +11,7 @@ import { NewtLabSubject } from "@/types/newt"
 import ULTabContentNotes from "../ULTabContentNotes";
 
 type Props = {
-  subject: NewtLabSubject
+  subject: NewtLabSubject | null
 }
 
 const tabList: Unilab.TabList = [

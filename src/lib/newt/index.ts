@@ -54,8 +54,8 @@ export const getLabSubjects = async () => {
   return items
 }
 
-export const getLabSubject = async (slug: string) => {
-  const item = await client.getFirstContent<NewtLabSubject>({
+export const getLabSubjectBySlug = async (slug: string) => {
+  const subject = await client.getFirstContent<NewtLabSubject>({
     appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
     modelUid: process.env.NEWT_APP_UID_TECH_LAB_SUBJECT + '', 
     query: {
@@ -63,7 +63,7 @@ export const getLabSubject = async (slug: string) => {
       select: ['_id', '_sys', 'slug', 'title', 'status', 'pickup', 'body', 'thumbnail', 'groups', 'dev-note', 'ui-note'],
     },
   })
-  return item
+  return subject
 }
 
 export const getLabGroup = async () => {

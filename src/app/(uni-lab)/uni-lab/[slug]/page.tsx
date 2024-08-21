@@ -1,7 +1,7 @@
 import Draft_CtrlButton from "@/components/molecules/Draft_CtrlButton";
 import styles from "./_index.module.scss"
 import LabScreen from "@/components/molecules/LabScreen";
-import { getLabSubject, getLabSubjects } from "@/lib/newt";
+import { getLabSubjectBySlug, getLabSubjects } from "@/lib/newt";
 import ULTabArea from "@/components/organisms/ULTabArea";
 
 type Props = {
@@ -14,7 +14,7 @@ export default async function ULSubject({
   params
 }: Props ) {
   const { slug } = params
-  const subject = await getLabSubject(slug)
+  const subject = await getLabSubjectBySlug(slug)
   return <>
     <div className={styles.root}>
       <div className={styles.ctrl}>
@@ -23,7 +23,9 @@ export default async function ULSubject({
       <div className={styles.screen}>
         <LabScreen slug={slug} />
       </div>
-      <ULTabArea subject={subject} />
+      <div className={styles.notes}>
+        <ULTabArea subject={subject} />
+      </div>
     </div>
   </>
 }
