@@ -15,7 +15,7 @@ export default function GlobalNav({
   return <>
     <div className={styles.root}>
       {navs.map( nav => (
-        nav.slug !== 'uni-lab' && <Link href={`/${nav.slug}/`} key={nav.slug} className={`${styles.nav} ${zenOldMincho_w700.className}`}>
+        nav.slug !== 'uni-lab' && <Link href={`/${nav.slug}/`} key={nav.slug} className={`${styles.nav} ${!nav.active ? styles.isUnactive : ''} ${zenOldMincho_w700.className}`}>
           {nav.name}
         </Link>
       ))}

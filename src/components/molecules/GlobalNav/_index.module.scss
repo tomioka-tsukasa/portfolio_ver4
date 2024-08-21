@@ -26,3 +26,8 @@
     font-size: 14px;
   }
 }
+
+.isUnactive {
+  opacity: 0.5;
+  pointer-events: none;
+}
