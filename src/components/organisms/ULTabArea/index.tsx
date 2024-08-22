@@ -8,6 +8,7 @@ import { register } from "@/lib/store/slice/tab"
 import ULTabContentBody from "@/components/molecules/ULTabContentBody"
 import { NewtLabSubject } from "@/types/newt"
 import ULTabContentNotes from "../ULTabContentNotes";
+import { usePathname } from "next/navigation"
 
 type Props = {
   subject: NewtLabSubject
@@ -32,6 +33,7 @@ export default function ULTabArea({
   subject
 }: Props ) {
   const dispatch = useAppDispatch()
+  const pathname = usePathname()
   const state = useAppSelector(state => state.tab)
   const tabContentId = 'ul-tabarea-content'
   useEffect(() => {
@@ -42,7 +44,7 @@ export default function ULTabArea({
         contentId: tabContentId
       }
     }))
-  }, [])
+  }, [pathname])
   return <>
     <div className={styles.root}>
       <TabList list={tabList} />

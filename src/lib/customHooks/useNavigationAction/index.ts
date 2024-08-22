@@ -1,4 +1,4 @@
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 type Props = {
@@ -11,9 +11,8 @@ export default function useNavigationAction ({
   cleanup,
 }: Props ) {
   const pathname = usePathname()
-  const searchParams = useSearchParams()
   useEffect( () => {
     callback()
     return cleanup
-  }, [pathname, searchParams])
+  }, [pathname])
 }

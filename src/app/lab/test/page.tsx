@@ -3,11 +3,13 @@
 import { useEffect } from "react";
 import styles from "./_index.module.scss";
 import Canvas from "./webgl/index"
+import { usePathname } from "next/navigation";
 
 export default function LabTest() {
+  const pathname = usePathname()
   useEffect(() => {
     Canvas()
-  }, [])
+  }, [pathname])
   return <>
     <div className={styles.root}>
       <h1>
