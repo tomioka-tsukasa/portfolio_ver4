@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "@setting" as *;
+
+@mixin app() {
+  > * + * {
+    @include pc {
+      margin-top: 32px;
+    }
+
+    @include sp {
+      margin-top: 24px;
+    }
+  }
+
+  * + h2 {
+    @include pc {
+      margin-top: 160px;
+    }
+
+    @include sp {
+      margin-top: 120px;
+    }
+  }
+
+  * + h3 {
+    @include pc {
+      margin-top: 96px;
+    }
+
+    @include sp {
+      margin-top: 64px;
+    }
+  }
+}

@@ -2,7 +2,7 @@ import styles from "./_index.module.scss"
 import LabSubjectList from "@/components/organisms/LabSubjectList";
 import { getLabSubjects } from "@/lib/newt";
 import Image from "next/image";
-import logo from "@/public/logo/logo-unilab.png"
+import logo from "/public/logo/logo-unilab.png"
 import { zenOldMincho_w700 } from "@/lib/fonts";
 
 export default async function ULHome() {

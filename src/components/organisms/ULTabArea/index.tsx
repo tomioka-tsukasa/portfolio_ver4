@@ -1,7 +1,6 @@
 'use client'
 
 import styles from "./_index.module.scss"
-import parse from 'html-react-parser';
 import TabList from "@/components/molecules/TabList"
 import React, { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "@/lib/store/hook"
@@ -49,7 +48,7 @@ export default function ULTabArea({
       <TabList list={tabList} />
       <div id={tabContentId} className={`${styles.contentWrapper} is-${state.ULTabArea?.active ?? 'default'}`}>
         <div className={`${styles.content} ${state.ULTabArea?.active === 'body' ? styles.isActive : ''}`}>
-          <ULTabContentBody body={parse(subject?.body + '')} />
+          <ULTabContentBody body={subject?.body + ''} />
         </div>
         <div className={`${styles.content} ${state.ULTabArea?.active === 'dev' ? styles.isActive : ''}`}>
           <ULTabContentNotes notes={subject["dev-note"]} />
