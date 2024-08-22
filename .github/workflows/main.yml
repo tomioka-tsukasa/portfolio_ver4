@@ -1,4 +1,4 @@
-name: Next.js Build & FTP Deploy Tsukasa Tomioka Portfolio
+name: GitHub Actions
 
 on:
   pull_request:
