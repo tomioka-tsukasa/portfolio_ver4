@@ -1,3 +1,4 @@
+import MarkdownStyle from "@/components/organisms/MarkdownStyle"
 import styles from "./_index.module.scss"
 
 type Props = {
@@ -9,7 +10,9 @@ export default function ULTabContentBody({
 }: Props ) {
   return <>
     <div className={styles.root}>
-      {body}
+      <MarkdownStyle>
+        {body}
+      </MarkdownStyle>
     </div>
   </>
 }

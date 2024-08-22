@@ -1,8 +1,8 @@
 import { NewtNote } from "@/types/newt"
-import parse from 'html-react-parser';
 import styles from "./_index.module.scss"
 import Arrow from "@/components/atoms/Arrow"
 import { zenKakuGothicNew_w700 } from "@/lib/fonts";
+import MarkdownStyle from "@/components/organisms/MarkdownStyle";
 
 type Props = {
   note: NewtNote
@@ -42,7 +42,11 @@ export default function TabNote({
         </div>
       </div>
       {note.body 
-        ? <div className={styles.cont}>{parse(note.body)}</div>
+        ? <div className={styles.cont}>
+          <MarkdownStyle mode='light'>
+            {note.body}
+          </MarkdownStyle>
+        </div>
         : ''
       }
     </div>

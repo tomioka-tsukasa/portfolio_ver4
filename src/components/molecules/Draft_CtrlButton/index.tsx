@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation"
 import styles from "./_index.module.scss"
 import Arrow from "@/components/atoms/Arrow"
-import { useEffect } from "react"
 
 export default function Draft_CtrlButton() {
   const router = useRouter()

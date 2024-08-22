@@ -1,0 +1,113 @@
+@use "sass:map";
+@use "@setting" as *;
+
+@mixin app() {
+  h2 {
+    font-weight: bold;
+
+    @include pc {
+      font-size: 32px;
+    }
+
+    @include sp {
+      font-size: 24px;
+    }
+  }
+
+  h3 {
+    padding: 5px 12px 6px;
+    border-radius: 9px;
+    background-color: map.get($mainColor, "L20");
+    font-weight: bold;
+
+    @include pc {
+      font-size: 24px;
+    }
+
+    @include sp {
+      font-size: 18px;
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    text-decoration: underline;
+
+    @include pc {
+      font-size: 18px;
+    }
+
+    @include sp {
+      font-size: 16px;
+    }
+  }
+
+  > ul,
+  > ol {
+    li {
+      display: flex;
+      position: relative;
+      align-items: center;
+      gap: 0 12px;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        margin-top: 3px;
+        border-radius: 50%;
+        background-color: map.get($mainColor, "index");
+      }
+    }
+  }
+
+  a {
+    color: map.get($infoColor, "link");
+    text-decoration: underline;
+  }
+
+  table {
+    border-spacing: 5px;
+    border-collapse: separate;
+
+    th,
+    td {
+      padding: 6px 24px;
+      white-space: pre;
+    }
+
+    thead {
+      tr {
+        > * {
+          background-color: map.get($mainColor, "L20");
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        > * {
+          position: relative;
+
+          &:first-child {
+            padding: 6px 24px 6px 12px;
+          }
+
+          &:not(:first-child) {
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 0;
+              left: -3px;
+              width: 1px;
+              height: 100%;
+              background-color: map.get($mainColor, "L20");
+            }
+          }
+        }
+      }
+    }
+  }
+}

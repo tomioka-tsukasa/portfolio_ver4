@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@setting": ["./src/sass/setting/_index.scss"]
+      "¥/*": ["./*"],
+      "@setting": ["./src/sass/setting/_index.scss"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/types/unilab.d.ts"],

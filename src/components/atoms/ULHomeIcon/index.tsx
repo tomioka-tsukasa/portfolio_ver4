@@ -1,5 +1,5 @@
 import Image from "next/image"
-import icon from "@/public/icons/icon-unilab-logo-emblem.png"
+import icon from "/public/icons/icon-unilab-logo-emblem.png"
 
 export default function ULHomeIcon() {
   return <>

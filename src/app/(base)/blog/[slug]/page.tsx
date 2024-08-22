@@ -1,12 +1,26 @@
 import { getArticleBySlug, getArticles } from "@/lib/newt";
-import parse from 'html-react-parser';
 import ArticleHead from "@/components/molecules/ArticleHead";
 import styles from "./_index.module.scss"
 import BlogTemplate from "@/components/templates/BlogTemplate";
+import MarkdownStyle from "@/components/organisms/MarkdownStyle";
+import { Metadata } from "next";
 
 type Props = {
   params: {
     slug: string
+  }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = params
+  const article = await getArticleBySlug(slug)
+  return {
+    title: article?.title,
+    description: '投稿詳細ページです',
+    robots: {
+      index: false,
+      follow: false
+    },
   }
 }
 
@@ -22,7 +36,9 @@ export default async function BlogDetail({
       <BlogTemplate className={{
         main: styles.main
       }}>
-        {parse(article.body)}
+        <MarkdownStyle>
+          {article.body}
+        </MarkdownStyle>
       </BlogTemplate>
     </div>
   </>
