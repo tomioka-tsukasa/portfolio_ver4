@@ -27,8 +27,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: yarn install
+
+      - name: Create .env File
+        run: |
+          echo "${{ secrets.ENV_LOCAL }}" > $GITHUB_WORKSPACE/.env.local
 
       - name: Build
         run: yarn build
