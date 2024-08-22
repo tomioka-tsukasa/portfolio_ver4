@@ -2,7 +2,7 @@ import { NewtNote } from "@/types/newt"
 import styles from "./_index.module.scss"
 import Arrow from "@/components/atoms/Arrow"
 import { zenKakuGothicNew_w700 } from "@/lib/fonts";
-import MarkdownStyle from "@/components/organisms/MarkdownStyle";
+import FormatMarkdown from "@/components/organisms/FormatMarkdown";
 
 type Props = {
   note: NewtNote
@@ -43,9 +43,7 @@ export default function TabNote({
       </div>
       {note.body 
         ? <div className={styles.cont}>
-          <MarkdownStyle mode='light'>
-            {note.body}
-          </MarkdownStyle>
+          <FormatMarkdown body={note.body} mode='light' />
         </div>
         : ''
       }

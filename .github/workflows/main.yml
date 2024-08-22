@@ -1,4 +1,4 @@
-name: Next.js Build & FTP Deploy Tsukasa Tomioka Portfolio
+name: Next.js Build & FTP Upload
 
 on:
   pull_request:
@@ -6,8 +6,8 @@ on:
       - main
     types: [closed]
 
-  workflow_dispatch:
-    types: [manual_deploy]
+  repository_dispatch:
+    types: [Newt_Manual_Deploy]
 
 jobs:
   ftp-deploy:
