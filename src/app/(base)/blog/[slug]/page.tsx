@@ -2,8 +2,8 @@ import { getArticleBySlug, getArticles } from "@/lib/newt";
 import ArticleHead from "@/components/molecules/ArticleHead";
 import styles from "./_index.module.scss"
 import BlogTemplate from "@/components/templates/BlogTemplate";
-import MarkdownStyle from "@/components/organisms/MarkdownStyle";
 import { Metadata } from "next";
+import FormatMarkdown from "@/components/organisms/FormatMarkdown";
 
 type Props = {
   params: {
@@ -36,9 +36,7 @@ export default async function BlogDetail({
       <BlogTemplate className={{
         main: styles.main
       }}>
-        <MarkdownStyle>
-          {article.body}
-        </MarkdownStyle>
+        <FormatMarkdown body={article.body} />
       </BlogTemplate>
     </div>
   </>

@@ -1,5 +1,5 @@
-import MarkdownStyle from "@/components/organisms/MarkdownStyle"
 import styles from "./_index.module.scss"
+import FormatMarkdown from "@/components/organisms/FormatMarkdown"
 
 type Props = {
   body: any
@@ -10,9 +10,7 @@ export default function ULTabContentBody({
 }: Props ) {
   return <>
     <div className={styles.root}>
-      <MarkdownStyle>
-        {body}
-      </MarkdownStyle>
+      <FormatMarkdown body={body} mode='light' />
     </div>
   </>
 }

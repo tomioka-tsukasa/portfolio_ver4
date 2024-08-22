@@ -11,9 +11,10 @@ export interface NewtArticle {
   slug: string;
   title: string;
   pickup: boolean;
+  issue: boolean;
   body: string;
   thumbnail: NewtEmoji;
-  categorys: Array<NewtCategory>
+  categorys: Array<NewtCategory>,
 }
 
 export interface NewtCategory {
