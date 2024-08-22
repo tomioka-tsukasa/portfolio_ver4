@@ -1,4 +1,4 @@
-name: GitHub Actions
+name: Next.js Build & FTP Upload
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
     types: [closed]
 
   repository_dispatch:
-    types: [manual_deploy]
+    types: [Newt_Manual_Deploy]
 
 jobs:
   ftp-deploy:
