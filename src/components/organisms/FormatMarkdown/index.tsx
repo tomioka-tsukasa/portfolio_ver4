@@ -58,6 +58,11 @@ export default function FormatMarkdown({
           />
         </a>
       }
+      if (domNode.name === 'code') {
+        return <code className={`${code.code}`}>
+          {domToReact(domNode.children as DOMNode[], options)}
+        </code>
+      }
       if (domNode.name === 'pre') {
         return <pre className={`${code.pre} prettyprint linenums`}>
           {domToReact(domNode.children as DOMNode[], options)}
