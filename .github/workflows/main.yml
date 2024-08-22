@@ -1,4 +1,4 @@
-name: FTP Deploy Tsukasa Tomioka Portfolio
+name: Next.js Build & FTP Deploy Tsukasa Tomioka Portfolio
 
 on:
   pull_request:
@@ -7,16 +7,32 @@ on:
     types: [closed]
 
   workflow_dispatch:
-    types: [update_content]
+    types: [manual_deploy]
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [20.x]
+
     steps:
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
+      - name: Use Node.js ${{ matrix.node-version }}
+
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
