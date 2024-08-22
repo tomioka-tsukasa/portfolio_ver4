@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "@setting" as *;
+
+@mixin app() {
+  code {
+    display: inline-block;
+    padding: 2px 4px 3px;
+    border-radius: 6px;
+    background-color: map.get($mainColor, "L15");
+    color: map.get($mainColor, "L90");
+    line-height: 0.9;
+  }
+
+  pre {
+    padding: 12px 12px 12px 34px;
+    border-radius: 9px;
+
+    @include pc {
+      font-size: 14px;
+    }
+
+    @include sp {
+      font-size: 12px;
+    }
+
+    code {
+      padding: 0;
+      border-radius: 0;
+      background-color: initial;
+      color: map.get($mainColor, "index");
+      white-space: pre-wrap;
+    }
+
+    span {
+      line-height: 1.4;
+    }
+
+    ol {
+      * + li {
+        margin-top: 3px;
+      }
+    }
+  }
+}

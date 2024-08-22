@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "@setting" as *;
+
+@mixin app() {
+  ul,
+  ol {
+    li {
+      &:before {
+        background-color: map.get($baseColor, "index");
+      }
+    }
+  }
+}
