@@ -3,6 +3,7 @@
 
 .code {
   display: inline-block;
+  margin: 0 2px;
   padding: 2px 4px 3px;
   border-radius: 6px;
   background-color: map.get($mainColor, "L15");
@@ -20,6 +21,16 @@
 
   @include sp {
     font-size: 12px;
+  }
+
+  code {
+    display: initial;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: initial;
+    color: initial;
+    line-height: initial;
   }
 
   span {
