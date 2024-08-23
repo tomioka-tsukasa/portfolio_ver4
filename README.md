@@ -14,6 +14,7 @@ yarn build
 * fix: バグ修正
 * hotfix: 緊急のバグ修正
 * add: 新規追加
+* adjust: 微細な修正など
 * update: ニュース更新など機能変更ががない更新
 * style: ソースのフォーマット調整
 * refactor: 仕様に影響がないコード改善(リファクタ)
