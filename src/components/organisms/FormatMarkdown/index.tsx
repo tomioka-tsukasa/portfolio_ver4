@@ -45,6 +45,21 @@ export default function FormatMarkdown({
           </table>
         </div>
       }
+      if (domNode.name === 'blockquote') {
+        return <blockquote className={base.blockquote}>
+          {domToReact(domNode.children as DOMNode[], options)}
+        </blockquote>
+      }
+      if (domNode.name === 's') {
+        return <s className={base.lineThrough}>
+          {domToReact(domNode.children as DOMNode[], options)}
+        </s>
+      }
+      if (domNode.name === 'em') {
+        return <em className={base.italic}>
+          {domToReact(domNode.children as DOMNode[], options)}
+        </em>
+      }
       if (domNode.name === 'a' && domNode.attribs.href.includes('http')) {
         const props = attributesToProps(domNode.attribs);
         return <a {...props} className={`${base.externalLink}`}>
