@@ -100,12 +100,11 @@
       content: "";
       display: block;
       position: absolute;
-      top: 42%;
+      top: 0.35em;
       left: 0;
       width: 6px;
       height: 6px;
       margin-top: 3px;
-      transform: translateY(-50%);
       border-radius: 50%;
       background-color: map.get($mainColor, "index");
     }
