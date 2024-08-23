@@ -24,7 +24,7 @@
     }
   }
 
-  * + h2 {
+  *:not(h2, h3, h4) + h2 {
     @include pc {
       margin-top: 160px;
     }
@@ -49,7 +49,7 @@
     }
   }
 
-  * + h3 {
+  *:not(h2, h3, h4) + h3 {
     @include pc {
       margin-top: 96px;
     }
@@ -159,4 +159,34 @@
       }
     }
   }
+}
+
+.blockquote {
+  position: relative;
+  padding: 9px 0 9px 24px;
+  color: map.get($mainColor, "L85");
+  font-style: italic;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 2px;
+    background-color: map.get($mainColor, "L40");
+  }
+
+  > * + * {
+    margin-top: 24px;
+  }
+}
+
+.lineThrough {
+  text-decoration: line-through;
+}
+
+.italic {
+  font-style: italic;
 }
