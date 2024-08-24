@@ -63,10 +63,10 @@ $thumbnailWidth: 65px;
   border-left: 1px solid map.get($mainColor, "L30");
 }
 
-@container (max-width: 910px) {
+@container (max-width: 840px) {
   .root {
     width: 100%;
-    max-width: 720px;
+    max-width: 640px;
     margin: 0 auto;
   }
 }
