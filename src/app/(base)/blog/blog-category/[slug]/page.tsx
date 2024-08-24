@@ -1,4 +1,5 @@
 import ArticleList from "@/components/organisms/ArticleList"
+import BlogSidebar from "@/components/organisms/BlogSidebar"
 import BlogTemplate from "@/components/templates/BlogTemplate"
 import { getArticles, getCategorys } from "@/lib/newt"
 
@@ -23,7 +24,7 @@ export default async function BlogCategory({
     return judge
   })
   return <>
-    <BlogTemplate>
+    <BlogTemplate nav={<BlogSidebar />}>
       <ArticleList articles={filtered} rootPath="/blog/" />
     </BlogTemplate>
   </>
