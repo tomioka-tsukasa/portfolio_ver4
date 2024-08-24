@@ -1,5 +1,5 @@
 ---
-name: basic-template-blog
+name: Basic_Template_Blog
 about: ブログ投稿を前提とした標準的なテンプレート
 title: "[主な言語やツール] 詳細"
 labels: ''
