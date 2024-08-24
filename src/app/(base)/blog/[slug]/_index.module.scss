@@ -11,11 +11,18 @@
   background-color: map.get($mainColor, "L15");
 
   @include pc {
+    max-width: 960px;
     padding: 48px 60px;
   }
 
   @include sp {
     max-width: 720px;
     padding: 36px 30px;
+  }
+}
+
+@container (max-width: 1440px) {
+  .main {
+    max-width: 840px;
   }
 }
