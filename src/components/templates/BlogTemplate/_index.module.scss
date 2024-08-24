@@ -6,21 +6,30 @@
   justify-content: center;
   padding: 0 60px;
   gap: 0 80px;
-}
-
-.nav {
-  flex-shrink: 0;
+  container-type: inline-size;
 }
 
 .main {
+  display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 1072px;
 }
 
-.wrapper {
-  width: 100%;
-  border-radius: 12px;
-  background-color: map.get($mainColor, "L15");
+.nav {
+  flex-shrink: 0;
+  width: 260px;
+  max-width: 720px;
+
+  > * + * {
+    margin-top: 80px;
+  }
+}
+
+@container (max-width: 1440px) {
+  .main {
+    max-width: 840px;
+  }
 }
 
 @container (max-width: 1180px) {
@@ -35,5 +44,9 @@
 @container (max-width: 768px) {
   .root {
     padding: 0;
+  }
+
+  .nav {
+    padding: 0 30px;
   }
 }

@@ -6,8 +6,11 @@
 }
 
 .main {
+  width: 100%;
+  border-radius: 12px;
+  background-color: map.get($mainColor, "L15");
+
   @include pc {
-    max-width: 840px;
     padding: 48px 60px;
   }
 
