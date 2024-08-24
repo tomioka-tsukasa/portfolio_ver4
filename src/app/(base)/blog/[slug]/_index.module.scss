@@ -1,11 +1,11 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.main {
-  width: 100%;
-  border-radius: 12px;
-  background-color: map.get($mainColor, "L15");
+* + .contents {
+  margin-top: 80px;
+}
 
+.main {
   @include pc {
     max-width: 840px;
     padding: 48px 60px;
@@ -15,8 +15,4 @@
     max-width: 720px;
     padding: 36px 30px;
   }
-}
-
-* + .contents {
-  margin-top: 80px;
 }

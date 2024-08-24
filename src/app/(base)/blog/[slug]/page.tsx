@@ -4,6 +4,7 @@ import styles from "./_index.module.scss"
 import BlogTemplate from "@/components/templates/BlogTemplate";
 import { Metadata } from "next";
 import FormatMarkdown from "@/components/organisms/FormatMarkdown";
+import BlogSidebar from "@/components/organisms/BlogSidebar";
 
 type Props = {
   params: {
@@ -33,10 +34,10 @@ export default async function BlogDetail({
   return <>
     <ArticleHead article={article} />
     <div className={styles.contents}>
-      <BlogTemplate className={{
-        main: styles.main
-      }}>
-        <FormatMarkdown body={article.body} />
+      <BlogTemplate nav={<BlogSidebar />} wrapper={true}>
+        <div className={styles.main}>
+          <FormatMarkdown body={article.body} />
+        </div>
       </BlogTemplate>
     </div>
   </>
