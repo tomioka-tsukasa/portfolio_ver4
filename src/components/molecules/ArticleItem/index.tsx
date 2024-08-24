@@ -21,7 +21,8 @@ export default function ArticleItem({
           <EmojiIcon emoji={article.thumbnail} />
         </div>
         <p className={`${styles.title} ${zenKakuGothicNew_w700.className}`}>
-          {article.title}
+          {article.title.substring(0, 60)}
+          {article.title.length <= 60 ? '' : '...'}
         </p>
         <div className={styles.info}>
           <div className={styles.date}>
