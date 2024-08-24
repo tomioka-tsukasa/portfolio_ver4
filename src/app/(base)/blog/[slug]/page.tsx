@@ -34,7 +34,7 @@ export default async function BlogDetail({
   return <>
     <ArticleHead article={article} />
     <div className={styles.contents}>
-      <BlogTemplate nav={<BlogSidebar />} wrapper={true}>
+      <BlogTemplate nav={<BlogSidebar />}>
         <div className={styles.main}>
           <FormatMarkdown body={article.body} />
         </div>
