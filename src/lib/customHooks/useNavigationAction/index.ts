@@ -14,5 +14,5 @@ export default function useNavigationAction ({
   useEffect( () => {
     callback()
     return cleanup
-  }, [pathname])
+  }, [pathname, callback, cleanup])
 }
