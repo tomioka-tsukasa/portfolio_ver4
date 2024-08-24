@@ -60,5 +60,5 @@ export default function useImportLab ({
       }
     }
     getDocument(slug);
-  }, [])
+  }, [state, slug])
 }
