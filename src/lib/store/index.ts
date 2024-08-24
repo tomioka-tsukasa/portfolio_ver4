@@ -1,11 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import tab from './slice/tab'
+import counter from './slice/counter'
 
 export const makeStore = () => {
+  
   return configureStore({
     reducer: {
-      tab
-    },
+      counter
+    }
   })
 }
 
