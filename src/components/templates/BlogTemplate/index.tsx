@@ -1,47 +1,28 @@
-import BlogSidebar from "@/components/organisms/BlogSidebar";
 import styles from "./_index.module.scss"
 import React from "react";
 
+type Props = {
+  children: React.ReactNode,
+  nav: React.ReactNode,
+  wrapper?: boolean,
+}
+
 export default function BlogTemplate({
   children,
-  className
-}: {
-  children: React.ReactNode;
-  className?: {
-    main?: string;
-    nav?: string;
-  }
-}) {
-  let main: React.ReactNode;
-  let nav: React.ReactNode;
-  if (className?.main) main = <>
-    <main className={`${className?.main ?? ''}`}>
-      <div className={`${styles.main}`}>
-        {children}
-      </div>
-    </main>
-  </>
-  else main = <>
-    <main className={`${styles.main}`}>
-      {children}
-    </main>
-  </>
-  if (className?.nav) nav = <>
-    <nav className={`${className?.nav ?? ''}`}>
-      <div className={`${styles.nav}`}>
-        <BlogSidebar />
-      </div>
-    </nav>
-  </>
-  else nav = <>
-    <nav className={`${styles.nav}`}>
-      <BlogSidebar />
-    </nav>
-  </>
+  nav,
+  wrapper = false
+}: Props ) {
   return <>
     <div className={styles.root}>
-      {main}
-      {nav}
+      <main className={`${styles.main}`}>
+        {wrapper
+         ? <div className={styles.wrapper}>{children}</div>
+         : children
+        }
+      </main>
+      <nav className={`${styles.nav}`}>
+        {nav}
+      </nav>
     </div>
   </>
 }
