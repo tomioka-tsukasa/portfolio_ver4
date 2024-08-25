@@ -112,6 +112,10 @@
 }
 
 .table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
   @include sp {
     overflow-x: scroll;
   }
@@ -124,7 +128,8 @@
   th,
   td {
     padding: 6px 24px;
-    white-space: pre;
+    word-break: break-word;
+    white-space: pre-wrap;
   }
 
   thead {
