@@ -121,15 +121,25 @@
   }
 
   table {
+    display: table;
     border-spacing: 5px;
     border-collapse: separate;
+
+    @include pc {
+      width: 100%;
+      table-layout: fixed;
+    }
   }
 
   th,
   td {
     padding: 6px 24px;
-    word-break: break-word;
-    white-space: pre-wrap;
+    white-space: pre;
+
+    @include pc {
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
   }
 
   thead {
