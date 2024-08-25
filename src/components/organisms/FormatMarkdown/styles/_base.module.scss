@@ -112,9 +112,7 @@
 }
 
 .table {
-  display: table;
   width: 100%;
-  table-layout: fixed;
 
   @include sp {
     overflow-x: scroll;
@@ -122,6 +120,7 @@
 
   table {
     display: table;
+    table-layout: fixed;
     border-spacing: 5px;
     border-collapse: separate;
 
