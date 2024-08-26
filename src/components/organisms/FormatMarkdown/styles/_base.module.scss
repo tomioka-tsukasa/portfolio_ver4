@@ -2,6 +2,16 @@
 @use "@setting" as *;
 
 .root {
+  line-height: 1.7;
+
+  @include pc {
+    font-size: 16px;
+  }
+
+  @include sp {
+    font-size: 14px;
+  }
+
   > * + * {
     @include pc {
       margin-top: 32px;

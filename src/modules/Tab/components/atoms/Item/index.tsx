@@ -5,7 +5,7 @@ import { ItemType } from "@/modules/Tab/types"
 interface Props {
   item: ItemType,
 }
-  
+
 export default function TabItem({
   item,
 }: Props ) {
