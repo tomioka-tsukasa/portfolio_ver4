@@ -1,4 +1,4 @@
-import { Svg } from "@/types/svg";
+import { Svg } from "@/types/global";
 
 type Color = '' | 'white' | 'black' | 'link';
 type Props = Svg<Color>

@@ -1,9 +1,9 @@
 import HomeIcon from "@/components/atoms/HomeIcon";
 import styles from "./_index.module.scss"
 import GlobalNav from "@/components/molecules/GlobalNav";
-import { Navs } from "@/types/nav";
+import { Nav } from "@/types/global";
 
-const navs: Navs = [
+const navs: Nav = [
   {
     name: 'Works.',
     slug: 'works',

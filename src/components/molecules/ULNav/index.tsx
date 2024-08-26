@@ -2,7 +2,7 @@ import Link from "next/link"
 import styles from "./_index.module.scss"
 
 type Props = {
-  navs: Unilab.Navs['local']
+  navs: UniLab.LocalNav
 }
 
 export default function ULNav({
