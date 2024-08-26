@@ -1,12 +1,11 @@
 import ArticleItem from "@/components/molecules/ArticleItem/"
 import styles from "./_index.module.scss";
-import { NewtArticle } from "@/types/newt";
 
 export default function ArticleList({
   articles,
   rootPath = '/blog/'
 }: {
-  articles: Array<NewtArticle>,
+  articles: Array<Newt.Article>,
   rootPath?: string
 }) {
   return <>

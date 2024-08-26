@@ -2,7 +2,6 @@ import styles from "./_index.module.scss"
 import LabGroupHead from "@/components/molecules/LabGroupHead"
 import LabSubjectList from "@/components/organisms/LabSubjectList"
 import { getLabGroup, getLabGroupBySlug, getLabSubjects } from "@/lib/newt"
-import { NewtLabGroup } from "@/types/newt"
 
 type StaticParams = {
   slug: string
@@ -19,7 +18,7 @@ export default async function LabGroup({
   const subjects = await getLabSubjects()
   const filtered = subjects.filter( subject => {
     let judge: boolean = false
-    subject.groups.forEach( (item: NewtLabGroup) => {
+    subject.groups.forEach( (item: Newt.LabGroup) => {
       if (item.slug === slug) judge = true
     })
     return judge
