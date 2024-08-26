@@ -5,7 +5,12 @@ import NewtIcon from "@/components/atoms/NewtIcon"
 import ULNav from "@/components/molecules/ULNav"
 import GlobalMenuIcon from "@/components/atoms/GlobalMenuIcon"
 
-const navs: Unilab.Navs = {
+interface Navs {
+  global: UniLab.GlobalNav;
+  local: UniLab.LocalNav;
+}
+
+const navs: Navs = {
   global: [
     {
       name: 'Works.',
