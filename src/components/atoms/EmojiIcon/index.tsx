@@ -1,8 +1,7 @@
-import { NewtEmoji } from "@/types/newt"
 import styles from "./_index.module.scss"
 
 type Props = {
-  emoji: NewtEmoji
+  emoji: Newt.Emoji
 }
 
 export default function EmojiIcon({

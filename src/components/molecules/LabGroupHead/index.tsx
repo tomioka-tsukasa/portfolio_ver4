@@ -1,10 +1,9 @@
 import { zenOldMincho_w700 } from "@/lib/fonts"
 import styles from "./_index.module.scss"
-import { NewtLabGroup } from "@/types/newt"
 import Image from "next/image"
 
 type Props = {
-  group: NewtLabGroup | null,
+  group: Newt.LabGroup | null,
 }
 
 export default function LabGroupHead({

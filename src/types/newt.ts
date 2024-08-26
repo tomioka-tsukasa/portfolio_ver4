@@ -1,87 +1,89 @@
-export interface NewtArticle {
-  _id: string;
-  _sys: {
-    raw: {
+namespace Newt {
+  export interface Article {
+    _id: string;
+    _sys: {
+      raw: {
+        createdAt: string;
+        updatedAt: string;
+        firstPublishedAt: string;
+        publishedAt: string;
+      }
+    };
+    slug: string;
+    title: string;
+    pickup: boolean;
+    issue: boolean;
+    body: string;
+    thumbnail: Emoji;
+    categorys: Array<Category>,
+  }
+  
+  export interface Category {
+    _id: string;
+    _sys: {
       createdAt: string;
       updatedAt: string;
-      firstPublishedAt: string;
-      publishedAt: string;
-    }
-  };
-  slug: string;
-  title: string;
-  pickup: boolean;
-  issue: boolean;
-  body: string;
-  thumbnail: NewtEmoji;
-  categorys: Array<NewtCategory>,
-}
-
-export interface NewtCategory {
-  _id: string;
-  _sys: {
-    createdAt: string;
-    updatedAt: string;
-    customOrder: number;
-  },
-  name: string;
-  slug: string;
-}
-
-export interface NewtEmoji {
-  type: string;
-  value: string;
-}
-
-export interface NewtThumbnail {
-  _id: string;
-  src: string;
-  fileName: string;
-  fileType: string;
-  fileSize: number;
-  width: number;
-  height: number;
-  title: string;
-  altText: string;
-  description: string;
-  metadata: {};
-}
-
-export type NewtLabLabel = 'progress' | 'task'
-
-export interface NewtLabSubject {
-  _id: string;
-  _sys: {
-    raw: {
-      createdAt: string;
-      updatedAt: string;
-      firstPublishedAt: string;
-      publishedAt: string;
-    }
-  };
-  slug: string;
-  title: string;
-  status: Array<NewtLabLabel>;
-  pickup: boolean;
-  body: string;
-  thumbnail: NewtThumbnail;
-  groups: Array<NewtLabGroup>;
-  'dev-note': Array<NewtNote>;
-  'ui-note': Array<NewtNote>;
-}
-
-export interface NewtNote {
-  title: string;
-  body: string;
-  'url-type': boolean;
-  thumbnail: NewtEmoji;
-  slug: string;
-}
-
-export interface NewtLabGroup {
-  title: string;
-  slug: string;
-  pickup: boolean;
-  thumbnail: NewtThumbnail;
-  body: string;
+      customOrder: number;
+    },
+    name: string;
+    slug: string;
+  }
+  
+  export interface Emoji {
+    type: string;
+    value: string;
+  }
+  
+  export interface Thumbnail {
+    _id: string;
+    src: string;
+    fileName: string;
+    fileType: string;
+    fileSize: number;
+    width: number;
+    height: number;
+    title: string;
+    altText: string;
+    description: string;
+    metadata: {};
+  }
+  
+  export type LabLabel = 'progress' | 'task'
+  
+  export interface LabSubject {
+    _id: string;
+    _sys: {
+      raw: {
+        createdAt: string;
+        updatedAt: string;
+        firstPublishedAt: string;
+        publishedAt: string;
+      }
+    };
+    slug: string;
+    title: string;
+    status: Array<LabLabel>;
+    pickup: boolean;
+    body: string;
+    thumbnail: Thumbnail;
+    groups: Array<LabGroup>;
+    'dev-note': Array<Note>;
+    'ui-note': Array<Note>;
+  }
+  
+  export interface Note {
+    title: string;
+    body: string;
+    'url-type': boolean;
+    thumbnail: Emoji;
+    slug: string;
+  }
+  
+  export interface LabGroup {
+    title: string;
+    slug: string;
+    pickup: boolean;
+    thumbnail: Thumbnail;
+    body: string;
+  }
 }

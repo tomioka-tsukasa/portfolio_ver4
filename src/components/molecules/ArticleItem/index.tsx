@@ -1,4 +1,3 @@
-import { NewtArticle } from "@/types/newt";
 import Link from "next/link";
 import Arrow from "@/components/atoms/Arrow/";
 import styles from "./_index.module.scss";
@@ -11,7 +10,7 @@ export default function ArticleItem({
   article,
   rootPath = '/blog/'
 }: {
-  article: NewtArticle,
+  article: Newt.Article,
   rootPath?: string
 }) {
   return <>

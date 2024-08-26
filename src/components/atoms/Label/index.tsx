@@ -1,9 +1,8 @@
-import { NewtLabLabel } from "@/types/newt"
 import styles from "./_index.module.scss"
 import { zenKakuGothicNew_w700 } from "@/lib/fonts"
 
 type Props = {
-  slug: NewtLabLabel,
+  slug: Newt.LabLabel,
   text?: string | null,
 }
 
