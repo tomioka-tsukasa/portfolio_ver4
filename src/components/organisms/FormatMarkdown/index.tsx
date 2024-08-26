@@ -62,7 +62,7 @@ export default function FormatMarkdown({
       }
       if (domNode.name === 'a' && domNode.attribs.href.includes('http')) {
         const props = attributesToProps(domNode.attribs);
-        return <a {...props} className={`${base.externalLink}`}>
+        return <a {...props} target="_blank" className={`${base.externalLink}`}>
           {domToReact(domNode.children as DOMNode[], options)}
           <Image 
             className={base.externalIcon}
