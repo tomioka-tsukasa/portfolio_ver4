@@ -2,18 +2,19 @@
 @use "@setting" as *;
 
 .code {
-  display: inline-block;
+  display: inline;
   margin: 0 2px;
-  padding: 2px 4px 3px;
+  padding: 0 4px;
   border-radius: 6px;
   background-color: map.get($mainColor, "L10");
   color: map.get($mainColor, "L90");
-  line-height: 0.9;
+  word-break: break-all;
 }
 
 .pre {
-  padding: 12px 12px 12px 34px;
+  padding: 12px 12px 12px 37px;
   border-radius: 9px;
+  word-break: break-all;
   white-space: pre-wrap;
 
   @include pc {
@@ -21,6 +22,8 @@
   }
 
   @include sp {
+    width: calc(100% + 10px);
+    margin-left: -30px;
     font-size: 12px;
   }
 
