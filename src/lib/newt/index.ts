@@ -1,7 +1,6 @@
 import 'server-only'
 
 import { createClient } from 'newt-client-js'
-import { NewtArticle, NewtCategory, NewtLabGroup, NewtLabSubject } from '../../types/newt'
 
 const client = createClient({
   spaceUid: process.env.NEWT_SPACE_UID + '',
@@ -10,7 +9,7 @@ const client = createClient({
 })
 
 export const getArticles = async () => {
-  const { items } = await client.getContents<NewtArticle>({
+  const { items } = await client.getContents<Newt.Article>({
     appUid: process.env.NEWT_APP_UID_TECH_BLOG + '',
     modelUid: process.env.NEWT_APP_UID_TECH_BLOG_ARTICLE + '',
     query: {
@@ -21,7 +20,7 @@ export const getArticles = async () => {
 }
 
 export const getCategorys = async () => {
-  const { items } = await client.getContents<NewtCategory>({
+  const { items } = await client.getContents<Newt.Category>({
     appUid: process.env.NEWT_APP_UID_TECH_BLOG + '',
     modelUid: process.env.NEWT_APP_UID_TECH_BLOG_CATEGORY + '', 
     query: {
@@ -32,7 +31,7 @@ export const getCategorys = async () => {
 }
 
 export const getArticleBySlug = async (slug: string) => {
-  const article = await client.getFirstContent<NewtArticle>({
+  const article = await client.getFirstContent<Newt.Article>({
     appUid: process.env.NEWT_APP_UID_TECH_BLOG + '',
     modelUid: process.env.NEWT_APP_UID_TECH_BLOG_ARTICLE + '',
     query: {
@@ -44,7 +43,7 @@ export const getArticleBySlug = async (slug: string) => {
 }
 
 export const getLabSubjects = async () => {
-  const { items } = await client.getContents<NewtLabSubject>({
+  const { items } = await client.getContents<Newt.LabSubject>({
     appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
     modelUid: process.env.NEWT_APP_UID_TECH_LAB_SUBJECT + '',
     query: {
@@ -55,7 +54,7 @@ export const getLabSubjects = async () => {
 }
 
 export const getLabSubjectBySlug = async (slug: string) => {
-  const subject = await client.getFirstContent<NewtLabSubject>({
+  const subject = await client.getFirstContent<Newt.LabSubject>({
     appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
     modelUid: process.env.NEWT_APP_UID_TECH_LAB_SUBJECT + '', 
     query: {
@@ -67,7 +66,7 @@ export const getLabSubjectBySlug = async (slug: string) => {
 }
 
 export const getLabGroup = async () => {
-  const { items } = await client.getContents<NewtLabGroup>({
+  const { items } = await client.getContents<Newt.LabGroup>({
     appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
     modelUid: process.env.NEWT_APP_UID_TECH_LAB_GROUP + '', 
     query: {
@@ -78,7 +77,7 @@ export const getLabGroup = async () => {
 }
 
 export const getLabGroupBySlug = async (slug: string) => {
-  const item = await client.getFirstContent<NewtLabGroup>({
+  const item = await client.getFirstContent<Newt.LabGroup>({
     appUid: process.env.NEWT_APP_UID_TECH_LAB + '',
     modelUid: process.env.NEWT_APP_UID_TECH_LAB_GROUP + '', 
     query: {

@@ -1,9 +1,8 @@
-import { NewtNote } from "@/types/newt"
 import styles from "./_index.module.scss"
 import TabNote from "@/components/molecules/TabNote"
 
 type Props = {
-  notes: Array<NewtNote> | null
+  notes: Array<Newt.Note> | null
 }
 
 export default function ULTabContentNotes({

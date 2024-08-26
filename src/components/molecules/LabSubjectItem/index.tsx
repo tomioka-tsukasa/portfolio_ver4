@@ -1,4 +1,3 @@
-import { NewtLabSubject } from "@/types/newt";
 import styles from "./_index.module.scss"
 import Label from "@/components/atoms/Label";
 import UpdateDate from "../UpdateDate";
@@ -8,7 +7,7 @@ import parse from 'html-react-parser';
 import Link from "next/link";
 
 type Props = {
-  subject: NewtLabSubject,
+  subject: Newt.LabSubject,
   rootPath?: string
 }
 

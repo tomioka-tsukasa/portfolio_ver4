@@ -2,11 +2,10 @@ import { ListType } from "@/modules/Tab/types"
 import styles from "./_index.module.scss"
 import Tab from "@/modules/Tab"
 import ULTabContentBody from "@/components/molecules/ULTabContentBody"
-import { NewtLabSubject } from "@/types/newt"
 import ULTabContentNotes from "../ULTabContentNotes"
 
 type Props = {
-  subject: NewtLabSubject
+  subject: Newt.LabSubject
 }
 
 export default function ULTabArea({

@@ -1,4 +1,3 @@
-import { NewtLabSubject } from "@/types/newt";
 import styles from "./_index.module.scss";
 import LabSubjectItem from "@/components/molecules/LabSubjectItem";
 
@@ -6,7 +5,7 @@ export default function LabSubjectList({
   subjects,
   rootPath = '/uni-lab/'
 }: {
-  subjects: Array<NewtLabSubject>,
+  subjects: Array<Newt.LabSubject>,
   rootPath?: string
 }) {
   return <>

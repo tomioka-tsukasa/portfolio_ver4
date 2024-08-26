@@ -1,17 +1,17 @@
 import styles from "./_index.module.scss"
 import Link from "next/link"
 import { zenOldMincho_w700 } from "@/lib/fonts"
-import { Navs } from "@/types/nav"
+import { Nav } from "@/types/global"
 import SpecialButton from "../SpecialButton"
 
 type Props = {
-  navs: Navs
+  navs: Nav
 }
 
 export default function GlobalNav({
   navs
 }: Props) {
-  const unilab: Navs = navs.filter( nav => nav.slug === 'uni-lab')
+  const unilab: Nav = navs.filter( nav => nav.slug === 'uni-lab')
   return <>
     <div className={styles.root}>
       {navs.map( nav => (

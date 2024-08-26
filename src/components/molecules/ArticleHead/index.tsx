@@ -1,4 +1,3 @@
-import { NewtArticle } from "@/types/newt"
 import styles from "./_index.module.scss"
 import Categorys from "../Categorys"
 import UpdateDate from "../UpdateDate"
@@ -6,7 +5,7 @@ import { zenKakuGothicNew_w700 } from "@/lib/fonts"
 import EmojiIcon from "@/components/atoms/EmojiIcon"
 
 type Props = {
-  article: NewtArticle
+  article: Newt.Article
 }
 
 export default function ArticleHead({

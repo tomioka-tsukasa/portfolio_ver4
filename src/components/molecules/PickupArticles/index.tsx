@@ -1,11 +1,10 @@
 import Link from "next/link"
-import { NewtArticle } from "@/types/newt"
 import ArticleList from "@/components/organisms/ArticleList"
 import styles from "./_index.module.scss"
 
 type Props = {
   type?: 'item' | 'inline',
-  articles: Array<NewtArticle>,
+  articles: Array<Newt.Article>,
   rootPath?: string
 }
 
