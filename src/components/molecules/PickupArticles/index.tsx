@@ -20,7 +20,8 @@ export default function PickupArticles({
       return <>
         <div className={styles.rootInline}>
           {articles.map( article => (article.pickup && <Link key={article.slug} href={`${rootPath}${article.slug}`}>
-            {article.title}
+            {article.title.substring(0, 60)}
+            {article.title.length <= 60 ? '' : '...'}
           </Link>))}
         </div>
       </>
