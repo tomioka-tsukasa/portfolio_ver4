@@ -87,3 +87,15 @@ export const getLabGroupBySlug = async (slug: string) => {
   })
   return item
 }
+
+export const getContentsManagerBySlug = async (slug: string) => {
+  const contents = await client.getFirstContent<Newt.Contents>({
+    appUid: process.env.NEWT_APP_UID_TECH_CONTENTS_MANAGER + '',
+    modelUid: process.env.NEWT_APP_UID_TECH_CONTENTS_MANAGER + '', 
+    query: {
+      slug,
+      select: ['_id', '_sys', 'name', 'slug', 'select-field', 'qa-category', 'qa-item-field', 'thumbnail-item-field', 'works-field', 'object-field', 'display']
+    },
+  })
+  return contents
+}
