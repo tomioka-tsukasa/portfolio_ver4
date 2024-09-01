@@ -86,11 +86,11 @@ namespace Newt {
     slug: string;
     question: string;
     answer: string;
-    group: ContentsQaCategory;
+    group: Array<string>;
     references: string;
   }
 
-  export type ContentsQaCategory = Array<string>
+  export type ContentsQaCategory = Array<ContentsObject>
 
   export type ContentsThumbnail = {
     title: string,
@@ -109,9 +109,9 @@ namespace Newt {
   }
 
   export type ContentsObject = {
-    property: "text",
-    value: "text",
-    group: "text"
+    property: string,
+    value: string,
+    group: string,
   }
 
   export interface Contents {

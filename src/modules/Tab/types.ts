@@ -2,12 +2,12 @@ import React from "react"
 
 export type TabList = Array<TabMember>
 
-export type TabMember = {
+export type TabMember<O = Record<string, any>> = {
   id: string,
-  content: React.ReactNode,
+  content?: React.ReactNode,
   name?: string,
   trigger?: React.ReactNode,
-  opt?: Record<string, any>
+  opt?: O
 }
 
 export type GetInitial = (defaultActive?: string) => InitialState
