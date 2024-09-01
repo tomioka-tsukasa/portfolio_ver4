@@ -37,9 +37,11 @@ export default async function QuestionPanel() {
       <TabProvider initialState={{active: 'myself'}}>
         <QaCategoryList list={tabList} />
         {tabList.map( member => (
-          <TabContent member={member} key={member.id}>
-            <QuestionList items={contents['qa-item-field']} category={member.id} />
-          </TabContent>
+          <div className={styles.contents}>
+            <TabContent member={member} key={member.id}>
+              <QuestionList items={contents['qa-item-field']} category={member.id} />
+            </TabContent>
+          </div>
         ))}
       </TabProvider>
     </div>

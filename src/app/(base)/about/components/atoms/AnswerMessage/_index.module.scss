@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: none;
+}
+
+.isActive {
+  display: block;
+}

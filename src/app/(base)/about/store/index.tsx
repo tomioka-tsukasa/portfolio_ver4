@@ -1,42 +1,40 @@
 'use client'
 
-import { createContext, useContext, useReducer } from "react";
-import { ActionPayload, InitialState, ProviderProps, StoreMember } from "../types";
+import { createContext, Dispatch, useContext, useReducer } from "react";
+import { ActionPayload, Initializer, InitialState, ProviderProps, StoreMember } from "../types";
 
-const initialState: InitialState = {
-  qa: {
-    active: ''
-  }
-}
+const initializer: Initializer = (initialState) => ({
+  ...initialState
+})
 
 const reducer = {
-  qa(state: InitialState['qa'], action: ActionPayload['qa']) {
+  qa(state: InitialState, action: ActionPayload) {
     return {
-      active: action.active
+      ...state,
+      qa: {
+        active: action.qa.active
+      }
     }
   }
 }
 
-const StateContext = createContext<any>(undefined)
-const ChangeContext = createContext<any | undefined>(undefined)
+const StateContext = createContext<InitialState | undefined>(undefined)
+const DispatchContext = createContext<Dispatch<ActionPayload> | undefined>(undefined)
 
 export default function AboutStore({
-  children
+  children,
+  initialState,
 }: ProviderProps ) {
-  const [qaState, setQaState] = useReducer(reducer.qa, initialState.qa)
+  const [state, dispatch] = useReducer(reducer.qa, initialState, initializer)
   const store: StoreMember = {
-    state: {
-      qa: qaState
-    },
-    dispatch: {
-      qa: setQaState
-    }
+    state,
+    dispatch,
   }
   return <>
     <StateContext.Provider value={store.state}>
-      <ChangeContext.Provider value={store.dispatch}>
+      <DispatchContext.Provider value={store.dispatch}>
         {children}
-      </ChangeContext.Provider>
+      </DispatchContext.Provider>
     </StateContext.Provider>
   </>
 }
@@ -47,8 +45,8 @@ export const useStateContext = () => {
   return context
 }
 
-export const useChangeContext = () => {
-  const context = useContext(StateContext)
-  if (context === undefined) throw new Error('useChangeContext must be used within a TabProvider.')
+export const useDispatchContext = () => {
+  const context = useContext(DispatchContext)
+  if (context === undefined) throw new Error('useDispatchContext must be used within a TabProvider.')
   return context
 }
