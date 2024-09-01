@@ -1,3 +1,5 @@
+'use client'
+
 import React, { createContext, Dispatch, useContext, useReducer } from "react";
 import { ActionPayload, InitialState, Initializer, ProviderProps } from "../types";
 
@@ -16,7 +18,7 @@ const StateContext = createContext<InitialState | undefined>(undefined)
 
 const ChangeContext = createContext<Dispatch<ActionPayload> | undefined>(undefined)
 
-export default function TabProvider({
+export default function Provider({
   children,
   initialState
 }: ProviderProps ) {

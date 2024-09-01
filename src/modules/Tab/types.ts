@@ -1,12 +1,13 @@
 import React from "react"
 
-export type ListType = Array<ItemType>
+export type TabList = Array<TabMember>
 
-export type ItemType = {
+export type TabMember = {
   id: string,
   default: boolean,
-  name: string,
-  component: React.ReactNode
+  name?: string,
+  trigger: React.ReactNode,
+  content: React.ReactNode
 }
 
 export type GetInitial = (defaultActive?: string) => InitialState
