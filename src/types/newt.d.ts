@@ -1,14 +1,16 @@
 namespace Newt {
+  export interface _sys {
+    raw: {
+      createdAt: string;
+      updatedAt: string;
+      firstPublishedAt: string;
+      publishedAt: string;
+    }
+  }
+
   export interface Article {
     _id: string;
-    _sys: {
-      raw: {
-        createdAt: string;
-        updatedAt: string;
-        firstPublishedAt: string;
-        publishedAt: string;
-      }
-    };
+    _sys: Newt._sys;
     slug: string;
     title: string;
     pickup: boolean;
@@ -52,14 +54,7 @@ namespace Newt {
   
   export interface LabSubject {
     _id: string;
-    _sys: {
-      raw: {
-        createdAt: string;
-        updatedAt: string;
-        firstPublishedAt: string;
-        publishedAt: string;
-      }
-    };
+    _sys: Newt._sys;
     slug: string;
     title: string;
     status: Array<LabLabel>;
@@ -85,5 +80,50 @@ namespace Newt {
     pickup: boolean;
     thumbnail: Thumbnail;
     body: string;
+  }
+
+  export type ContentsQa = Array<{
+    slug: string;
+    question: string;
+    answer: string;
+    group: ContentsQaCategory;
+    references: string;
+  }>
+
+  export type ContentsQaCategory = Array<string>
+
+  export type ContentsThumbnail = Array<{
+    title: string,
+    body: string,
+    thumbnail: Newt.Thumbnail
+  }>
+
+  export type ContentsWorks = Array<{
+    title: string,
+    thumbnail: Newt.Thumbnail
+    tags: Array<{
+      property: string,
+      value: string,
+    }>,
+    body: string,
+  }>
+
+  export type ContentsObject = Array<{
+    property: "text",
+    value: "text",
+    group: "text"
+  }>
+
+  export interface Contents {
+    _id: string;
+    _sys: Newt._sys;
+    slug: string;
+    name: string; 
+    "select-field": Array<string>;
+    "qa-item-field": Newt.ContentsQa;
+    "thumbnail-item-field": Newt.ContentsThumbnail;
+    "works-field": Newt.ContentsWorks;
+    "object-field": Newt.ContentsObject;
+    display: boolean;
   }
 }

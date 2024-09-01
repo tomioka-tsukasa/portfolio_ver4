@@ -17,7 +17,7 @@ const navs: Nav = [
   {
     name: 'TalkMe!',
     slug: 'about',
-    active: false,
+    active: true,
   },
   {
     name: 'Uni Lab.',
