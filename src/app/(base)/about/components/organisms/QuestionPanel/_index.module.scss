@@ -1,6 +1,46 @@
 @use "sass:map";
 @use "@setting" as *;
 
+.root {
+  max-width: 1080px;
+}
+
+.wrapper {
+  @include pc {
+    height: 40vh;
+  }
+
+  @include sp {
+    height: 50vh;
+  }
+}
+
+.categorys {
+  width: calc(100% + 32px);
+  overflow-x: scroll;
+}
+
+* + .categorys {
+  margin-top: 20px;
+}
+
+.contents {
+  overflow-y: scroll;
+
+  @include pc {
+    height: 52%;
+  }
+
+  @include sp {
+    height: 64%;
+  }
+}
+
 * + .contents {
   margin-top: 48px;
+}
+
+.console {
+  font-size: 10px;
+  @include consoleText();
 }

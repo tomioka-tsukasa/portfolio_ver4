@@ -1,6 +1,21 @@
 @use "sass:map";
 @use "@setting" as *;
 
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.answer {
+  @include pc {
+    margin-left: 48px;
+  }
+
+  @include sp {
+    padding: 0 20px;
+  }
+}
+
 * + .answer {
-  margin-top: 96px;
+  margin-top: 72px;
 }
