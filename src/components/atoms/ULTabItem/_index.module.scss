@@ -10,14 +10,7 @@
   border: 1px solid map.get($baseColor, "L25");
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
-  opacity: 0.7;
   background-color: map.get($mainColor, "index");
   color: map.get($baseColor, "index");
   font-size: 12px;
-  cursor: pointer;
-}
-
-.isActive {
-  opacity: 1;
-  pointer-events: none;
 }

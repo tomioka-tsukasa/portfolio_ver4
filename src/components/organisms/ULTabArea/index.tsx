@@ -1,8 +1,11 @@
-import { ListType } from "@/modules/Tab/types"
 import styles from "./_index.module.scss"
-import Tab from "@/modules/Tab"
 import ULTabContentBody from "@/components/molecules/ULTabContentBody"
 import ULTabContentNotes from "../ULTabContentNotes"
+import ULTabItem from "@/components/atoms/ULTabItem"
+import ULTabList from "@/components/molecules/ULTabList"
+import { TabProvider } from "@/modules/Tab/components/TabProvider"
+import { TabMember } from "@/modules/Tab/types"
+import { TabContent } from "@/modules/Tab/components/TabContent"
 
 type Props = {
   subject: Newt.LabSubject
@@ -11,31 +14,40 @@ type Props = {
 export default function ULTabArea({
   subject
 }: Props ) {
-  const list: ListType = [
+  const list: Array<TabMember> = [
     {
       id: 'body',
       default: true,
-      name: '概要',
-      component: <ULTabContentBody body={subject.body} />
+      trigger: <ULTabItem name={'概要'} />,
+      content: <ULTabContentBody body={subject.body} />
     },
     {
       id: 'dev',
       default: false,
-      name: '開発メモ',
-      component: <ULTabContentNotes notes={subject["dev-note"]} />
+      trigger: <ULTabItem name={'開発メモ'} />,
+      content: <ULTabContentNotes notes={subject["dev-note"]} />
     },
     {
       id: 'design',
       default: false,
-      name: 'デザインメモ',
-      component: <ULTabContentNotes notes={subject["ui-note"]} />
+      trigger: <ULTabItem name={'デザインメモ'} />,
+      content: <ULTabContentNotes notes={subject["ui-note"]} />
     },
   ]
   return <>
     <div className={styles.root}>
-      <Tab initialState={{
+      <TabProvider initialState={{
         active: list[0].id
-      }} list={list} />
+      }}>
+        <ULTabList list={list} />
+        <div className={styles.wrapper}>
+          {list.map( member => (
+            <TabContent member={member} key={member.id}>
+              {member.content}
+            </TabContent>
+          ))}
+        </div>
+      </TabProvider>
     </div>
   </>
 }
