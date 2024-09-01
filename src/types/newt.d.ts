@@ -82,23 +82,23 @@ namespace Newt {
     body: string;
   }
 
-  export type ContentsQa = Array<{
+  export type ContentsQa = {
     slug: string;
     question: string;
     answer: string;
     group: ContentsQaCategory;
     references: string;
-  }>
+  }
 
   export type ContentsQaCategory = Array<string>
 
-  export type ContentsThumbnail = Array<{
+  export type ContentsThumbnail = {
     title: string,
     body: string,
     thumbnail: Newt.Thumbnail
-  }>
+  }
 
-  export type ContentsWorks = Array<{
+  export type ContentsWorks = {
     title: string,
     thumbnail: Newt.Thumbnail
     tags: Array<{
@@ -106,13 +106,13 @@ namespace Newt {
       value: string,
     }>,
     body: string,
-  }>
+  }
 
-  export type ContentsObject = Array<{
+  export type ContentsObject = {
     property: "text",
     value: "text",
     group: "text"
-  }>
+  }
 
   export interface Contents {
     _id: string;
@@ -120,10 +120,11 @@ namespace Newt {
     slug: string;
     name: string; 
     "select-field": Array<string>;
-    "qa-item-field": Newt.ContentsQa;
-    "thumbnail-item-field": Newt.ContentsThumbnail;
-    "works-field": Newt.ContentsWorks;
-    "object-field": Newt.ContentsObject;
+    "qa-category": Newt.ContentsQaCategory;
+    "qa-item-field": Array<Newt.ContentsQa>;
+    "thumbnail-item-field": Array<Newt.ContentsThumbnail>;
+    "works-field": Array<Newt.ContentsWorks>;
+    "object-field": Array<Newt.ContentsObject>;
     display: boolean;
   }
 }
