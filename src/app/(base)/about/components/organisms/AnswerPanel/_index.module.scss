@@ -3,7 +3,12 @@
 
 .root {
   display: flex;
-  gap: 0 64px;
+  gap: 32px 64px;
+
+  @include sp {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
 }
 
 .icon {
@@ -15,8 +20,21 @@
 }
 
 .message {
-  padding: 32px 48px;
+  height: 240px;
+  overflow-y: scroll;
   border: 1px solid map.get($mainColor, "L70");
   border-radius: 9px;
   background-color: map.get($mainColor, "L10");
+  white-space: pre-wrap;
+  overscroll-behavior: none;
+
+  @include pc {
+    padding: 32px 48px;
+    font-size: 16px;
+  }
+
+  @include sp {
+    padding: 32px 20px;
+    font-size: 14px;
+  }
 }

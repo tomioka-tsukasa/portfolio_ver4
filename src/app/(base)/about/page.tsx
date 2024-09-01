@@ -8,17 +8,19 @@ export default async function About() {
   const contents = await getContentsManagerBySlug('portfolio-talkme');
   if (!contents) return
   return <>
-    <AboutStore initialState={{
-      qa: {
-        active: 'test-001'
-      }
-    }}>
-      <div className={styles.question}>
-        <QuestionPanel />
-      </div>
-      <div className={styles.answer}>
-        <AnswerPanel />
-      </div>
-    </AboutStore>
+    <div className={styles.root}>
+      <AboutStore initialState={{
+        qa: {
+          active: 'test-001'
+        }
+      }}>
+        <div className={styles.question}>
+          <QuestionPanel />
+        </div>
+        <div className={styles.answer}>
+          <AnswerPanel />
+        </div>
+      </AboutStore>
+    </div>
   </>
 }

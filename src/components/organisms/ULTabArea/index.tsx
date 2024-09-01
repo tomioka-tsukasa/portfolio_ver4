@@ -1,7 +1,6 @@
 import styles from "./_index.module.scss"
 import ULTabContentBody from "@/components/molecules/ULTabContentBody"
 import ULTabContentNotes from "../ULTabContentNotes"
-import ULTabItem from "@/components/atoms/ULTabItem"
 import ULTabList from "@/components/molecules/ULTabList"
 import TabProvider from "@/modules/Tab/components/TabProvider"
 import { TabMember } from "@/modules/Tab/types"

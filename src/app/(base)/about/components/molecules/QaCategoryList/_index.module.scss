@@ -4,4 +4,12 @@
 .root {
   display: flex;
   gap: 0 40px;
+
+  @include sp {
+    gap: 0 20px;
+  }
+
+  > * {
+    flex-shrink: 0;
+  }
 }

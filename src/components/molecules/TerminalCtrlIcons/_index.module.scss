@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  gap: 0 9px;
+
+  > * {
+    flex-shrink: 0;
+  }
+}
+
+.icon {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: map.get($baseColor, "L50");
+}
+
+.red {
+  background-color: map.get($infoColor, "red"); 
+}
+
+.yellow {
+  background-color: map.get($infoColor, "yellow"); 
+}
+
+.green {
+  background-color: map.get($infoColor, "green"); 
+}

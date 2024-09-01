@@ -20,6 +20,7 @@ $baseColor: (
   "L20": rgba(#000000, 0.2),
   "L15": rgba(#000000, 0.15),
   "L10": rgba(#000000, 0.1),
+  "L5": rgba(#000000, 0.05),
 );
 
 $mainColor: (
@@ -42,6 +43,7 @@ $mainColor: (
   "L20": rgba(#ffffff, 0.2),
   "L15": rgba(#ffffff, 0.15),
   "L10": rgba(#ffffff, 0.1),
+  "L5": rgba(#ffffff, 0.05),
 );
 
 $infoColor: (
@@ -74,7 +76,7 @@ $consoleColor: #079e20;
 
 @mixin consoleText() {
   color: $consoleColor;
-  text-shadow: 0 0 4px map.get($mainColor, "L65");
+  text-shadow: 0 0 0.2em map.get($mainColor, "L65");
 }
 
 @mixin bgGradient($type: "base") {
