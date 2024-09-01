@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  gap: 0 64px;
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 108px;
+  height: 108px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.message {
+  padding: 32px 48px;
+  border: 1px solid map.get($mainColor, "L70");
+  border-radius: 9px;
+  background-color: map.get($mainColor, "L10");
+}

@@ -1,7 +1,8 @@
 import { Dispatch, ReducerState } from "react"
 
 export type ProviderProps = {
-  children: React.ReactNode
+  children: React.ReactNode,
+  initialState: InitialState
 }
 
 export type InitialState = {
@@ -10,6 +11,8 @@ export type InitialState = {
   }
 }
 
+export type Initializer = (initialState: InitialState) => InitialState
+
 export type ActionPayload = {
   qa: {
     active: string
@@ -17,6 +20,6 @@ export type ActionPayload = {
 }
 
 export type StoreMember = {
-  state: Record<string, ReducerState<any>>,
-  dispatch: Record<string, Dispatch<any>>
+  state: InitialState,
+  dispatch: Dispatch<ActionPayload>,
 }
