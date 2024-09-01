@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  padding: 12px 40px 9px;
+  border: 1px solid map.get($mainColor, "L30");
+  background-color: map.get($mainColor, "L10");
+  line-height: 1.2;
+}
+
+.name {
+  color: map.get($mainColor, "index");
+  font-size: 16px;
+}
+
+.slug {
+  color: map.get($mainColor, "L30");
+  font-size: 12px;
+}

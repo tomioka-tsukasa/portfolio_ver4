@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  gap: 0 40px;
+}

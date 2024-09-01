@@ -17,19 +17,16 @@ export default function ULTabArea({
   const list: Array<TabMember> = [
     {
       id: 'body',
-      default: true,
       trigger: <ULTabItem name={'概要'} />,
       content: <ULTabContentBody body={subject.body} />
     },
     {
       id: 'dev',
-      default: false,
       trigger: <ULTabItem name={'開発メモ'} />,
       content: <ULTabContentNotes notes={subject["dev-note"]} />
     },
     {
       id: 'design',
-      default: false,
       trigger: <ULTabItem name={'デザインメモ'} />,
       content: <ULTabContentNotes notes={subject["ui-note"]} />
     },

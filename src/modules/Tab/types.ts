@@ -4,10 +4,10 @@ export type TabList = Array<TabMember>
 
 export type TabMember = {
   id: string,
-  default: boolean,
   name?: string,
   trigger: React.ReactNode,
-  content: React.ReactNode
+  content: React.ReactNode,
+  opt?: Record<string, any>
 }
 
 export type GetInitial = (defaultActive?: string) => InitialState

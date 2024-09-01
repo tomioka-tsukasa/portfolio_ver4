@@ -34,12 +34,12 @@ export default function Provider({
 
 export const useStateContext = () => {
   const context = useContext(StateContext)
-  if (context === undefined) throw new Error("useStateContext must be used within a TabProvider")
+  if (context === undefined) throw new Error('useStateContext must be used within a TabProvider.')
   return context
 }
 
 export const useChangeContext = () => {
   const context = useContext(ChangeContext)
-  if (context === undefined) throw new Error("ChangeContext has not been provided.")
+  if (context === undefined) throw new Error('useChangeContext must be used within a TabProvider.')
   return context
 }
