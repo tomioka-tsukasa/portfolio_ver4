@@ -3,18 +3,20 @@ import styles from "./_index.module.scss"
 type Props = {
   name: string,
   slug: string,
+  active: string,
 }
 
-export default async function QaCategory({
+export default function QaCategory({
   name,
-  slug
+  slug,
+  active,
 }: Props ) {
   return <>
-    <div className={styles.root}>
-      <div className={styles.name}>
+    <div className={`${styles.root} ${slug === active ? styles.isActive : ''}`}>
+      <div className={`${styles.name}`}>
         {name}
       </div>
-      <div className={styles.slug}>
+      <div className={`${styles.slug}`}>
         {slug}
       </div>
     </div>

@@ -3,9 +3,15 @@
 
 .root {
   padding: 12px 40px 9px;
+  transition: all 0.5s ease 0s;
   border: 1px solid map.get($mainColor, "L30");
   background-color: map.get($mainColor, "L10");
   line-height: 1.2;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+  }
 }
 
 .name {
@@ -16,4 +22,18 @@
 .slug {
   color: map.get($mainColor, "L30");
   font-size: 12px;
+}
+
+.isActive {
+  border: 1px solid map.get($baseColor, "L30");
+  background-color: map.get($mainColor, "L90");
+  pointer-events: none;
+
+  .name {
+    color: map.get($baseColor, "index");
+  }
+
+  .slug {
+    color: map.get($baseColor, "L30");
+  }
 }

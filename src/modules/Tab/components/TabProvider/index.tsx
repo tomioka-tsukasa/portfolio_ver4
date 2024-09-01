@@ -8,7 +8,7 @@ type Props = {
   initialState: InitialState,
 }
 
-export function TabProvider({
+export default function TabProvider({
   children,
   initialState
 }: Props ) {
