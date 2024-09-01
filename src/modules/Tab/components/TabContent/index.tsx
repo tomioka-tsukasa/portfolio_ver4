@@ -9,7 +9,7 @@ type Props = {
   member: TabMember,
 }
 
-export function TabContent({
+export default function TabContent({
   children,
   member
 }: Props ) {

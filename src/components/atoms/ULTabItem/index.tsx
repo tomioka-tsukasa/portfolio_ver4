@@ -1,7 +1,7 @@
 import styles from "./_index.module.scss";
 
 interface Props {
-  name: string,
+  name?: string,
 }
 
 export default function ULTabItem({

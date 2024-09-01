@@ -4,9 +4,9 @@ export type TabList = Array<TabMember>
 
 export type TabMember = {
   id: string,
-  name?: string,
-  trigger: React.ReactNode,
   content: React.ReactNode,
+  name?: string,
+  trigger?: React.ReactNode,
   opt?: Record<string, any>
 }
 

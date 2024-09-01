@@ -1,17 +1,19 @@
 'use client'
 
-import styles from "./_index.module.scss"
+import defaultStyles from "./_index.module.scss"
 import { useChangeContext, useStateContext } from "../../store"
 import { TabMember } from "../../types"
 
 type Props = {
   children: React.ReactNode,
   member: TabMember,
+  styles?: { readonly [key: string]: string }
 }
 
-export function TabTrigger({
+export default function TabTrigger({
   children,
   member,
+  styles
 }: Props ) {
   const state = useStateContext()
   const setActive = useChangeContext()
@@ -21,8 +23,15 @@ export function TabTrigger({
     })
   }
   return <>
-    <button className={`${styles.root} ${state.active === member.id ? styles.isActive : ''}`} onClick={clickHandler}>
+    <button className={`
+      ${styles ? styles.default : defaultStyles.default} 
+      ${styles ? (state.active === member.id ? styles.isActive : '') : (state.active === member.id ? defaultStyles.isActive : '') }`
+    } onClick={clickHandler}>
       {children}
     </button>
   </>
+}
+
+export const useTabActive = (): string => {
+  return useStateContext().active
 }

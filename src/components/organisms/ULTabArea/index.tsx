@@ -3,9 +3,9 @@ import ULTabContentBody from "@/components/molecules/ULTabContentBody"
 import ULTabContentNotes from "../ULTabContentNotes"
 import ULTabItem from "@/components/atoms/ULTabItem"
 import ULTabList from "@/components/molecules/ULTabList"
-import { TabProvider } from "@/modules/Tab/components/TabProvider"
+import TabProvider from "@/modules/Tab/components/TabProvider"
 import { TabMember } from "@/modules/Tab/types"
-import { TabContent } from "@/modules/Tab/components/TabContent"
+import TabContent from "@/modules/Tab/components/TabContent"
 
 type Props = {
   subject: Newt.LabSubject
@@ -17,17 +17,17 @@ export default function ULTabArea({
   const list: Array<TabMember> = [
     {
       id: 'body',
-      trigger: <ULTabItem name={'概要'} />,
+      name: '概要',
       content: <ULTabContentBody body={subject.body} />
     },
     {
       id: 'dev',
-      trigger: <ULTabItem name={'開発メモ'} />,
+      name: '開発メモ',
       content: <ULTabContentNotes notes={subject["dev-note"]} />
     },
     {
       id: 'design',
-      trigger: <ULTabItem name={'デザインメモ'} />,
+      name: 'デザインメモ',
       content: <ULTabContentNotes notes={subject["ui-note"]} />
     },
   ]
