@@ -26,8 +26,10 @@
 
 .contents {
   overflow-y: scroll;
+  overscroll-behavior: none;
 
   @include pc {
+    width: 50%;
     height: 52%;
   }
 

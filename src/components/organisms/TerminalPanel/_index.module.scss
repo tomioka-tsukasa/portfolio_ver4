@@ -3,8 +3,10 @@
 
 .root {
   background-color: map.get($mainColor, "L5");
+  box-shadow: 0 12px 96px map.get($mainColor, "L10");
 }
 
 .content {
   padding: 32px;
+  border: 1px solid map.get($mainColor, "L10");
 }
