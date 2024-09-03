@@ -26,7 +26,6 @@
   border-radius: 9px;
   background-color: map.get($mainColor, "L10");
   white-space: pre-wrap;
-  overscroll-behavior: none;
 
   @include pc {
     padding: 32px 48px;
