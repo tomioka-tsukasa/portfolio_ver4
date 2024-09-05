@@ -98,14 +98,16 @@ namespace Newt {
     thumbnail: Newt.Thumbnail
   }
 
-  export type ContentsWorks = {
+  export type ContentsWork = {
     title: string,
+    slug: string,
+    body?: string,
     thumbnail: Newt.Thumbnail
-    tags: Array<{
-      property: string,
-      value: string,
-    }>,
-    body: string,
+    tags?: Array<string>,
+    "display-type"?: string,
+    url?: string,
+    "button-text"?: string,
+    _id: string,
   }
 
   export type ContentsObject = {
@@ -123,7 +125,7 @@ namespace Newt {
     "qa-category": Newt.ContentsQaCategory;
     "qa-item-field": Array<Newt.ContentsQa>;
     "thumbnail-item-field": Array<Newt.ContentsThumbnail>;
-    "works-field": Array<Newt.ContentsWorks>;
+    "works-field": Array<Newt.ContentsWork>;
     "object-field": Array<Newt.ContentsObject>;
     display: boolean;
   }
