@@ -14,11 +14,11 @@ export default async function About() {
           active: 'test-001'
         }
       }}>
-        <div className={styles.question}>
-          <QuestionPanel />
-        </div>
         <div className={styles.answer}>
           <AnswerPanel />
+        </div>
+        <div className={styles.question}>
+          <QuestionPanel />
         </div>
       </AboutStore>
     </div>
