@@ -8,12 +8,10 @@ export default async function Works() {
   const works = contents['works-field']
   if (!works) return
   return <>
-    <main className={styles.root}>
-      <div className={styles.uniques}>
-        {works.map( work => (
-          <WorkUniqueCard key={work.slug} work={work} />
-        ))}
-      </div>
-    </main>
+    <div className={styles.uniques}>
+      {works.map( work => (
+        <WorkUniqueCard key={work.slug} work={work} />
+      ))}
+    </div>
   </>
 }

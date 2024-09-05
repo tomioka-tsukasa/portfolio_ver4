@@ -27,6 +27,7 @@ export default async function WorkUniqueCard({
           width={work.thumbnail.width}
           height={work.thumbnail.height}
           className={styles.image}
+          unoptimized
         />
       </div>
       <div className={styles.description}> 
