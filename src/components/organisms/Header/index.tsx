@@ -7,7 +7,7 @@ const navs: Nav = [
   {
     name: 'Works.',
     slug: 'works',
-    active: false,
+    active: true,
   },
   {
     name: 'Blog.',

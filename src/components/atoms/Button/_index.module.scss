@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: inline-block;
+  min-width: 280px;
+  padding: 5px 32px 6px;
+  border-radius: 16px;
+  background-color: map.get($mainColor, "index");
+  color: map.get($baseColor, "index");
+  text-align: center;
+
+  @include pc {
+    font-size: 14px;
+  }
+
+  @include sp {
+    font-size: 12px;
+  }
+}

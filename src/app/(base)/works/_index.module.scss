@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include sp {
+    padding: 0 20px;
+  }
+}

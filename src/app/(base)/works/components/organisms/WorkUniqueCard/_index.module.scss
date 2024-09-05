@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+}
+
+.image {
+  height: auto;
+}
+
+* + .thumbnail {
+  margin-top: 32px;
+}
+
+.description {
+  p {
+    @include pc {
+      font-size: 14px;
+    }
+
+    @include sp {
+      font-size: 12px;
+    }
+  }
+}
+
+* + .description {
+  margin-top: 32px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+* + .button {
+  margin-top: 24px;
+}
