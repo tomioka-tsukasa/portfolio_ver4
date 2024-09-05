@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+
+  @include sp {
+    padding: 0 20px;
+  }
+}
+
+.image {
+  height: auto;
+}
+
+* + .thumbnail {
+  margin-top: 32px;
+}
+
+.description {
+  p {
+    @include pc {
+      font-size: 14px;
+    }
+
+    @include sp {
+      font-size: 12px;
+    }
+  }
+}
+
+* + .description {
+  margin-top: 32px;
+}
+
+.link {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    transform: translateX(-50%);
+    transition: all 0.5s ease 0s;
+    background-color: map.get($mainColor, "index");
+  }
+
+  &:hover {
+    &::before {
+      @include pc {
+        width: 6%;
+      }
+    }
+  }
+}
+
+* + .link {
+  margin-top: 24px;
+}
+
+.linkText {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 12px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-align: center;
+}
