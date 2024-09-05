@@ -2,8 +2,15 @@
 @use "@setting" as *;
 
 .root {
-  font-size: 26px;
   @include textShadow();
+
+  @include pc {
+    font-size: 26px;
+  }
+
+  @include sp {
+    font-size: 18px;
+  }
 }
 
 .border {
@@ -12,13 +19,31 @@
 }
 
 .large {
-  font-size: 32px;
+  @include pc {
+    font-size: 32px;
+  }
+
+  @include sp {
+    font-size: 24px;
+  }
 }
 
 .middle {
-  font-size: 26px;
+  @include pc {
+    font-size: 26px;
+  }
+
+  @include sp {
+    font-size: 18px;
+  }
 }
 
 .small {
-  font-size: 20px;
+  @include pc {
+    font-size: 20px;
+  }
+
+  @include sp {
+    font-size: 14px;
+  }
 }
