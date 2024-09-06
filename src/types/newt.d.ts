@@ -103,7 +103,7 @@ namespace Newt {
     slug: string,
     body?: string,
     thumbnail: Newt.Thumbnail
-    tags?: Array<string>,
+    tags?: string,
     "display-type"?: string,
     url?: string,
     "button-text"?: string,

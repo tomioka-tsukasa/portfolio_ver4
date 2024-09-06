@@ -10,3 +10,29 @@
     padding: 0 20px;
   }
 }
+
+.cards {
+  @include pc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px 60px;
+  }
+}
+
+.card {
+  @include pc {
+    width: calc(50% - 30px);
+  }
+}
+
+* + .card {
+  @include sp {
+    margin-top: 72px;
+  }
+}
+
+* + .cards,
+* + .uniques,
+* + .uniqueCard {
+  margin-top: 120px;
+}

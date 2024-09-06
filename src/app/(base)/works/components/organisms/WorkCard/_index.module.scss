@@ -3,3 +3,25 @@
 
 .root {
 }
+
+.image {
+  height: auto;
+}
+
+* + .heading {
+  margin-top: 24px;
+}
+
+.headingSlug {
+  color: map.get($mainColor, "L50");
+  font-size: 11px;
+  font-style: italic;
+}
+
+.tags {
+  font-size: 11px;
+}
+
+* + .tags {
+  margin-top: 32px;
+}
