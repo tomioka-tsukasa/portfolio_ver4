@@ -24,8 +24,9 @@ export default async function Work({
 
 export async function generateStaticParams() {
   const contents = await getContentsManagerBySlug('portfolio-works')
-  if (!contents) return 
+  if (!contents) return []
   const works = contents['works-field']
+  if (!works) return []
   return works.filter( work => work["display-type"] === 'modal').map( work => (
     {
       slug: work.slug
