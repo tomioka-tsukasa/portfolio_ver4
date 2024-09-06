@@ -21,7 +21,7 @@ export default function Modal() {
   const pathname = usePathname()
   useEffect(() => {
     dispatch(close())
-  }, [pathname])
+  }, [pathname, dispatch])
   if (!modalCtrl.open) return
   switch(modalCtrl.active.type) {
     case 'works':
@@ -45,7 +45,7 @@ export function ModalSetter({
       type,
       pass
     }))
-  })
+  }, [dispatch, id, type, pass])
   return <>
   </>
 }
