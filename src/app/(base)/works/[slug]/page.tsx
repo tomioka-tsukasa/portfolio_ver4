@@ -1,10 +1,9 @@
 import { getContentsManagerBySlug } from "@/lib/newt"
-import WorkModal from "../components/templates/WorkModal"
-import WorkTemplate from "../components/templates/Work"
+import { ModalSetter } from "../../../../components/templates/Modal"
 
 type Props = {
   params: {
-    modal: string
+    slug: string
   }
 }
 
@@ -16,7 +15,9 @@ export default async function Work({
   const works = contents['works-field']
   return <>
     {works.map( work => (
-      work["display-type"] === 'modal' && <WorkTemplate work={work} />
+      work["display-type"] === 'modal' && (
+        <ModalSetter key={work.slug} id={work.slug} type={'works'} pass={work} />
+      )
     ))}
   </>
 }
@@ -25,9 +26,9 @@ export async function generateStaticParams() {
   const contents = await getContentsManagerBySlug('portfolio-works')
   if (!contents) return 
   const works = contents['works-field']
-  return works.map( work => (
-    work["display-type"] === 'modal' && {
-      modal: work.slug
+  return works.filter( work => work["display-type"] === 'modal').map( work => (
+    {
+      slug: work.slug
     }
   ))
 }

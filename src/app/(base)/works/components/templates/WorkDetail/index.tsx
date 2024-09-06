@@ -3,12 +3,14 @@ import styles from "./_index.module.scss"
 import Image from "next/image"
 import FormatMarkdown from "@/components/organisms/FormatMarkdown"
 import { zenOldMincho_w700 } from "@/lib/fonts"
+import UniqueButton from "../../atoms/UniqueButton"
+import Button from "@/components/atoms/Button"
 
 type Props = {
   work: Newt.ContentsWork
 }
 
-export default function WorkTemplate({
+export default function WorkDetail({
   work
 }: Props ) {
   return <>
@@ -29,18 +31,19 @@ export default function WorkTemplate({
         />
       </div>
       <div className={styles.link}>
-        <a 
-          href={work.url || '/'}
-          target={work.url?.includes('http') ? '_blank' : undefined}
-          className={`${zenOldMincho_w700.className} ${styles.linkText}`}
-        >
-          {work["button-text"] || 'VIEW MORE'}
-        </a>
+        <UniqueButton url={work.url ?? '/'}>
+          {work["button-text"]}
+        </UniqueButton>
       </div>
       <div className={styles.description}> 
         {work.body && (
           <FormatMarkdown body={work.body} />
         )}
+      </div>
+      <div className={styles.back}>
+        <Button type={'routerBack'}>
+          BACK
+        </Button>
       </div>
     </div>
   </>

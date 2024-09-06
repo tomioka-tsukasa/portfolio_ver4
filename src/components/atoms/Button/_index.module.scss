@@ -9,6 +9,7 @@
   background-color: map.get($mainColor, "index");
   color: map.get($baseColor, "index");
   text-align: center;
+  cursor: pointer;
 
   @include pc {
     font-size: 14px;
