@@ -5,6 +5,7 @@ import styles from "./_layout.module.scss";
 import { zenKakuGothicNew_w400 } from "@/lib/fonts";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
+import Modal from "@/components/templates/Modal";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,16 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${styles.html}`}>
-      <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
-        <Header />
-        <div className={`${styles.container}`}>
-          <StoreProvider>
+      <StoreProvider>
+        <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
+          <Header />
+          <Modal />
+          <div className={`${styles.container}`}>
             {children}
-          </StoreProvider>
-        </div>
-        <Footer />
-        <div className={`${styles.globalBg}`}></div>
-      </body>
+          </div>
+          <Footer />
+          <div className={`${styles.globalBg}`}></div>
+        </body>
+      </StoreProvider>
     </html>
   )
 }
