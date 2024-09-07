@@ -20,6 +20,8 @@
 }
 
 .message {
+  width: 100%;
+  max-width: 882px;
   height: 240px;
   overflow-y: scroll;
   border: 1px solid map.get($mainColor, "L70");

@@ -1,6 +1,7 @@
 import { getCategorys } from "@/lib/newt"
 import Link from "next/link"
 import styles from "./_index.module.scss"
+import Navigation from "@/modules/Navigation"
 
 type Props = {
   rootPath: string
@@ -13,9 +14,9 @@ export default async function CategoryLinks({
   return <>
     <ul className={styles.root}>
       {categorys.map( category => <li key={category.slug} className={styles.item}>
-        <Link href={`${rootPath}${category.slug}`}>
+        <Navigation href={`${rootPath}${category.slug}`}>
           {category.name}
-        </Link>
+        </Navigation>
       </li>)}
     </ul>
   </>

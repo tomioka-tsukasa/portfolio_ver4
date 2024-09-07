@@ -5,6 +5,7 @@ import styles from "./_layout.module.scss";
 import { zenKakuGothicNew_w400 } from "@/lib/fonts";
 import Footer from "@/components/organisms/Footer";
 import ULHeader from "@/components/organisms/ULHeader";
+import NavigatingType from "../(base)/components/atoms/NavigatingType";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,16 +19,17 @@ export default function UniLabLayout({
 }>) {
   return (
     <html lang="ja" className={`${styles.html}`}>
-      <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
-        <ULHeader />
-        <div className={`${styles.container}`}>
-          <StoreProvider>
+      <StoreProvider>
+        <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
+          <NavigatingType />
+          <ULHeader />
+          <div className={`${styles.container}`}>
             {children}
-          </StoreProvider>
-        </div>
-        <Footer />
-        <div className={`${styles.globalBg}`}></div>
-      </body>
+          </div>
+          <Footer />
+          <div className={`${styles.globalBg}`}></div>
+        </body>
+      </StoreProvider>
     </html>
   )
 }

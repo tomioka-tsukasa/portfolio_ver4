@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import modalCtrl from './slice/modalCtrl'
+import navigationCtrl from './slice/navigationCtrl'
 
 export const makeStore = () => {
   
   return configureStore({
     reducer: {
-      modalCtrl
+      modalCtrl,
+      navigationCtrl
     }
   })
 }
