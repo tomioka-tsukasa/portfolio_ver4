@@ -4,6 +4,7 @@ import React from "react"
 import styles from "./_index.module.scss"
 import { useRouter } from "next/navigation"
 import { zenOldMincho_w500, zenOldMincho_w700 } from "@/lib/fonts"
+import Navigation from "@/modules/Navigation"
 
 type Props = {
   children: React.ReactNode | string,
@@ -35,16 +36,21 @@ export default function Button({
         )}
       </>
     default:
-      return <>
-        {React.createElement(
-          tag,
-          {
-            className: `${styles.root} ${zenOldMincho_w500.className}`,
-            href: href ? href : undefined,
-            target: href.includes('http') ? '_blank' : undefined
-          },
-          children
-        )}
-      </>
+      if (href.includes('http')) return <>
+      {React.createElement(
+        tag,
+        {
+          className: `${styles.root} ${zenOldMincho_w500.className}`,
+          href: href ? href : undefined,
+          target: href.includes('http') ? '_blank' : undefined
+        },
+        children
+      )}
+    </>
+    else return <>
+      <Navigation href={href} className={`${styles.root} ${zenOldMincho_w500.className}`}>
+        {children}
+      </Navigation>
+    </>
   }
 }
