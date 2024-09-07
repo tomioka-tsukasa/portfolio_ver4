@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.nav {
+  @include pc {
+    font-size: 18px;
+  }
+
+  @include sp {
+    padding: 3px 6px 4px;
+    background-color: map.get($mainColor, "L20");
+    font-size: 14px;
+  }
+}
+
+.isUnactive {
+  opacity: 0.5;
+  pointer-events: none;
+}

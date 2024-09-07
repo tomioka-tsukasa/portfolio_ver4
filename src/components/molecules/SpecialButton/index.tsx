@@ -10,7 +10,7 @@ type Props = {
   arrowPos?: 'right' | 'left'
 }
 
-export default async function SpecialButton({
+export default function SpecialButton({
   children,
   href = '/',
   arrowPos

@@ -1,13 +1,14 @@
 'use client'
 
-import React from "react"
+import React, { useState } from "react"
 import styles from "./_index.module.scss"
 import { useRouter } from "next/navigation"
 import { zenOldMincho_w500, zenOldMincho_w700 } from "@/lib/fonts"
 import Navigation from "@/modules/Navigation"
+import Typing from "../Typing"
 
 type Props = {
-  children: React.ReactNode | string,
+  children: string,
   href?: string,
   tag?: 'a' | 'button',
   type?: 'routerBack' | string,
@@ -23,6 +24,20 @@ export default function Button({
   const backClickHander = () => {
     router.back()
   }
+  const [state, setState] = useState(false)
+  const mouseEnterHander = () => {
+    setState(true)
+  }
+  const childNode = <div onMouseEnter={mouseEnterHander}>
+    <Typing 
+      text={children} 
+      speed={4} 
+      trigger={state} 
+      endCallback={() => {
+        setState(false)
+      }}
+    />
+  </div>
   switch (type) {
     case 'routerBack':
       return <>
@@ -32,7 +47,7 @@ export default function Button({
             className: `${styles.root} ${zenOldMincho_w500.className}`,
             onClick: backClickHander
           },
-          children
+          childNode
         )}
       </>
     default:
@@ -44,12 +59,12 @@ export default function Button({
           href: href ? href : undefined,
           target: href.includes('http') ? '_blank' : undefined
         },
-        children
+        childNode
       )}
     </>
     else return <>
       <Navigation href={href} className={`${styles.root} ${zenOldMincho_w500.className}`}>
-        {children}
+        {childNode}
       </Navigation>
     </>
   }

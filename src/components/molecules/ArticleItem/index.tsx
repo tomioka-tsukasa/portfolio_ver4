@@ -1,10 +1,10 @@
-import Link from "next/link";
 import Arrow from "@/components/atoms/Arrow/";
 import styles from "./_index.module.scss";
 import { zenKakuGothicNew_w700 } from "@/lib/fonts";
 import Categorys from "@/components/molecules/Categorys/";
 import UpdateDate from "@/components/molecules/UpdateDate";
 import EmojiIcon from "@/components/atoms/EmojiIcon";
+import Navigation from "@/modules/Navigation";
 
 export default function ArticleItem({
   article,
@@ -15,7 +15,7 @@ export default function ArticleItem({
 }) {
   return <>
     <li key={article.slug} className={styles.root}>
-      <Link href={`${rootPath}${article.slug}`} className={styles.inner}>
+      <Navigation href={`${rootPath}${article.slug}`} className={styles.inner}>
         <div className={styles.thumbnail}>
           <EmojiIcon emoji={article.thumbnail} />
         </div>
@@ -34,7 +34,7 @@ export default function ArticleItem({
         <div className={styles.arrow}>
           <Arrow fill={'white'} />
         </div>
-      </Link>
+      </Navigation>
     </li>
   </>
 }
