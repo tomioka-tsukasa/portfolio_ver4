@@ -1,24 +1,22 @@
+'use client'
+
 import styles from "./_index.module.scss"
-import { zenOldMincho_w700 } from "@/lib/fonts"
 import { Nav } from "@/types/global"
 import SpecialButton from "../SpecialButton"
-import Navigation from "@/modules/Navigation"
+import GlobalNavText from "@/components/atoms/GlobalNavText"
 
 type Props = {
-  navs: Nav
+  navs: Array<Nav>
 }
 
 export default function GlobalNav({
   navs
 }: Props) {
-  const unilab: Nav = navs.filter( nav => nav.slug === 'uni-lab')
+  const unilab: Array<Nav> = navs.filter( nav => nav.slug === 'uni-lab')
   return <>
     <div className={styles.root}>
       {navs.map( nav => (
-        nav.slug !== 'uni-lab' && <Navigation href={`/${nav.slug}/`} key={nav.slug} className={`${styles.nav} ${!nav.active ? styles.isUnactive : ''} ${zenOldMincho_w700.className}`}>
-          {nav.name}
-        </Navigation>
-      ))}
+        nav.slug !== 'uni-lab' && <GlobalNavText nav={nav} key={nav.slug} />))}
       <SpecialButton href={`/${unilab[0].slug}/`}>
         {unilab[0].name}
       </SpecialButton>

@@ -3,6 +3,7 @@ import { getContentsManagerBySlug } from "@/lib/newt";
 import WorkUniqueCard from "./components/organisms/WorkUniqueCard";
 import WorkCard from "./components/organisms/WorkCard";
 import Navigation from "@/modules/Navigation";
+import Typing from "@/components/atoms/Typing";
 
 type Props = {
   children: React.ReactNode

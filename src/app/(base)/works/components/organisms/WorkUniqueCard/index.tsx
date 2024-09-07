@@ -1,23 +1,35 @@
+'use client'
+
 import Heading from "@/components/atoms/Heading"
 import styles from "./_index.module.scss"
 import Image from "next/image"
 import FormatMarkdown from "@/components/organisms/FormatMarkdown"
 import Button from "@/components/atoms/Button"
 import { zenOldMincho_w700 } from "@/lib/fonts"
+import Typing from "@/components/atoms/Typing"
+import { useState } from "react"
 
 type Props = {
   work: Newt.ContentsWork
 }
 
-export default async function WorkUniqueCard({
+export default function WorkUniqueCard({
   work
 }: Props ) {
   if (work["display-type"] !== 'unique') return
+  const [state, setState] = useState(false)
+  const mouseEnterHander = () => {
+    setState(true)
+  }
   return <>
-    <div className={styles.root}>
+    <div className={styles.root} onMouseEnter={mouseEnterHander}>
       <div className={styles.heading}>
         <Heading tag={'h3'}>
-          {work.title}
+          <Typing
+            text={work.title} 
+            speed={4} 
+            trigger={state}
+          />
         </Heading>
       </div>
       <div className={styles.thumbnail}>

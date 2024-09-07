@@ -3,7 +3,7 @@ import styles from "./_index.module.scss"
 import GlobalNav from "@/components/molecules/GlobalNav";
 import { Nav } from "@/types/global";
 
-const navs: Nav = [
+const navs: Array<Nav> = [
   {
     name: 'Works.',
     slug: 'works',
