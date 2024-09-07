@@ -1,4 +1,3 @@
-import Link from "next/link"
 import ArticleList from "@/components/organisms/ArticleList"
 import styles from "./_index.module.scss"
 import Navigation from "@/modules/Navigation"
@@ -20,7 +19,7 @@ export default function PickupArticles({
     case 'inline':
       return <>
         <div className={styles.rootInline}>
-          {articles.map( article => (article.pickup && <Navigation key={article.slug} href={`${rootPath}${article.slug}`}>
+          {articles.map( article => (article.pickup && <Navigation typing={false} key={article.slug} href={`${rootPath}${article.slug}`}>
             {article.title.substring(0, 60)}
             {article.title.length <= 60 ? '' : '...'}
           </Navigation>))}

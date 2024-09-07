@@ -6,18 +6,21 @@ import { useClickManager } from "./customHook/useClickManager"
 interface Props extends LinkProps {
   children: React.ReactNode,
   className?: string | undefined;
+  typing?: boolean
 }
 
 export default function Navigation({
   children,
   href,
-  className
+  className,
+  typing = true
 }: Props ) {
   const clickManager = useClickManager()
   const clickHander = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     clickManager.clickEvent(
       event,
-      href.toString()
+      href.toString(),
+      typing
     )
   }
   return <>
