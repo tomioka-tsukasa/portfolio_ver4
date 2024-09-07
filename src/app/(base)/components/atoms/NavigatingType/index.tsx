@@ -11,7 +11,7 @@ export default function NavigatingType() {
     <div className={styles.root} data-style={'navigatingType'}>
       <p className={`${styles.navigatingType} ${zenOldMincho_w400.className}`}>
         <Typing 
-          text={`Access to ${navigationCtrl.nextPath}...`}
+          text={navigationCtrl.nextPath}
           initDisplay={false}
           speed={1}
         />

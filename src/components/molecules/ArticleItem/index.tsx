@@ -15,7 +15,7 @@ export default function ArticleItem({
 }) {
   return <>
     <li key={article.slug} className={styles.root}>
-      <Navigation href={`${rootPath}${article.slug}`} className={styles.inner}>
+      <Navigation typing={false} href={`${rootPath}${article.slug}`} className={styles.inner}>
         <div className={styles.thumbnail}>
           <EmojiIcon emoji={article.thumbnail} />
         </div>
