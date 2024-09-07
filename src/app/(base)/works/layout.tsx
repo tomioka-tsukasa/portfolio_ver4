@@ -1,8 +1,8 @@
 import styles from "./_index.module.scss"
 import { getContentsManagerBySlug } from "@/lib/newt";
 import WorkUniqueCard from "./components/organisms/WorkUniqueCard";
-import Link from "next/link";
 import WorkCard from "./components/organisms/WorkCard";
+import Navigation from "@/modules/Navigation";
 
 type Props = {
   children: React.ReactNode
@@ -26,9 +26,9 @@ export default async function WorksLayout({
       </div>
       <div className={styles.cards}>
         {works.map( work => (
-          work["display-type"] === 'modal' && <Link className={styles.card} href={`/works/${work.slug}`} key={work.slug} scroll={false}>
+          work["display-type"] === 'modal' && <Navigation className={styles.card} href={`/works/${work.slug}`} key={work.slug} scroll={false}>
             <WorkCard work={work} />
-          </Link>
+          </Navigation>
         ))}
       </div>
     </main>

@@ -2,7 +2,7 @@ import Arrow from "@/components/atoms/Arrow"
 import styles from "./_index.module.scss"
 import React from "react"
 import { zenOldMincho_w700 } from "@/lib/fonts"
-import Link from "next/link"
+import Navigation from "@/modules/Navigation"
 
 type Props = {
   children: string | React.ReactNode,
@@ -16,7 +16,7 @@ export default async function SpecialButton({
   arrowPos
 }: Props) {
   return <>
-    <Link href={href} className={`${styles.root} ${arrowPos}`}>
+    <Navigation href={href} className={`${styles.root} ${arrowPos}`}>
       <div className={`${styles.text} ${zenOldMincho_w700.className}`}>
         {children}
       </div>
@@ -25,6 +25,6 @@ export default async function SpecialButton({
         svg: styles.svg,
         path: styles.path,
       }} />
-    </Link>
+    </Navigation>
   </>
 }
