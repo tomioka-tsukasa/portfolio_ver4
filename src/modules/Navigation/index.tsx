@@ -13,7 +13,6 @@ export default function Navigation({
   href,
   className
 }: Props ) {
-  console.log('rendered.')
   const clickManager = useClickManager()
   const clickHander = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     clickManager.clickEvent(

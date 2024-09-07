@@ -76,7 +76,7 @@ $consoleColor: #079e20;
 
 @mixin consoleText() {
   color: $consoleColor;
-  text-shadow: 0 0 0.2em map.get($mainColor, "L65");
+  text-shadow: 0 0 0.15em map.get($mainColor, "L50");
 }
 
 @mixin bgGradient($type: "base") {

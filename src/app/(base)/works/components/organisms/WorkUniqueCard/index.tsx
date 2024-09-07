@@ -27,7 +27,7 @@ export default function WorkUniqueCard({
         <Heading tag={'h3'}>
           <Typing
             text={work.title} 
-            speed={4} 
+            speed={3} 
             trigger={state}
           />
         </Heading>

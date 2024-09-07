@@ -1,11 +1,12 @@
+import styles from "./_layout.module.scss";
 import type { Metadata } from "next";
 import "@/sass/globals.scss";
 import StoreProvider from "@/lib/store/provider";
-import styles from "./_layout.module.scss";
-import { zenKakuGothicNew_w400 } from "@/lib/fonts";
+import { zenKakuGothicNew_w400, zenOldMincho_w400 } from "@/lib/fonts";
 import Header from "@/components/organisms/Header";
 import Footer from "@/components/organisms/Footer";
 import Modal from "@/components/templates/Modal";
+import NavigatingType from "./components/atoms/NavigatingType";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="ja" className={`${styles.html}`}>
       <StoreProvider>
         <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
+          <NavigatingType />
           <Header />
           <Modal />
           <div className={`${styles.container}`}>

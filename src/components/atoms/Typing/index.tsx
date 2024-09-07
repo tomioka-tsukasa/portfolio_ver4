@@ -28,10 +28,10 @@ export default function Typing({
     )
   }, [ref, text, initDisplay, trigger])
   return <>
-    <p ref={ref} style={{
+    <span ref={ref} style={{
       whiteSpace: 'pre-wrap'
     }}>
       {initDisplay ? text : ''}
-    </p>
+    </span>
   </>
 }

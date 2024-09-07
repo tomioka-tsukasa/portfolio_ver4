@@ -10,7 +10,7 @@ const initialState: InitialState = {
   }
 }
 
-const counterSlice = createSlice({
+const modalCtrlSlice = createSlice({
   name: 'modalCtrl',
   initialState,
   reducers: {
@@ -24,5 +24,5 @@ const counterSlice = createSlice({
   }
 })
 
-export const { push, close } = counterSlice.actions
-export default counterSlice.reducer
+export const { push, close } = modalCtrlSlice.actions
+export default modalCtrlSlice.reducer
