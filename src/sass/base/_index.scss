@@ -12,8 +12,6 @@ button {
 }
 
 body {
-  transition: all 0.7s ease 0s;
-
   &:after {
     content: "";
     display: block;
@@ -23,9 +21,9 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    transition: all 0.7s ease 0s;
+    transition: all 0.58s ease 0s;
     opacity: 0;
-    backdrop-filter: blur(7px) brightness(30%);
+    backdrop-filter: blur(9px) brightness(28%);
     pointer-events: none;
   }
 
