@@ -23,7 +23,6 @@ export default function Modal() {
     dispatch(close())
   }, [pathname, dispatch])
   if (!modalCtrl.open) return
-  console.log(modalCtrl.active.pass)
   switch(modalCtrl.active.type) {
     case 'works':
       return <ModalLayout>
