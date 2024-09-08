@@ -21,16 +21,19 @@ export default function Typing({
   const ref = useRef<HTMLParagraphElement>(null)
   useEffect(() => {
     if (!ref.current) return
-    new TypingAnimation(
+    const ta = new TypingAnimation(
       ref.current,
       text,
       initDisplay,
-    ).start(
-      ref.current,
-      text,
-      speed,
-      endCallback
     )
+    if (trigger) { 
+      ta.start(
+        ref.current,
+        text,
+        speed,
+        endCallback
+      )
+    }
   }, [ref, text, initDisplay, speed, trigger, endCallback])
   return <>
     <span ref={ref} style={{
