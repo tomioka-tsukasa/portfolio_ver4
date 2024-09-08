@@ -32,17 +32,17 @@ export default function WorkCard({
       </div>
       <div className={styles.heading}>
         <Heading tag={'h3'} size={'small'}>
+          {work.title}
+        </Heading>
+        <div className={`${styles.headingSlug} ${zenOldMincho_w400.className}`}>
           <Typing 
-            text={work.title} 
-            speed={4} 
+            text={work.slug.split('-').join(' ').toUpperCase()} 
+            speed={1} 
             trigger={state} 
             endCallback={() => {
               setState(false)
             }}
           />
-        </Heading>
-        <div className={`${styles.headingSlug} ${zenOldMincho_w400.className}`}>
-          {work.slug.split('-').join(' ').toUpperCase()} 
         </div>
       </div>
       <div className={styles.tags}>

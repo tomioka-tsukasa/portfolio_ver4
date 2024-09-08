@@ -28,7 +28,7 @@ export default function Button({
   const mouseEnterHander = () => {
     setState(true)
   }
-  const childNode = <div onMouseEnter={mouseEnterHander}>
+  const childNode = <div className={styles.text} onMouseEnter={mouseEnterHander}>
     <Typing 
       text={children} 
       speed={4} 
@@ -52,20 +52,20 @@ export default function Button({
       </>
     default:
       if (href.includes('http')) return <>
-      {React.createElement(
-        tag,
-        {
-          className: `${styles.root} ${zenOldMincho_w500.className}`,
-          href: href ? href : undefined,
-          target: href.includes('http') ? '_blank' : undefined
-        },
-        childNode
-      )}
-    </>
-    else return <>
-      <Navigation href={href} className={`${styles.root} ${zenOldMincho_w500.className}`}>
-        {childNode}
-      </Navigation>
-    </>
+        {React.createElement(
+          tag,
+          {
+            className: `${styles.root} ${zenOldMincho_w500.className}`,
+            href: href ? href : undefined,
+            target: href.includes('http') ? '_blank' : undefined
+          },
+          childNode
+        )}
+      </>
+      else return <>
+        <Navigation href={href} className={`${styles.root} ${zenOldMincho_w500.className}`}>
+          {childNode}
+        </Navigation>
+      </>
   }
 }

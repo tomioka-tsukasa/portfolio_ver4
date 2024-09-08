@@ -13,6 +13,8 @@
 }
 
 .description {
+  max-width: 960px;
+
   p {
     @include pc {
       font-size: 14px;

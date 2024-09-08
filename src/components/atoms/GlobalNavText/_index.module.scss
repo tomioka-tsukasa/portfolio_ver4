@@ -8,8 +8,7 @@
 
   @include sp {
     padding: 3px 6px 4px;
-    background-color: map.get($mainColor, "L20");
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
