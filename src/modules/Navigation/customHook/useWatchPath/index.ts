@@ -10,5 +10,5 @@ export const useWatchPath = () => {
   useEffect(() => {
     document.body.classList.remove(NAVIGATING_CLASS)
     dispatch(push(' '))
-  }, [pathname])
+  }, [pathname, dispatch])
 }

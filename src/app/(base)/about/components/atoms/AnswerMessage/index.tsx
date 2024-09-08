@@ -14,12 +14,12 @@ export default function AnswerMessage({
   const state = useStateContext()
   return <>
     <div className={`${styles.root} ${content.slug === state.qa.active ? styles.isActive : ''}`} data-slug={content.slug}>
-      <Typing
+      {content.slug === state.qa.active && <Typing
         text={content.answer}
-        speed={2}
+        speed={1}
         initDisplay={false}
         trigger={content.slug === state.qa.active}
-      />
+      />}
     </div>
   </>
 }
