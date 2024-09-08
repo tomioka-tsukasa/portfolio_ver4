@@ -18,7 +18,7 @@
   overflow-y: scroll;
   border: 1px solid map.get($mainColor, "L10");
   border-radius: 12px;
-  background-color: map.get($baseColor, "L50");
+  background-color: map.get($baseColor, "L70");
   overscroll-behavior: none;
 
   @include pc {

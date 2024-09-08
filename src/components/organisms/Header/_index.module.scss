@@ -21,6 +21,10 @@
   justify-content: space-between;
   width: 100%;
   height: 100%;
+
+  @include pc {
+    backdrop-filter: blur(14px) hue-rotate(180deg) brightness(50%);
+  }
 }
 
 .backhome {
@@ -47,5 +51,6 @@
     justify-content: center;
     width: 100%;
     padding: 12px;
+    backdrop-filter: blur(14px) hue-rotate(180deg) brightness(50%);
   }
 }
