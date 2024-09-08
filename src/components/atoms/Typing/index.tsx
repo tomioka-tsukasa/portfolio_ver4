@@ -1,6 +1,6 @@
 'use client'
 
-import { typingAnimation } from "@/lib/utils/typingAnimation"
+import { TypingAnimation } from "@/lib/utils/typingAnimation"
 import { useEffect, useRef } from "react"
 
 type Props = {
@@ -20,18 +20,21 @@ export default function Typing({
 }: Props ) {
   const ref = useRef<HTMLParagraphElement>(null)
   useEffect(() => {
-    trigger && typingAnimation(
+    if (!ref.current) return
+    new TypingAnimation(
       ref.current,
-      initDisplay ? '' : text,
+      text,
+      initDisplay,
+    ).start(
+      ref.current,
+      text,
       speed,
       endCallback
     )
-  }, [ref, text, initDisplay, trigger])
+  }, [ref, text, initDisplay, speed, trigger, endCallback])
   return <>
     <span ref={ref} style={{
       whiteSpace: 'pre-wrap'
-    }}>
-      {initDisplay ? text : ''}
-    </span>
+    }} />
   </>
 }

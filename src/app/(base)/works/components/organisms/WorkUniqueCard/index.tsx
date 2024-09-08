@@ -16,8 +16,8 @@ type Props = {
 export default function WorkUniqueCard({
   work
 }: Props ) {
-  if (work["display-type"] !== 'unique') return
   const [state, setState] = useState(false)
+  if (work["display-type"] !== 'unique') return
   const mouseEnterHander = () => {
     setState(true)
   }

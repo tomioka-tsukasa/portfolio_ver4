@@ -14,8 +14,8 @@ type Props = {
 export default function WorkCard({
   work
 }: Props ) {
-  if (work["display-type"] !== 'modal') return 
   const [state, setState] = useState(false)
+  if (work["display-type"] !== 'modal') return 
   const mouseEnterHander = () => {
     setState(true)
   }
