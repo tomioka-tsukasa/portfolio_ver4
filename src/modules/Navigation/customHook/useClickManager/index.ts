@@ -4,10 +4,11 @@ import { INTERACTION_TIME, INTERACTION_TIME_SHORT, NAVIGATING_CLASS } from "../.
 import { useAppDispatch } from "@/lib/store/hook"
 import { push } from "@/lib/store/slice/navigationCtrl"
 
-type FunctionType = (
+type ClickEvent = (
   event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   href: string,
-  typing?: boolean
+  typing?: boolean,
+  scroll?: boolean
 ) => void
 
 export const useClickManager = () => {
@@ -15,10 +16,11 @@ export const useClickManager = () => {
   const pathname = usePathname()
   const dispatch = useAppDispatch()
   useWatchPath()
-  const clickEvent: FunctionType = (
+  const clickEvent: ClickEvent = (
     event,
     href,
-    typing = true
+    typing = true,
+    scroll = true
   ) => {
     if (pathname.split('/').join('') === href.split('/').join('')) return
     event.preventDefault()
@@ -26,7 +28,9 @@ export const useClickManager = () => {
     if (typing) dispatch(push(`Access to ${href}...`))
     else dispatch(push(' '))
     setTimeout(() => {
-      router.push(href)
+      router.push(href, {
+        scroll
+      })
     }, typing ? INTERACTION_TIME : INTERACTION_TIME_SHORT);
     setTimeout(() => {
       if (pathname.split('/').join('') === href.split('/').join('')) {

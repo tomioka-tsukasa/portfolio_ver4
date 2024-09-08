@@ -6,8 +6,6 @@ import Image from "next/image"
 import FormatMarkdown from "@/components/organisms/FormatMarkdown"
 import Button from "@/components/atoms/Button"
 import { zenOldMincho_w700 } from "@/lib/fonts"
-import Typing from "@/components/atoms/Typing"
-import { useState } from "react"
 
 type Props = {
   work: Newt.ContentsWork
@@ -16,20 +14,12 @@ type Props = {
 export default function WorkUniqueCard({
   work
 }: Props ) {
-  const [state, setState] = useState(false)
   if (work["display-type"] !== 'unique') return
-  const mouseEnterHander = () => {
-    setState(true)
-  }
   return <>
-    <div className={styles.root} onMouseEnter={mouseEnterHander}>
+    <div className={styles.root}>
       <div className={styles.heading}>
         <Heading tag={'h3'}>
-          <Typing
-            text={work.title} 
-            speed={3} 
-            trigger={state}
-          />
+          {work.title} 
         </Heading>
       </div>
       <div className={styles.thumbnail}>

@@ -13,7 +13,7 @@ export default function NavigatingType() {
         <Typing 
           text={navigationCtrl.nextPath}
           initDisplay={false}
-          speed={1}
+          speed={0}
         />
       </p>
     </div>
