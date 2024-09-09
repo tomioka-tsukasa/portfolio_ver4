@@ -67,7 +67,7 @@ Works、Blog、About、Uni Lab.、それぞれのページは「[Newt(Headless C
 
 公開中のコンテンツへのアクセスは、「[スペース設定 ＞ APIキー](https://app.newt.so/tsukasa-tomioka-lab/settings/api)」の「PORTFOLIO」のトークンを使用。
 
-アクセストークンを使ったNewtへのリクエストは「[blob/main/src/lib/newt/index.ts](blob/main/src/lib/newt/index.ts)」の`newt-client-js`の初期化メソッドで行っている。
+アクセストークンを使ったNewtへのリクエストは「[/src/lib/newt/index.ts](./src/lib/newt/index.ts)」の`newt-client-js`の初期化メソッドで行っている。
 
 ### GitHub Webhook
 
@@ -109,9 +109,9 @@ NewtのWebhookで、Tech Blog等の各モデル公開時に自動デプロイが
 
 ### Next.js内での型定義
 
-「[newt.d.ts](./blob/main/src/types/newt.d.ts)」にてNewtに関連する型定義を一括で定義。import不要でどのファイルからもアクセス可能。
+「[newt.d.ts](./src/types/newt.d.ts)」にてNewtに関連する型定義を一括で定義。import不要でどのファイルからもアクセス可能。
 
-新規モデルを追加する際は上記で型定義をして、「[lib/newt/](./newt/index.ts)」にてデーフェッチ用関数を登録。
+新規モデルを追加する際は上記で型定義をして、「[lib/newt/](./src/lib/newt/index.ts)」にてデーフェッチ用関数を登録。
 
 ## Deploy
 🚚 💨
@@ -126,7 +126,7 @@ NewtのWebhookで、Tech Blog等の各モデル公開時に自動デプロイが
 
 #### 【トリガー②】 Newt(Headless CMS) Webhook
 
-Newtの「手動デプロイApp」の「デプロイログモデル」を公開することで、自動デプロイが走るようにWebhookをかけています。詳細は後述の「[Newt Management](./?tab=readme-ov-file#)」を参照。
+Newtの「手動デプロイApp」の「デプロイログモデル」を公開することで、自動デプロイが走るようにWebhookをかけています。詳細は「[Newt Management](#newt-management)」を参照。
 
 #### 【ステップ概要】
 
