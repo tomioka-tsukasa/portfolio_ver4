@@ -1,4 +1,6 @@
-# [Tsukasa Tomioka Portfolio ver4](https://tsukasa-tomioka-portfolio.com/)
+# Portfolio ver4
+
+[ポートフォリオへアクセス！](https://tsukasa-tomioka-portfolio.com/)
 
 ## Getting Started
 
