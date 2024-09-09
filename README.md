@@ -26,41 +26,6 @@ nodeバージョンは`nodenv`で管理。yarnは`nodenv`でインストール�
 
 「[nodenv-yarn-install｜GitHub](https://github.com/pine/nodenv-yarn-install)」を使えば、`nodenv install [version]`時にyarnも合わせてインストール可能。
 
-## Deploy
-🚚 💨
-
-### 1. GitHubワークフローで自動デプロイ
-
-[.github/workflows/main.yml](./.github/workflows/main.yml)
-
-#### 【トリガー①】 main branch PR close
-
-`main`ブランチへのPRがクローズされると自動デプロイが走ります。`main`から派生させるブランチは後述のブランチルールを参照。
-
-#### 【トリガー②】 Newt(Headless CMS) Webhook
-
-Newtの「手動デプロイApp」の「デプロイログモデル」を公開することで、自動デプロイが走るようにWebhookをかけています。詳細は後述の「[Newt Management](./?tab=readme-ov-file#)」を参照。
-
-#### 【ステップ概要】
-
-前述のトリガーで下記のタスクが実行されるよう組んでいます。
-
-* [Install Dependencies]：yarnでパッケージインストール
-* [Create .env File]：リポジトリの`Actions secrets and variables`で設定した`ENV_LOCAL`を扱って環境変数のセット
-* [Build]：`yarn build`Next.jsのSGビルド
-* [Sync files]：FTPでサーバーへのアップロード
-
-### 2. FTPでサーバーへアップロード
-
-* サーバー「[Xserver](https://secure.xserver.ne.jp/xapanel/login/xserver/?request_page=xserver%2Findex)」
-* ドメインは「[Netowl](https://secure.netowl.jp/netowl/?service=stardomain)」
-
-それぞれのアクセス情報は私用MacBookのローカル上で保存しているテキストを参照。
-
-#### 直接アップロードの際の注意
-
-ドメインフォルダのルート直下の`.ftp-deploy-sync-state.json`は自動デプロイのキャッシュ等が入っているので削除厳禁。Next.jsの機能でWebフォントをサブセット化してアップロードしており、初期のデプロイに11分は掛かるので、不要な削除を防ぐために直接アップは控える。
-
 ## Git Rules
 
 🌿 🌿 🌿 
@@ -115,7 +80,7 @@ GitHub Actionsで自動デプロイが走るようにNewt側でWebhookの設定�
 
 GitHubのアクセストークンは「tomioka-tsukasa」アカウントの`Newt Webhook`にて発行。
 
-### 運用方法【Tech Blog】
+### Tech Blog
 
 #### スラッグルール
 
@@ -125,7 +90,7 @@ GitHubのアクセストークンは「tomioka-tsukasa」アカウントの`Newt
   * 数字・小文字のみ
   * シリーズ系じゃない限り連番は使用しない
 
-### 運用方法【コンテンツ管理】
+### コンテンツ管理
 
 Works、About、これらのページは一括で「コンテンツ管理モデル」で管理している。
 
@@ -138,7 +103,7 @@ Works、About、これらのページは一括で「コンテンツ管理モデ�
 
 上記以外に新規ページを拡充する際は、適宜必要なフィールドを追加。パフォーマンス向上のためにも「（任意）フィールド指定」の設定を推奨します。
 
-### 運用方法【手動デプロイ】
+### 手動デプロイ
 
 NewtのWebhookで、Tech Blog等の各モデル公開時に自動デプロイができるが、不用意なワークフロー発火を防ぐために、「手動デプロイ」のAppのみをトリガーにしています。
 
@@ -147,6 +112,37 @@ NewtのWebhookで、Tech Blog等の各モデル公開時に自動デプロイが
 「[newt.d.ts](./blob/main/src/types/newt.d.ts)」にてNewtに関連する型定義を一括で定義。import不要でどのファイルからもアクセス可能。
 
 新規モデルを追加する際は上記で型定義をして、「[lib/newt/](./newt/index.ts)」にてデーフェッチ用関数を登録。
+
+## Deploy
+🚚 💨
+
+### 1. GitHubワークフローで自動デプロイ
+
+[.github/workflows/main.yml](./.github/workflows/main.yml)
+
+#### 【トリガー①】 main branch PR close
+
+`main`ブランチへのPRがクローズされると自動デプロイが走ります。`main`から派生させるブランチは後述のブランチルールを参照。
+
+#### 【トリガー②】 Newt(Headless CMS) Webhook
+
+Newtの「手動デプロイApp」の「デプロイログモデル」を公開することで、自動デプロイが走るようにWebhookをかけています。詳細は後述の「[Newt Management](./?tab=readme-ov-file#)」を参照。
+
+#### 【ステップ概要】
+
+前述のトリガーで下記のタスクが実行されるよう組んでいます。
+
+* [Install Dependencies]：yarnでパッケージインストール
+* [Create .env File]：リポジトリの`Actions secrets and variables`で設定した`ENV_LOCAL`を扱って環境変数のセット
+* [Build]：`yarn build`Next.jsのSGビルド
+* [Sync files]：FTPでサーバーへのアップロード
+
+### 2. FTPでサーバーへアップロード
+
+* サーバー「[Xserver](https://secure.xserver.ne.jp/xapanel/login/xserver/?request_page=xserver%2Findex)」
+* ドメインは「[Netowl](https://secure.netowl.jp/netowl/?service=stardomain)」
+
+それぞれのアクセス情報は私用MacBookのローカル上で保存しているテキストを参照。
 
 ## Troubleshooting
 
