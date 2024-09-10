@@ -6,6 +6,7 @@ import Image from "next/image"
 import FormatMarkdown from "@/components/organisms/FormatMarkdown"
 import Button from "@/components/atoms/Button"
 import { zenOldMincho_w700 } from "@/lib/fonts"
+import Figcaption from "@/components/atoms/Figcaption"
 
 type Props = {
   work: Newt.ContentsWork
@@ -22,7 +23,7 @@ export default function WorkUniqueCard({
           {work.title} 
         </Heading>
       </div>
-      <div className={styles.thumbnail}>
+      <figure className={styles.thumbnail}>
         <Image 
           src={work.thumbnail.src}
           alt=''
@@ -30,7 +31,8 @@ export default function WorkUniqueCard({
           height={work.thumbnail.height}
           className={styles.image}
         />
-      </div>
+        <Figcaption caption={`「${work.title}」のサムネイル画像`} />
+      </figure>
       <div className={styles.description}> 
         {work.body && (
           <FormatMarkdown body={work.body} />

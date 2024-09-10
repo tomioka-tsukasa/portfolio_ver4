@@ -8,7 +8,7 @@ import { zenOldMincho_w700 } from "@/lib/fonts";
 export default async function ULHome() {
   const subjects = await getLabSubjects()
   return <>
-    <div className={styles.root}>
+    <main className={styles.root}>
       <div className={styles.mv}>
         <Image
           className={styles.logo}
@@ -20,6 +20,6 @@ export default async function ULHome() {
         </h1> 
       </div>
       <LabSubjectList subjects={subjects} />
-    </div>
+    </main>
   </>
 }

@@ -3,10 +3,10 @@ import styles from "./_index.module.scss"
 
 export default function Footer() {
   return <>
-    <div className={styles.root}>
+    <footer className={styles.root}>
       <small className={`${styles.copyright} ${zenOldMincho_w400.className}`}>
         PORTFOLIO SITE. | COPYRIGHT © TSUKASA TOMIOKA ALL RIGHTS RESERVED.
       </small>
-    </div>
+    </footer>
   </>
 }

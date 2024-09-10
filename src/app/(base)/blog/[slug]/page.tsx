@@ -35,9 +35,9 @@ export default async function BlogDetail({
     <ArticleHead article={article} />
     <div className={styles.contents}>
       <BlogTemplate nav={<BlogSidebar />}>
-        <div className={styles.main}>
+        <article className={styles.main}>
           <FormatMarkdown body={article.body} />
-        </div>
+        </article>
       </BlogTemplate>
     </div>
   </>

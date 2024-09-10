@@ -9,12 +9,14 @@ export default function ULNav({
   navs
 }: Props ) {
   return <>
-    <div className={styles.root}>
-      {navs.map( nav => {
-        let target: string = ''
-        nav.href.includes('http') ? target = '_blank' : ''
-        return <Link href={nav.href} key={nav.slug} target={target}>{nav.icon ?? nav.name}</Link> 
-      })}
-    </div>
+    <nav className={styles.root}>
+      <ul className={styles.list}>
+        {navs.map( nav => <li key={nav.slug}>
+          <Link href={nav.href} key={nav.slug} target={nav.href.includes('http') ? '_blank' : undefined}>
+            {nav.icon ?? nav.name}
+          </Link>
+        </li>)}
+      </ul>
+    </nav>
   </>
 }

@@ -6,6 +6,7 @@ import Heading from "@/components/atoms/Heading"
 import { zenOldMincho_w400 } from "@/lib/fonts"
 import { useState } from "react"
 import Typing from "@/components/atoms/Typing"
+import Figcaption from "@/components/atoms/Figcaption"
 
 type Props = {
   work: Newt.ContentsWork
@@ -21,7 +22,7 @@ export default function WorkCard({
   }
   return <>
     <div className={styles.root} onMouseEnter={mouseEnterHander}>
-      <div className={styles.thumbnail}>
+      <figure className={styles.thumbnail}>
         <Image 
           src={work.thumbnail.src}
           alt=''
@@ -29,7 +30,8 @@ export default function WorkCard({
           height={work.thumbnail.height}
           className={styles.image}
         />
-      </div>
+        <Figcaption caption={`「${work.title}」のサムネイル画像`} />
+      </figure>
       <div className={styles.heading}>
         <Heading tag={'h3'} size={'small'}>
           {work.title}
@@ -45,9 +47,11 @@ export default function WorkCard({
           />
         </div>
       </div>
-      <div className={styles.tags}>
-        {work.tags && work.tags.split('\n').join(', ')}
-      </div>
+      <ul className={styles.tags}>
+        <li>
+          {work.tags && work.tags.split('\n').join(', ')}
+        </li>
+      </ul>
     </div>
   </>
 }

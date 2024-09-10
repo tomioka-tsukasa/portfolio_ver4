@@ -4,6 +4,7 @@ import Image from "next/image"
 import FormatMarkdown from "@/components/organisms/FormatMarkdown"
 import UniqueButton from "../../atoms/UniqueButton"
 import Button from "@/components/atoms/Button"
+import Figcaption from "@/components/atoms/Figcaption"
 
 type Props = {
   work: Newt.ContentsWork
@@ -13,13 +14,11 @@ export default function WorkDetail({
   work
 }: Props ) {
   return <>
-    <div className={styles.root}>
-      <div className={styles.heading}>
-        <Heading tag={'h3'}>
-          {work.title}
-        </Heading>
-      </div>
-      <div className={styles.thumbnail}>
+    <article className={styles.root}>
+      <Heading tag={'h1'}>
+        {work.title}
+      </Heading>
+      <figure className={styles.thumbnail}>
         <Image 
           src={work.thumbnail.src}
           alt=''
@@ -28,7 +27,8 @@ export default function WorkDetail({
           className={styles.image}
           unoptimized
         />
-      </div>
+        <Figcaption caption={`「${work.title}」のサムネイル画像`} />
+      </figure>
       <div className={styles.link}>
         <UniqueButton url={work.url ?? '/'}>
           {work["button-text"]}
@@ -44,6 +44,6 @@ export default function WorkDetail({
           BACK
         </Button>
       </div>
-    </div>
+    </article>
   </>
 }

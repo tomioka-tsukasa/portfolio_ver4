@@ -8,7 +8,7 @@ export default async function AnswerPanel() {
   const contents = await getContentsManagerBySlug('portfolio-talkme');
   if (!contents) return
   return <>
-    <div className={styles.root}>
+    <article className={styles.root}>
       <div className={styles.icon}>
         <Image 
           src={ProfileIcon}
@@ -20,6 +20,6 @@ export default async function AnswerPanel() {
           <AnswerMessage content={content} key={content.slug} />
         ))}
       </div>
-    </div>
+    </article>
   </>
 }
