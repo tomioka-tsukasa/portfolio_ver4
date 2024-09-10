@@ -1,16 +1,12 @@
 @use "sass:map";
 @use "@setting" as *;
 
-* + .root {
-  margin-top: 200px;
-}
-
 .root {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-bottom: 40px;
+  opacity: 0.3;
 }
 
 .copyright {
@@ -20,4 +16,8 @@
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-align: center;
+
+  @include sp {
+    font-size: 6px;
+  }
 }
