@@ -18,12 +18,19 @@ export default function PickupArticles({
       return <ArticleList articles={articles.filter( article => article.pickup)} />
     case 'inline':
       return <>
-        <div className={styles.rootInline}>
-          {articles.map( article => (article.pickup && <Navigation typing={false} key={article.slug} href={`${rootPath}${article.slug}`}>
-            {article.title.substring(0, 60)}
-            {article.title.length <= 60 ? '' : '...'}
-          </Navigation>))}
-        </div>
+        <ul className={styles.rootInline}>
+          {articles.map( article => (article.pickup && (
+            <li key={article.slug}>
+              <Navigation 
+                typing={false} 
+                href={`${rootPath}${article.slug}`}
+              >
+                {article.title.substring(0, 60)}
+                {article.title.length <= 60 ? '' : '...'}
+              </Navigation>
+            </li>
+          )))}
+        </ul>
       </>
     default:
       return <ArticleList articles={articles.filter( article => article.pickup)} />

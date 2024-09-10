@@ -17,7 +17,7 @@ export default async function QuestionPanel() {
     }
   }))
   return <>
-    <div className={styles.root}>
+    <article className={styles.root}>
       <TabProvider initialState={{active: tabList[0].id}}>
         <TerminalPanel title={'- Question to Tsukasa Tomioka. -'} annotation={'⌥⌘1'}>
           <div className={styles.wrapper}>
@@ -37,6 +37,6 @@ export default async function QuestionPanel() {
           </div>
         </TerminalPanel>
       </TabProvider>
-    </div>
+    </article>
   </>
 }

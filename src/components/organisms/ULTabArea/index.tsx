@@ -31,7 +31,7 @@ export default function ULTabArea({
     },
   ]
   return <>
-    <div className={styles.root}>
+    <article className={styles.root}>
       <TabProvider initialState={{
         active: list[0].id
       }}>
@@ -44,6 +44,6 @@ export default function ULTabArea({
           ))}
         </div>
       </TabProvider>
-    </div>
+    </article>
   </>
 }

@@ -5,6 +5,10 @@
   height: auto;
 }
 
+.thumbnail {
+  position: relative;
+}
+
 * + .thumbnail {
   margin-top: 32px;
 }

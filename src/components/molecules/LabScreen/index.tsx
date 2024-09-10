@@ -12,10 +12,10 @@ export default function LabScreen({
 }: Props ) {
   useImportLab({slug})
   return <>
-    <div className={styles.root} id="lab-screen">
+    <article className={styles.root} id="lab-screen">
       <div className={styles.loading}>
         Now Loading...
       </div>
-    </div>
+    </article>
   </>
 }

@@ -18,20 +18,27 @@ export default async function WorksLayout({
   if (!works) return
   return <>
     <main className={styles.root}>
-      <div className={styles.uniques}>
+      <ul className={styles.uniques}>
         {works.map( work => (
-          <div key={work.slug} className={styles.uniqueCard}> 
-            <WorkUniqueCard work={work} />
-          </div>
-        ))}
-      </div>
-      <div className={styles.cards}>
+          work['display-type'] == 'unique' && (
+            <li key={work.slug} className={styles.uniqueCard}> 
+              <WorkUniqueCard work={work} />
+            </li>
+        )))}
+      </ul>
+      <ul className={styles.cards}>
         {works.map( work => (
-          work["display-type"] === 'modal' && <Navigation className={styles.card} href={`/works/${work.slug}`} key={work.slug} scroll={false}>
-            <WorkCard work={work} />
-          </Navigation>
-        ))}
-      </div>
+          work["display-type"] === 'modal' && (
+            <li key={work.slug} className={styles.card}>
+              <Navigation 
+                href={`/works/${work.slug}`} 
+                scroll={false}
+              >
+                <WorkCard work={work} />
+              </Navigation>
+            </li>
+        )))}
+      </ul>
     </main>
     {children}
   </>

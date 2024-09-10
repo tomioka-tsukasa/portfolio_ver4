@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.root {
+.list {
   display: flex;
   flex-direction: column;
   gap: 32px;

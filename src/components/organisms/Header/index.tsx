@@ -28,7 +28,7 @@ const navs: Array<Nav> = [
 
 export default function Header() {
   return <>
-    <div className={styles.root}>
+    <header className={styles.root}>
       <div className={styles.inner}>
         <div className={styles.backhome}>
           <HomeIcon />
@@ -37,6 +37,6 @@ export default function Header() {
           <GlobalNav navs={navs} />
         </div>
       </div>
-    </div>
+    </header>
   </>
 }

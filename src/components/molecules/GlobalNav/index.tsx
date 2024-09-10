@@ -14,12 +14,17 @@ export default function GlobalNav({
 }: Props) {
   const unilab: Array<Nav> = navs.filter( nav => nav.slug === 'uni-lab')
   return <>
-    <div className={styles.root}>
-      {navs.map( nav => (
-        nav.slug !== 'uni-lab' && <GlobalNavText nav={nav} key={nav.slug} />))}
-      <SpecialButton href={`/${unilab[0].slug}/`}>
-        {unilab[0].name}
-      </SpecialButton>
-    </div>
+    <nav className={styles.root}>
+      <ul className={styles.list}>
+        {navs.map( nav => (
+          nav.slug !== 'uni-lab' && <li key={nav.slug}><GlobalNavText nav={nav} /></li>
+        ))}
+        <li>
+          <SpecialButton href={`/${unilab[0].slug}/`}>
+            {unilab[0].name}
+          </SpecialButton>
+        </li>
+      </ul>
+    </nav>
   </>
 }

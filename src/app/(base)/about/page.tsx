@@ -8,7 +8,7 @@ export default async function About() {
   const contents = await getContentsManagerBySlug('portfolio-talkme');
   if (!contents) return
   return <>
-    <div className={styles.root}>
+    <main className={styles.root}>
       <AboutStore initialState={{
         qa: {
           active: 'test-001'
@@ -21,6 +21,6 @@ export default async function About() {
           <QuestionPanel />
         </div>
       </AboutStore>
-    </div>
+    </main>
   </>
 }
