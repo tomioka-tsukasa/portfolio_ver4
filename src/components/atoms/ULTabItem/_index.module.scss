@@ -13,4 +13,8 @@
   background-color: map.get($mainColor, "index");
   color: map.get($baseColor, "index");
   font-size: 12px;
+
+  @include sp {
+    padding: 10px 18px;
+  }
 }
