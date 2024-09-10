@@ -1,11 +1,14 @@
-import { zenOldMincho_w700 } from "@/lib/fonts"
 import styles from "./_index.module.scss"
-import Typing from "@/components/atoms/Typing"
+import Footer from "@/components/organisms/Footer"
+import HomeScreen from "./components/molecules/HomeScreen"
 
 export default function Home() {
   return <>
-    <h1 className={`${styles.head} ${zenOldMincho_w700.className}`}>
-      <Typing text={'Hello Tsukasa Tomioka Portfolio. ver4.0'} initDisplay={false} />
-    </h1>
+    <div className={styles.root}>
+      <HomeScreen />
+      <div className={styles.footer}>
+        <Footer />
+      </div>
+    </div>
   </>
 }
