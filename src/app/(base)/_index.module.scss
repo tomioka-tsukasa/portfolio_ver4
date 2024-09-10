@@ -1,18 +1,6 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: calc(88vh - 120px);
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-.col {
-  display: inline-block;
-  font-size: 12px;
+.root {
+  padding-bottom: 20px;
 }

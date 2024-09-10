@@ -1,24 +1,6 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.body {
-  background-color: #000000;
-  color: map.get($mainColor, "index");
-  letter-spacing: 0.04em;
-}
-
-.container {
-  container-type: inline-size;
-
-  @include pc {
-    padding: 120px 0 0;
-  }
-
-  @include sp {
-    padding: 80px 0 120px;
-  }
-}
-
 .globalBg {
   content: "";
   position: fixed;
