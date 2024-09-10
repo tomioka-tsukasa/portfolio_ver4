@@ -32,13 +32,6 @@ export const useClickManager = () => {
         scroll
       })
     }, typing ? INTERACTION_TIME : INTERACTION_TIME_SHORT);
-    setTimeout(() => {
-      if (pathname.split('/').join('') === href.split('/').join('')) {
-        document.body.classList.remove(NAVIGATING_CLASS)
-        dispatch(push(' '))
-        console.warn('3s経ってもパスが変わらなかったため強制的に Navigation が終了しました。')
-      }
-    }, 3000);
   }
   return { clickEvent }
 }
