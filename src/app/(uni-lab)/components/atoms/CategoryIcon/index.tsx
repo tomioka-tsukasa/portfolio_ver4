@@ -3,7 +3,7 @@ import { Svg } from "@/types/global";
 type Color = 'white';
 type Props = Svg<Color>
 
-export default function ULCategoryIcon({
+export default function CategoryIcon({
   type,
   stroke,
   fill = 'white',

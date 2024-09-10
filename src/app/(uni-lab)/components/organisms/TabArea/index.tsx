@@ -1,7 +1,7 @@
 import styles from "./_index.module.scss"
-import ULTabContentBody from "@/components/molecules/ULTabContentBody"
-import ULTabContentNotes from "../ULTabContentNotes"
-import ULTabList from "@/components/molecules/ULTabList"
+import TabContentBody from "@/app/(uni-lab)/components/molecules/TabContentBody"
+import TabContentNotes from "../TabContentNotes"
+import TabList from "@/app/(uni-lab)/components/molecules/TabList"
 import TabProvider from "@/modules/Tab/components/TabProvider"
 import { TabMember } from "@/modules/Tab/types"
 import TabContent from "@/modules/Tab/components/TabContent"
@@ -10,24 +10,24 @@ type Props = {
   subject: Newt.LabSubject
 }
 
-export default function ULTabArea({
+export default function TabArea({
   subject
 }: Props ) {
   const list: Array<TabMember> = [
     {
       id: 'body',
       name: '概要',
-      content: <ULTabContentBody body={subject.body} />
+      content: <TabContentBody body={subject.body} />
     },
     {
       id: 'dev',
       name: '開発メモ',
-      content: <ULTabContentNotes notes={subject["dev-note"]} />
+      content: <TabContentNotes notes={subject["dev-note"]} />
     },
     {
       id: 'design',
       name: 'デザインメモ',
-      content: <ULTabContentNotes notes={subject["ui-note"]} />
+      content: <TabContentNotes notes={subject["ui-note"]} />
     },
   ]
   return <>
@@ -35,7 +35,7 @@ export default function ULTabArea({
       <TabProvider initialState={{
         active: list[0].id
       }}>
-        <ULTabList list={list} />
+        <TabList list={list} />
         <div className={styles.wrapper}>
           {list.map( member => (
             <TabContent member={member} key={member.id}>

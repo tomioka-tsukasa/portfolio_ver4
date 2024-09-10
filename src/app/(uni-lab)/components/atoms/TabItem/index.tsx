@@ -5,7 +5,7 @@ interface Props {
   name?: string,
 }
 
-export default function ULTabItem({
+export default function TabItem({
   name
 }: Props ) {
   return <>
