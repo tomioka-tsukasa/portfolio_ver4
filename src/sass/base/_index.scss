@@ -27,7 +27,7 @@ body {
     pointer-events: none;
   }
 
-  &.isNavigating {
+  &.UF_isNavigating {
     pointer-events: none;
 
     &:after {
@@ -46,7 +46,7 @@ body {
       opacity: 0;
     }
 
-    &.homeAnimationInit {
+    &.UF_homeAnimationInit {
       header {
         opacity: 1;
       }

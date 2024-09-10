@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function HomeScreen() {
   const [status, setStatus] = useState(false)
   useEffect(() => {
-    document.body.classList.add('homeAnimationInit')
+    document.body.classList.add('UF_homeAnimationInit')
     setTimeout(() => {
       setStatus(true)
     }, 700);
