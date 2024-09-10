@@ -38,4 +38,18 @@ body {
       opacity: 1;
     }
   }
+
+  &#home {
+    header {
+      transition: opacity 1.2s ease 0s;
+      transition-delay: 2.5s;
+      opacity: 0;
+    }
+
+    &.homeAnimationInit {
+      header {
+        opacity: 1;
+      }
+    }
+  }
 }
