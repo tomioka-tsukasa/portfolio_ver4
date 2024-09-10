@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: inline-block;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: map.get($mainColor, "index");
+}
