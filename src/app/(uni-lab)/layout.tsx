@@ -4,7 +4,7 @@ import StoreProvider from "@/lib/store/provider";
 import styles from "./_layout.module.scss";
 import { zenKakuGothicNew_w400 } from "@/lib/fonts";
 import Footer from "@/components/organisms/Footer";
-import ULHeader from "@/components/organisms/ULHeader";
+import Header from "@/app/(uni-lab)/components/organisms/Header";
 import NavigatingType from "../(base)/components/atoms/NavigatingType";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function UniLabLayout({
       <StoreProvider>
         <body className={`${styles.body} ${zenKakuGothicNew_w400.className}`}>
           <NavigatingType />
-          <ULHeader />
+          <Header />
           <div className={`${styles.container}`}>
             {children}
           </div>

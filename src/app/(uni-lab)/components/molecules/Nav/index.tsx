@@ -5,7 +5,7 @@ type Props = {
   navs: UniLab.LocalNav
 }
 
-export default function ULNav({
+export default function Nav({
   navs
 }: Props ) {
   return <>

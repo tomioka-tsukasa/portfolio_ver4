@@ -1,8 +1,8 @@
 import styles from "./_index.module.scss"
-import ULCategoryIcon from "@/components/atoms/ULCategoryIcon"
-import ULHomeIcon from "@/components/atoms/ULHomeIcon"
+import CategoryIcon from "@/app/(uni-lab)/components/atoms/CategoryIcon"
+import HomeIcon from "@/app/(uni-lab)/components/atoms/HomeIcon"
 import NewtIcon from "@/components/atoms/NewtIcon"
-import ULNav from "@/components/molecules/ULNav"
+import Nav from "@/app/(uni-lab)/components/molecules/Nav"
 import GlobalMenuIcon from "@/components/atoms/GlobalMenuIcon"
 
 interface Navs {
@@ -32,12 +32,12 @@ const navs: Navs = {
   local: [
     {
       slug: 'home',
-      icon: <ULHomeIcon />,
+      icon: <HomeIcon />,
       href: '/uni-lab'
     },
     {
       slug: 'category',
-      icon: <ULCategoryIcon />,
+      icon: <CategoryIcon />,
       href: '/uni-lab'
     },
     {
@@ -48,11 +48,11 @@ const navs: Navs = {
   ]
 }
 
-export default function ULHeader() {
+export default function Header() {
   return <>
     <header className={styles.root}>
       <div className={styles.local}>
-        <ULNav navs={navs.local} />
+        <Nav navs={navs.local} />
       </div>
       <nav className={styles.global}>
         <GlobalMenuIcon />

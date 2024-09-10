@@ -2,7 +2,7 @@ import Draft_CtrlButton from "@/components/molecules/Draft_CtrlButton";
 import styles from "./_index.module.scss"
 import LabScreen from "@/components/molecules/LabScreen";
 import { getLabSubjectBySlug, getLabSubjects } from "@/lib/newt";
-import ULTabArea from "@/components/organisms/ULTabArea";
+import TabArea from "@/app/(uni-lab)/components/organisms/TabArea";
 import Link from "next/link";
 
 type Props = {
@@ -29,7 +29,7 @@ export default async function ULSubject({
         <LabScreen slug={slug} />
       </div>
       <div className={styles.notes}>
-        <ULTabArea subject={subject} />
+        <TabArea subject={subject} />
       </div>
     </main>
   </>

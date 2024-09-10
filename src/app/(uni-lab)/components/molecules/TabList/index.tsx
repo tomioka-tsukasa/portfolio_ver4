@@ -1,13 +1,13 @@
 import TabTrigger from "@/modules/Tab/components/TabTrigger"
 import styles from "./_index.module.scss"
 import { TabMember } from "@/modules/Tab/types"
-import ULTabItem from "@/components/atoms/ULTabItem"
+import TabItem from "@/app/(uni-lab)/components/atoms/TabItem"
 
 interface Props {
   list: Array<TabMember>
 }
 
-export default function ULTabList({
+export default function TabList({
   list,
 }: Props ) {
   return <>
@@ -15,7 +15,7 @@ export default function ULTabList({
       {list.map( member => (
         <li key={member.id}>
           <TabTrigger member={member}>
-            <ULTabItem name={member.name} />
+            <TabItem name={member.name} />
           </TabTrigger>
         </li>
       ))}

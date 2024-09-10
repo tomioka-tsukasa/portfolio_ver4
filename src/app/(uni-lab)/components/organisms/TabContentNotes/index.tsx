@@ -5,7 +5,7 @@ type Props = {
   notes: Array<Newt.Note> | null
 }
 
-export default function ULTabContentNotes({
+export default function TabContentNotes({
   notes
 }: Props ) {
   return <>

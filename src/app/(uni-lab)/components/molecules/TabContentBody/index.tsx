@@ -5,7 +5,7 @@ type Props = {
   body: any
 }
 
-export default function ULTabContentBody({
+export default function TabContentBody({
   body
 }: Props ) {
   return <>
