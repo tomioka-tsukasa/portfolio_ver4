@@ -18,7 +18,7 @@ export default async function ULSubject({
   const subject = await getLabSubjectBySlug(slug)
   if (!subject) return
   return <>
-    <div className={styles.root}>
+    <main className={styles.root}>
       <div className={styles.ctrl}>
         <Draft_CtrlButton />
       </div>
@@ -31,7 +31,7 @@ export default async function ULSubject({
       <div className={styles.notes}>
         <ULTabArea subject={subject} />
       </div>
-    </div>
+    </main>
   </>
 }
 

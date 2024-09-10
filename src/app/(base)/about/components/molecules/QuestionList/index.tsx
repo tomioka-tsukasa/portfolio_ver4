@@ -25,19 +25,17 @@ export default function QuestionList({
     })
   }
   return <>
-    <div className={`${styles.root}`}>
-      <ul className={styles.list}>
-        {list.map( item => (
-          <li className={`${styles.item} ${state.qa.active === item.slug ? styles.isActive : ''}`} key={item.slug} data-slug={item.slug} onClick={clickHander}>
-            <div className={styles.arrow}>
-              <Arrow />
-            </div>
-            <button className={styles.button}>
-              {item.question}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className={`${styles.list}`}>
+      {list.map( item => (
+        <li className={`${styles.item} ${state.qa.active === item.slug ? styles.isActive : ''}`} key={item.slug} data-slug={item.slug} onClick={clickHander}>
+          <div className={styles.arrow}>
+            <Arrow />
+          </div>
+          <button className={styles.button}>
+            {item.question}
+          </button>
+        </li>
+      ))}
+    </ul>
   </>
 }

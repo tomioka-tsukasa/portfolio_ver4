@@ -50,13 +50,13 @@ const navs: Navs = {
 
 export default function ULHeader() {
   return <>
-    <div className={styles.root}>
+    <header className={styles.root}>
       <div className={styles.local}>
         <ULNav navs={navs.local} />
       </div>
-      <div className={styles.global}>
+      <nav className={styles.global}>
         <GlobalMenuIcon />
-      </div>
-    </div>
+      </nav>
+    </header>
   </>
 }

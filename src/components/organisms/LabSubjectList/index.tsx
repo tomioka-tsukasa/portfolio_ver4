@@ -10,7 +10,9 @@ export default function LabSubjectList({
 }) {
   return <>
     <ul className={styles.root}>
-      {subjects.map( subject => <LabSubjectItem key={subject.slug} subject={subject} rootPath={rootPath} />)}
+      {subjects.map( subject => <li key={subject.slug}>
+        <LabSubjectItem subject={subject} rootPath={rootPath} />
+      </li>)}
     </ul>
   </>
 }

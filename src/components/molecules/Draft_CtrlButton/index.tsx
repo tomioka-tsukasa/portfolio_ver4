@@ -7,7 +7,7 @@ import Arrow from "@/components/atoms/Arrow"
 export default function Draft_CtrlButton() {
   const router = useRouter()
   return <>
-    <div className={styles.root}>
+    <nav className={styles.root}>
       <div className={styles.buttons}>
         <button onClick={() => router.back()} className={styles.button}>
           <span className={styles.arrow}>
@@ -18,6 +18,6 @@ export default function Draft_CtrlButton() {
           </span>
         </button>
       </div>
-    </div>
+    </nav>
   </>
 }
