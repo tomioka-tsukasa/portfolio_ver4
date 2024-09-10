@@ -19,7 +19,9 @@ export default async function ULHome() {
           Uni Lab.｜ハイエンドWeb制作研究所【開発途中！】
         </h1> 
       </div>
-      <LabSubjectList subjects={subjects} />
+      <div className={styles.list}>
+        <LabSubjectList subjects={subjects} />
+      </div>
     </main>
   </>
 }

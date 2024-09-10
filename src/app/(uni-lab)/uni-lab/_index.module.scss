@@ -1,9 +1,6 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.root {
-}
-
 .mv {
   display: flex;
   flex-direction: column;
@@ -14,6 +11,10 @@
   height: 90vh;
   margin: 0 auto;
 
+  @include sp {
+    padding: 0 30px;
+  }
+
   .logo {
     width: 100%;
   }
@@ -21,9 +22,21 @@
   .title {
     font-size: 16px;
     @include textShadow();
+
+    @include sp {
+      font-size: 12px;
+    }
   }
 
   img {
     height: auto;
+  }
+}
+
+.list {
+  container-type: inline-size;
+
+  @include sp {
+    padding: 0 20px;
   }
 }

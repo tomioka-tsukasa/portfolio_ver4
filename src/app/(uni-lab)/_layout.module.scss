@@ -19,7 +19,10 @@
   width: 100%;
   max-width: calc(1072px + 60px);
   margin: 0 auto;
-  padding: 0 30px;
+
+  @include pc {
+    padding: 0 30px;
+  }
 }
 
 .globalBg {

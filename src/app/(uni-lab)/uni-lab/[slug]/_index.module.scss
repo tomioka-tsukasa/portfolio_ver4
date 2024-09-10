@@ -10,6 +10,12 @@
   margin-top: 32px;
 }
 
+.ctrl {
+  @include sp {
+    padding: 0 20px;
+  }
+}
+
 .github {
   a {
     display: inline-block;
