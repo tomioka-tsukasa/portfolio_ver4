@@ -6,9 +6,6 @@ export default function Home() {
   return <>
     <h1 className={`${styles.head} ${zenOldMincho_w700.className}`}>
       <Typing text={'Hello Tsukasa Tomioka Portfolio. ver4.0'} initDisplay={false} />
-      <span className={`${styles.col} ${zenOldMincho_w700.className}`}>
-        開発途中...
-      </span>
     </h1>
   </>
 }
