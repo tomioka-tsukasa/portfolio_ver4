@@ -29,6 +29,11 @@
   margin-top: 96px;
 }
 
+.isUnactive {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
 * + .link {
   margin-top: 48px;
 }
