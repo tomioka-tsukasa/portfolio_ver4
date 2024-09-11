@@ -1,3 +1,4 @@
+import { upperCaseFirst } from "@/components/atoms/UpperCaseFirst"
 import styles from "./_index.module.scss"
 
 type Props = {
@@ -17,7 +18,11 @@ export default function QaCategory({
         {name}
       </div>
       <div className={`${styles.slug}`}>
-        {slug}
+        {slug
+          .split('-')
+          .map(s => upperCaseFirst(s))
+          .join(' ')
+        }
       </div>
     </div>
   </>
