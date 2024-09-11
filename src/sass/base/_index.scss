@@ -7,7 +7,9 @@ button {
   cursor: pointer;
 
   &:hover {
-    opacity: 0.7;
+    @include pc {
+      opacity: 0.7;
+    }
   }
 }
 
