@@ -31,7 +31,7 @@ export default function WorkUniqueCard({
           height={work.thumbnail.height}
           className={styles.image}
         />
-        <Figcaption caption={`「${work.title}」のサムネイル画像`} />
+        <Figcaption caption={`${work.title}`} />
       </figure>
       <div className={styles.description}> 
         {work.body && (

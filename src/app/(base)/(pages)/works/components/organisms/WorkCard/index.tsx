@@ -30,7 +30,7 @@ export default function WorkCard({
           height={work.thumbnail.height}
           className={styles.image}
         />
-        <Figcaption caption={`「${work.title}」のサムネイル画像`} />
+        <Figcaption caption={`${work.title}`} />
       </figure>
       <div className={styles.heading}>
         <Heading tag={'h3'} size={'small'}>
