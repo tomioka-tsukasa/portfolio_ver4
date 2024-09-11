@@ -11,7 +11,7 @@ export default function HomeScreen() {
     document.body.classList.add('UF_homeAnimationInit')
     setTimeout(() => {
       setStatus(true)
-    }, 700);
+    }, 300);
   }, [status, setStatus])
   return <>
     <div className={styles.root}>

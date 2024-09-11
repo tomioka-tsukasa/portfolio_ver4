@@ -6,8 +6,9 @@
   gap: 32px 64px;
 
   @include sp {
-    flex-direction: column-reverse;
-    align-items: flex-end;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 32px 24px;
   }
 }
 
@@ -17,6 +18,11 @@
   height: 108px;
   overflow: hidden;
   border-radius: 50%;
+
+  @include sp {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .message {
@@ -31,11 +37,10 @@
 
   @include pc {
     padding: 32px 48px;
-    font-size: 16px;
   }
 
   @include sp {
-    padding: 32px 20px;
-    font-size: 14px;
+    padding: 24px 16px;
+    border-radius: 6px;
   }
 }

@@ -9,19 +9,31 @@
   line-height: 1.2;
   cursor: pointer;
 
+  @include sp {
+    padding: 12px 32px 9px;
+  }
+
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
 }
 
 .name {
   color: map.get($mainColor, "index");
   font-size: 16px;
+
+  @include sp {
+    font-size: 14px;
+  }
 }
 
 .slug {
   color: map.get($mainColor, "L30");
   font-size: 12px;
+
+  @include sp {
+    font-size: 10px;
+  }
 }
 
 .isActive {

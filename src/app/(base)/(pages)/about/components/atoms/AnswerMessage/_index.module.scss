@@ -3,6 +3,15 @@
 
 .root {
   display: none;
+  line-height: 1.7;
+
+  @include pc {
+    font-size: 16px;
+  }
+
+  @include sp {
+    font-size: 12px;
+  }
 }
 
 .isActive {
