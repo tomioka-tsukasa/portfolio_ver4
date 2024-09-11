@@ -11,7 +11,7 @@ export default async function About() {
     <main className={styles.root}>
       <AboutStore initialState={{
         qa: {
-          active: 'test-001'
+          active: 'self-intro-001'
         }
       }}>
         <div className={styles.answer}>
