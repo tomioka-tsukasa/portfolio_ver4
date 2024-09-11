@@ -11,6 +11,7 @@
 
   @include sp {
     height: 100%;
+    pointer-events: none;
   }
 }
 
@@ -23,6 +24,12 @@
 
   @include pc {
     backdrop-filter: blur(14px) hue-rotate(180deg) brightness(50%);
+  }
+
+  * {
+    @include sp {
+      pointer-events: visible;
+    }
   }
 }
 
