@@ -27,7 +27,7 @@ export default function WorkDetail({
           className={styles.image}
           unoptimized
         />
-        <Figcaption caption={`「${work.title}」のサムネイル画像`} />
+        <Figcaption caption={`${work.title}`} />
       </figure>
       <div className={`${styles.link} ${work.url ? '' : styles.isUnactive}`}>
         <UniqueButton url={work.url ?? '/'}>
