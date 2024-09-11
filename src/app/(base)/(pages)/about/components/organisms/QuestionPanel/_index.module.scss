@@ -3,6 +3,10 @@
 
 .root {
   max-width: 1080px;
+
+  @include sp {
+    margin: 0 3px;
+  }
 }
 
 .wrapper {
