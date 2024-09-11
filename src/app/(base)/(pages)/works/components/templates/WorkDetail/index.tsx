@@ -29,7 +29,7 @@ export default function WorkDetail({
         />
         <Figcaption caption={`「${work.title}」のサムネイル画像`} />
       </figure>
-      <div className={styles.link}>
+      <div className={`${styles.link} ${work.url ? '' : styles.isUnactive}`}>
         <UniqueButton url={work.url ?? '/'}>
           {work["button-text"]}
         </UniqueButton>
