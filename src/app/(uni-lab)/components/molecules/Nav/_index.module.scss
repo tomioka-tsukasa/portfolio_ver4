@@ -1,6 +1,12 @@
 @use "sass:map";
 @use "@setting" as *;
 
+.root {
+  @include sp {
+    height: 100%;
+  }
+}
+
 .list {
   display: flex;
   flex-direction: column;
