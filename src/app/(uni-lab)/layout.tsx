@@ -26,7 +26,9 @@ export default function UniLabLayout({
           <div className={`${styles.container}`}>
             {children}
           </div>
-          <Footer />
+          <div className={styles.footer}>
+            <Footer />
+          </div>
           <div className={`${styles.globalBg}`}></div>
         </body>
       </StoreProvider>
