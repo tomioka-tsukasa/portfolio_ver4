@@ -7,7 +7,7 @@
 
 .wrapper {
   @include pc {
-    height: 40vh;
+    min-height: 50vh;
   }
 
   @include sp {
@@ -28,7 +28,7 @@
   overflow-y: scroll;
 
   @include pc {
-    width: 50%;
+    width: 70%;
     height: 52%;
   }
 
