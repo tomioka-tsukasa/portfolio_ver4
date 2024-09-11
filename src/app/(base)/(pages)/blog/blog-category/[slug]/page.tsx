@@ -1,3 +1,4 @@
+import styles from "./_index.module.scss"
 import ArticleList from "@/components/organisms/ArticleList"
 import BlogSidebar from "@/components/organisms/BlogSidebar"
 import BlogTemplate from "@/components/templates/BlogTemplate"
@@ -25,7 +26,9 @@ export default async function BlogCategory({
   })
   return <>
     <BlogTemplate nav={<BlogSidebar />}>
-      <ArticleList articles={filtered} rootPath="/blog/" />
+      <div className={styles.main}>
+        <ArticleList articles={filtered} rootPath="/blog/" />
+      </div>
     </BlogTemplate>
   </>
 }

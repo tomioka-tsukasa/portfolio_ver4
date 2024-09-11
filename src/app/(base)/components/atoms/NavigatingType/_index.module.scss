@@ -18,4 +18,8 @@
 .navigatingType {
   font-size: 14px;
   @include consoleText();
+
+  @include sp {
+    font-size: 12px;
+  }
 }

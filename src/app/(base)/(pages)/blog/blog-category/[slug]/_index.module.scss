@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.main {
+  width: 100%;
+}
+
+@container (max-width: 1180px) {
+  .main {
+    padding: 0 16px;
+  }
+}
