@@ -3,7 +3,7 @@
 
 .local {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
 
   @include sp {
     background-color: map.get($baseColor, "index");
@@ -44,7 +44,7 @@
 
 .global {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   top: 32px;
   right: 36px;
 }
