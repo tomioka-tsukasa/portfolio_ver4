@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/sass/globals.scss";
 import styles from "./_layout.module.scss";
 import Footer from "@/components/organisms/Footer";
-import Header from "@/app/(uni-lab)/components/organisms/Header";
+import Header from "@/app/(root)/(uni-lab)/components/organisms/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",

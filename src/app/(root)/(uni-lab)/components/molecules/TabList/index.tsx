@@ -1,7 +1,7 @@
 import TabTrigger from "@/modules/Tab/components/TabTrigger"
 import styles from "./_index.module.scss"
 import { TabMember } from "@/modules/Tab/types"
-import TabItem from "@/app/(uni-lab)/components/atoms/TabItem"
+import TabItem from "@/app/(root)/(uni-lab)/components/atoms/TabItem"
 
 interface Props {
   list: Array<TabMember>

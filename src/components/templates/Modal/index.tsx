@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "@/lib/store/hook"
 import { ModalClass } from "@/lib/store/slice/modalCtrl/types"
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
-import WorkDetail from "@/app/(base)/(pages)/works/components/templates/WorkDetail"
+import WorkDetail from "@/app/(root)/(base)/(pages)/works/components/templates/WorkDetail"
 
 interface Props {
   setter: ModalClass,

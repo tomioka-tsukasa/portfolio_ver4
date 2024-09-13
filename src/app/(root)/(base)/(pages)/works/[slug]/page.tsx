@@ -1,5 +1,5 @@
 import { getContentsManagerBySlug } from "@/lib/newt"
-import { ModalSetter } from "../../../../../components/templates/Modal"
+import { ModalSetter } from "../../../../../../components/templates/Modal"
 
 type Props = {
   params: {
