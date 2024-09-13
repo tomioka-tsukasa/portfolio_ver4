@@ -1,8 +1,8 @@
 import styles from "./_index.module.scss"
-import CategoryIcon from "@/app/(uni-lab)/components/atoms/CategoryIcon"
-import HomeIcon from "@/app/(uni-lab)/components/atoms/HomeIcon"
+import CategoryIcon from "@/app/(root)/(uni-lab)/components/atoms/CategoryIcon"
+import HomeIcon from "@/app/(root)/(uni-lab)/components/atoms/HomeIcon"
 import NewtIcon from "@/components/atoms/NewtIcon"
-import Nav from "@/app/(uni-lab)/components/molecules/Nav"
+import Nav from "@/app/(root)/(uni-lab)/components/molecules/Nav"
 import GlobalMenuIcon from "@/components/atoms/GlobalMenuIcon"
 
 interface Navs {
