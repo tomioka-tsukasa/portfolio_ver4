@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.body {
+.root {
   background-color: #000000;
   color: map.get($mainColor, "index");
   letter-spacing: 0.04em;

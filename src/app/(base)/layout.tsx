@@ -1,11 +1,7 @@
-import styles from "./_layout.module.scss";
 import type { Metadata } from "next";
 import "@/sass/globals.scss";
-import StoreProvider from "@/lib/store/provider";
 import Modal from "@/components/templates/Modal";
-import NavigatingType from "./components/atoms/NavigatingType";
 import Header from "@/components/organisms/Header";
-import BodyCtrl from "@/modules/BodyCtrl";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,17 +13,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="ja" className={`${styles.html}`}>
-      <StoreProvider>
-        <BodyCtrl>
-          <NavigatingType />
-          <Modal />
-          <Header />
-          {children}
-          <div className={`${styles.globalBg}`}></div>
-        </BodyCtrl>
-      </StoreProvider>
-    </html>
-  )
+  return <>
+    <Modal />
+    <Header />
+    {children}
+  </>
 }
