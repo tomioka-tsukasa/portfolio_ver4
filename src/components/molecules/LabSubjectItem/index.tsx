@@ -4,7 +4,7 @@ import UpdateDate from "../UpdateDate";
 import Image from "next/image";
 import { zenKakuGothicNew_w400, zenKakuGothicNew_w700 } from "@/lib/fonts";
 import parse from 'html-react-parser';
-import Link from "next/link";
+import Navigation from "@/modules/Navigation";
 
 type Props = {
   subject: Newt.LabSubject,
@@ -16,7 +16,7 @@ export default function LabSubjectItem({
   rootPath = '/uni-lab/'
 }: Props ) {
   return <>
-    <Link href={`${rootPath}${subject.slug}`} className={`${styles.root} ${zenKakuGothicNew_w400.className}`}>
+    <Navigation href={`${rootPath}${subject.slug}`} className={`${styles.root} ${zenKakuGothicNew_w400.className}`}>
       <div className={styles.thumbnail}> 
         <Image 
           src={subject.thumbnail.src}
@@ -50,6 +50,6 @@ export default function LabSubjectItem({
           {subject.body.length <= 80 ? '' : '...'}
         </div>
       </div>
-    </Link>
+    </Navigation>
   </>
 }
