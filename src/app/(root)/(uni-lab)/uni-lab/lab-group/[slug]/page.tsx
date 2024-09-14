@@ -23,7 +23,7 @@ export default async function LabGroup({
     <div className={styles.root}>
       <LabGroupHead group={group} />
       <div className={styles.subjects}>
-        <LabSubjectList subjects={subjects} scope={group} />
+        <LabSubjectList subjects={subjects} scope={group} max={-1} />
       </div>
       <div className={styles.backHome}>
         <Button href={'/uni-lab/'}>

@@ -4,41 +4,49 @@ import LabSubjectItem from "@/components/molecules/LabSubjectItem";
 type Props = {
   subjects: Array<Newt.LabSubject>,
   rootPath?: string,
-  scope?: Newt.LabGroup | 'noGroup'
+  scope?: Newt.LabGroup | 'noGroup',
+  max?: number,
 }
 
 type IsPush = (
   subject: Newt.LabSubject,
-  scope: Newt.LabGroup | 'noGroup'
+  index: number,
+  scope?: Newt.LabGroup | 'noGroup',
+  max?: number,
 ) => boolean
 
-export default function LabSubjectList({
-  subjects,
-  rootPath = '/uni-lab/',
-  scope
-}: Props ) {
-  const isPush: IsPush = (
-    subject,
-    scope,
-  ) => {
-    if (
-      scope === 'noGroup'
-      && !subject.groups?.length
-    ) return true
-    else if (
-      scope !== 'noGroup'
-    ) {
+const isPush: IsPush = (
+  subject,
+  index = 0,
+  scope,
+  max = 3,
+) => {
+  if (!scope) return false
+  if (max !== -1 && index >= max) return false
+  switch (scope) {
+    case 'noGroup':
+      if (!subject.groups?.length) return true
+      else return false
+    default:
       const group: Newt.LabGroup = scope
       if (
         subject.groups?.length
         && subject.groups?.[0].slug === group.slug
       ) return true
-    }
-    return false
+      else false
   }
+  return false
+}
+
+export default function LabSubjectList({
+  subjects,
+  rootPath = '/uni-lab/',
+  scope,
+  max = 3
+}: Props ) {
   return <>
     <ul className={styles.root}>
-      {subjects.map( subject => (scope ? isPush(subject, scope) : true) && (
+      {subjects.map( (subject, index) => isPush(subject, index, scope, max) && (
         <li key={subject.slug}>
           <LabSubjectItem subject={subject} rootPath={rootPath} />
         </li>
