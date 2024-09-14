@@ -6,9 +6,7 @@ export default function Home() {
   return <>
     <div className={styles.root}>
       <HomeScreen />
-      <div className={styles.footer}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   </>
 }
