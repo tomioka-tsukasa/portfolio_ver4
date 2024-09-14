@@ -14,4 +14,11 @@
   a {
     color: map.get($lightMode, "link");
   }
+
+  blockquote {
+    color: map.get($baseColor, "L85");
+    &:before {
+      background-color: map.get($baseColor, "L40");
+    }
+  }
 }
