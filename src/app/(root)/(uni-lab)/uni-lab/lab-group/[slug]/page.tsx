@@ -18,7 +18,7 @@ export default async function LabGroup({
   const subjects = await getLabSubjects()
   const filtered = subjects.filter( subject => {
     let judge: boolean = false
-    subject.groups.forEach( (item: Newt.LabGroup) => {
+    subject.groups?.forEach( (item: Newt.LabGroup) => {
       if (item.slug === slug) judge = true
     })
     return judge
