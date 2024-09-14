@@ -21,4 +21,9 @@
       background-color: map.get($baseColor, "L40");
     }
   }
+
+  code {
+    background-color: map.get($baseColor, "L10");
+    color: map.get($baseColor, "L90");
+  }
 }
