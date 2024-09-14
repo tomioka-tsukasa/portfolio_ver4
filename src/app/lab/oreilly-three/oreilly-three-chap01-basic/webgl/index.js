@@ -1,7 +1,3 @@
-// ========================================
-//  npm run build
-// ========================================
-
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
@@ -65,7 +61,7 @@ export default function Canvas() {
   });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(innerWidth, innerHeight);
-  renderer.setClearColor(new THREE.Color(0xEEEEEE));
+  renderer.setClearColor(new THREE.Color(0x000000));
   renderer.shadowMap.enabled = true;
 
   const scene = new THREE.Scene();

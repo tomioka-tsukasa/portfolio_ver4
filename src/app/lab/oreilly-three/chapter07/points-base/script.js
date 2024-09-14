@@ -2,8 +2,8 @@
 //  npm run build
 // ========================================
 
-import * as THREE from 'three/build/three.module.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
 
 import * as dat from '../../../../common/libs/ui/dat.gui';
 // https://github.com/dataarts/dat.gui
@@ -14,15 +14,14 @@ import { Stats } from '../../../../common/libs/ui/stats';
 // //  npm run dev
 // // ========================================
 
-// import * as THREE from 'three/build/three.module.js';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+// import * as THREE from 'three';
+// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
 
-// import * as dat from '../../../../libs/ui/dat.gui.js';
+// import * as dat from 'dat.gui';
 // // https://github.com/dataarts/dat.gui
-// import { Stats } from '../../../../libs/ui/stats.js';
+// import * as Stats from 'stats.js';
 // // https://github.com/mrdoob/stats.js
 
-window.addEventListener('load', init);
 
 function init() {
 
