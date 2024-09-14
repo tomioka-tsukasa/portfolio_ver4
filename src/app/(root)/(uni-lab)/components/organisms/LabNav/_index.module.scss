@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.group + .group {
+  margin-top: 128px;
+}
+
+.list {
+  container-type: inline-size;
+
+  @include sp {
+    padding: 0 20px;
+  }
+}
+
+* + .list {
+  margin-top: 32px;
+}
+
+.groupEnter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+* + .groupEnter {
+  margin-top: 24px;
+}
