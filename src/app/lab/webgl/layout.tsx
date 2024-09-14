@@ -1,4 +1,5 @@
 import "@/sass/globals.scss";
+import canvasStyles from "../_canvasLayout.module.scss"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +13,8 @@ export default function LabLayout({
   children: React.ReactNode;
 }>) {
   return <>
-    <html lang="ja">
-      <body>
+    <html lang="ja" className={canvasStyles.html}>
+      <body className={canvasStyles.body}>
         {children}
       </body>
     </html>

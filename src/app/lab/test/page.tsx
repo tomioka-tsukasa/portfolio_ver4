@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import styles from "./_index.module.scss";
+import canvasStyles from "@/app/lab/_canvasLayout.module.scss"
 import Canvas from "./webgl/index"
 import { usePathname } from "next/navigation";
 
@@ -19,7 +20,37 @@ export default function LabTest() {
         Hello World.<br />
         `@/app/lab/`配下で開発したページを読み込んで閲覧可能！
       </p>
-      <div id="canvas" className={styles.canvas}></div>
+      <div id="canvas" className={canvasStyles.canvas}></div>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
+      <p>
+        Dummy.
+      </p>
     </div>
   </>
 }
