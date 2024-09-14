@@ -33,6 +33,10 @@
   }
 }
 
+.group + .group {
+  margin-top: 128px;
+}
+
 .list {
   container-type: inline-size;
 
@@ -45,6 +49,11 @@
   margin-top: 32px;
 }
 
-.group + .group {
-  margin-top: 128px;
+.groupEnter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+* + .groupEnter {
+  margin-top: 24px;
 }

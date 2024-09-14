@@ -7,14 +7,6 @@
 .image {
   position: relative;
 
-  @include pc {
-    box-shadow: 0 0 96px map.get($mainColor, "L10");
-  }
-
-  @include sp {
-    box-shadow: 0 0 48px map.get($mainColor, "L10");
-  }
-
   &:before {
     content: "";
     display: block;

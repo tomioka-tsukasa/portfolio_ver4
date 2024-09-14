@@ -9,25 +9,29 @@ type Props = {
 export default function LabGroupHead({
   group,
 }: Props ) {
+  if (!group) return
   return <>
     <div className={styles.root}>
       <div className={styles.thumbnail}>
         <div className={styles.image}>
           <Image 
             className={styles.image}
-            src={group?.thumbnail.src || ''}
+            src={group.thumbnail.src || ''}
             alt=''
-            width={group?.thumbnail.width}
-            height={group?.thumbnail.height}
+            width={group.thumbnail.width}
+            height={group.thumbnail.height}
           />
         </div>
         <h1 className={`${styles.title} ${zenOldMincho_w700.className}`}>
-          {group?.title} 
+          {group.title} 
         </h1>
       </div>
-      <p className={styles.body}>
-        {group?.body}
-      </p>
+      {group.body
+        ?<p className={styles.body}>
+          {group.body}
+        </p>
+        : <></>
+      }
     </div> 
   </>
 }

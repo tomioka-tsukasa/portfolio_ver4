@@ -1,5 +1,6 @@
 import styles from "./_index.module.scss"
-import LabGroupHead from "@/components/molecules/LabGroupHead"
+import LabGroupHead from "@/app/(root)/(uni-lab)/components/molecules/LabGroupHead"
+import Button from "@/components/atoms/Button"
 import LabSubjectList from "@/components/organisms/LabSubjectList"
 import { getLabGroup, getLabGroupBySlug, getLabSubjects } from "@/lib/newt"
 
@@ -16,19 +17,18 @@ export default async function LabGroup({
 }: Props ) {
   const { slug } = params
   const subjects = await getLabSubjects()
-  const filtered = subjects.filter( subject => {
-    let judge: boolean = false
-    subject.groups?.forEach( (item: Newt.LabGroup) => {
-      if (item.slug === slug) judge = true
-    })
-    return judge
-  })
   const group = await getLabGroupBySlug(slug)
+  if (!subjects || !group) return 
   return <>
     <div className={styles.root}>
       <LabGroupHead group={group} />
       <div className={styles.subjects}>
-        <LabSubjectList subjects={filtered} />
+        <LabSubjectList subjects={subjects} scope={group} />
+      </div>
+      <div className={styles.backHome}>
+        <Button href={'/uni-lab/'}>
+          {'UniLabトップに戻る'}
+        </Button>
       </div>
     </div>
   </>
