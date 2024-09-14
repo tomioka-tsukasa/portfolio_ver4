@@ -1,0 +1,15 @@
+extends ../../../../common/layouts/_default.pug
+
+block Setting
+  -
+    dir = "study/oreilly/chapter06/"
+    title = "parametric";
+    paths.relative = paths.study;
+
+block Contents
+  canvas(
+    id="myCanvas"
+  )
+  #stats
+  button.effect
+    |Glitch Effect

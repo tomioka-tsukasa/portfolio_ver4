@@ -1,0 +1,32 @@
+extends ../../../../common/layouts/_default.pug
+
+block Setting
+  -
+    dir = "study/oreilly/chapter10/"
+    title = "texture-base";
+    paths.relative = paths.study;
+
+block Contents
+  canvas(
+    id="myCanvas"
+  )
+  #stats
+  .title(
+    style="position: absolute; z-index: 9; top: 50%; right: 100px; color: #FFFFFF; text-align: right; font-size: 2.0rem; text-shadow:0 0 10px #FFFFFF; letter-spacing: 0.3rem; line-height:1.5;"
+  )
+    |Dishes / Tsukasa Tomioka
+    br
+    |<span style="font-size: 1.0rem;">Hello Three.js</span>
+  #changer(
+    style="position: absolute; z-index: 9; bottom: 1%; right: 100px; color: #FFFFFF; text-align: right; font-size: 1.3rem; text-shadow:0 0 10px #FFFFFF; letter-spacing: 0.3rem; line-height:1.5;"
+  )
+    p.prev(
+      style="display: inline-block; margin-right: 20px;"
+    )
+      |PREV
+    span
+      |/
+    p.next(
+      style="display: inline-block; margin-left: 15px;"
+    )
+      |NEXT

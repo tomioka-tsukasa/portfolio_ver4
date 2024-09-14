@@ -1,0 +1,13 @@
+extends ../../../../common/layouts/_default.pug
+
+block Setting
+  -
+    dir = "study/oreilly/chapter07/"
+    title = "points-geom";
+    paths.relative = paths.study;
+
+block Contents
+  canvas(
+    id="myCanvas"
+  )
+  #stats
