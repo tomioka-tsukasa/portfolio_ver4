@@ -1,7 +1,8 @@
 import { useEffect, useReducer } from "react"
 
 type Props = {
-  slug: string
+  slug: string,
+  groups: Array<Newt.LabGroup> | undefined
 }
 
 type InitialState = {
@@ -9,7 +10,8 @@ type InitialState = {
 }
 
 export default function useImportLab ({
-  slug
+  slug,
+  groups
 }: Props) {
   const reducer = (state: InitialState) => {
     return {
@@ -22,8 +24,9 @@ export default function useImportLab ({
   const [state, dispatch] = useReducer(reducer, initialState)
   useEffect(() => {
     async function getDocument(slug: string) {
-      const url = `${window.location.origin}/lab/${slug}`
+      const url = `${window.location.origin}/lab/${groups?.length ? `${groups[0].slug}/` : ''}${slug}/`
       const screen = document.querySelector('#lab-screen')
+      const loading = document.querySelector('#loading')
       try {
         const res = await fetch(url)
         if (!res.ok) {
@@ -54,8 +57,11 @@ export default function useImportLab ({
           console.log(doc)
         }
       } catch(err) {
+        loading && (loading.innerHTML = 'Error - check console log.')
         console.error(
-          'iframeの読み込みに失敗しました。\`/src/app/lab\`に現在のURL末尾のスラッグと同じディレクトリを設置してください。',
+          'iframeの読み込みに失敗しました。\`/src/app/lab\`に現在のURL末尾のスラッグと同じディレクトリを設置してください。\n',
+          `Url: ${url}\n`,
+          `Groups: `, groups, '\n',
           err);
       }
     }
