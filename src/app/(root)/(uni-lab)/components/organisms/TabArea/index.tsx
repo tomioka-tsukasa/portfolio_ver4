@@ -26,8 +26,8 @@ export default function TabArea({
     },
     {
       id: 'design',
-      name: 'デザインメモ',
-      content: <TabContentNotes notes={subject["ui-note"]} />
+      name: 'タスク',
+      content: <TabContentNotes notes={subject["task"]} />
     },
   ]
   return <>
