@@ -1,0 +1,30 @@
+block Setting
+  -
+    const paths = {
+        study: "../../../../",
+        images: "/common/images/"
+      }
+    }
+    let header = false;
+    let footer = false;
+    let title = 'Hello WebGL';
+    let dir = "";
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+    title #{title}
+    //- link(href=paths.relative + 'css/app.css' rel="stylesheet")
+    //- Adobe Fonts Project
+    link(rel="stylesheet" href="https://use.typekit.net/qfm2teg.css")
+    //- script(src=paths.relative + "js/" + dir + title + "/script.bundle.js" type="module")
+    block Head
+  body
+    - if (header) {
+      include ../components/layouts/_header.pug
+    - };
+    block Contents
+    - if (footer) {
+      include ../components/layouts/_footer.pug
+    - };
