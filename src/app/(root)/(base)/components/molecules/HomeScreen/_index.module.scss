@@ -15,6 +15,7 @@
   line-height: 1.8;
 
   @include sp {
+    height: calc(100vh - 20px - 15px - 56px);
     font-size: 12px;
   }
 }

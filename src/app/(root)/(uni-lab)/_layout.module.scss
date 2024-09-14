@@ -2,7 +2,6 @@
 @use "@setting" as *;
 
 .root {
-  background-color: #000000;
   color: map.get($mainColor, "index");
   letter-spacing: 0.04em;
 
