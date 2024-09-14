@@ -97,7 +97,7 @@ function loadComplete() {
 }
 loadComplete();
 
-function onCLickAudio() {
+export default function Canvas() {
   initExecute = true;
   const allWraper = document.createElement('div');
   allWraper.innerText = "Click Me.";
@@ -155,7 +155,7 @@ function judgeLoaded() {
 }
 judgeLoaded();
 
-export default function Canvas() {
+function init() {
 
   // ========================================
   // Definition
