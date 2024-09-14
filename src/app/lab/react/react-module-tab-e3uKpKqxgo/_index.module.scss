@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  width: 980px;
+  height: 100vh;
+  margin: 32px auto;
+  padding: 0 20px;
+  background-color: map.get($baseColor, "index");
+}
+
+.wrapper {
+  padding: 12px;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  background-color: map.get($mainColor, "L40");
+}
+
+* + .heading {
+  margin-top: 96px;
+}
+
+* + .tabArea {
+  margin-top: 24px;
+}
