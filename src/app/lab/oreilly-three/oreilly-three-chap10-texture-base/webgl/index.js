@@ -132,7 +132,7 @@ export default function Canvas() {
       setTimeout(() => {
         allWraper.style.display = "none";
       }, 1000);
-      const music = new Audio('../../../../../common/audio/LOOP11.mp3');
+      const music = new Audio('..//lab/oreilly-three/audio/LOOP11.mp3');
       music.loop = true;
       music.volume = 0.5;
       music.play();
@@ -156,7 +156,7 @@ export default function Canvas() {
   }
   judgeLoaded();
 
-  function init() {
+  export default function Canvas() {
 
     // ========================================
     // Definition

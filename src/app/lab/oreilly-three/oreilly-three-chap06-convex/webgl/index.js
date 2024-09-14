@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { ConvexGeometry } from 'three/examples/jsm/geometries/ConvexGeometry.js';
 import * as SceneUtils from 'three/addons/utils/SceneUtils.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import * as dat from 'dat.gui';
 // https://github.com/dataarts/dat.gui
