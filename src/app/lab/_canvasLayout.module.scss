@@ -1,10 +1,16 @@
 @use "sass:map";
 @use "@setting" as *;
 
+.html,
+.body {
+  overflow: hidden;
+}
+
 .canvas {
   width: 100vw;
   height: 100vh;
   border: 1px solid #ffffff;
+  pointer-events: none;
 }
 
 .effect {

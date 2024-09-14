@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./_index.module.scss"
+import canvasStyles from "@/app/lab/_canvasLayout.module.scss"
 import { usePathname } from "next/navigation"
 import { useEffect } from "react"
 
@@ -12,9 +12,9 @@ export default function LabOreillyThreeChap01Basic() {
     })
   }, [pathname])
   return <>
-    <canvas id="canvas" className={styles.canvas}></canvas>
-    <div id="stats" className={styles.stats}></div>
-    <button id="effect" className={styles.effect}>
+    <canvas id="canvas" className={canvasStyles.canvas}></canvas>
+    <div id="stats" className={canvasStyles.stats}></div>
+    <button id="effect" className={canvasStyles.effect}>
       Effect
     </button>
   </>
