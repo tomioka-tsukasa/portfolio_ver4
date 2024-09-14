@@ -1,16 +1,16 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.group + .group {
-  margin-top: 128px;
-}
-
-.list {
+.group {
   container-type: inline-size;
 
   @include sp {
     padding: 0 20px;
   }
+}
+
+.group + .group {
+  margin-top: 128px;
 }
 
 * + .list {
@@ -23,5 +23,11 @@
 }
 
 * + .groupEnter {
-  margin-top: 24px;
+  margin-top: 32px;
+}
+
+@container (max-width: 680px) {
+  .groupEnter {
+    justify-content: center;
+  }
 }
