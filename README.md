@@ -57,6 +57,7 @@ nodeバージョンは`nodenv`で管理。yarnは`nodenv`でインストール�
 | develop | 開発ブランチ | main |
 | feature/* | 新規開発・調整ブランチ | (main), develop |
 | hotfix-* | 公開中のバグ修正 | main
+| lab/* | UniLab研究用ブランチ | develop |
 | store/* | ソース保存用ブランチ | [any] |
 
 ## Newt Management
