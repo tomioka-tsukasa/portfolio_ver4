@@ -1,0 +1,13 @@
+extends ../../../../common/layouts/_default.pug
+
+block Setting
+  -
+    dir = "study/oreilly/chapter09/"
+    title = "select-object";
+    paths.relative = paths.study;
+
+block Contents
+  canvas(
+    id="myCanvas"
+  )
+  #stats
