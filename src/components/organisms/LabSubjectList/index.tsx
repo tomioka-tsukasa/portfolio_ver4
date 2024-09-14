@@ -47,7 +47,7 @@ export default function LabSubjectList({
   return <>
     <ul className={styles.root}>
       {subjects.map( (subject, index) => isPush(subject, index, scope, max) && (
-        <li key={subject.slug}>
+        <li key={subject.slug} className={styles.item}>
           <LabSubjectItem subject={subject} rootPath={rootPath} />
         </li>
       ))}
