@@ -27,8 +27,8 @@ export default function LabSubjectItem({
       </div>
       <div className={styles.head}> 
         <p className={`${styles.title} ${zenKakuGothicNew_w700.className}`}> 
-          {subject.title.substring(0, 36)}
-          {subject.title.length <= 36 ? '' : '...'}
+          {subject.title.substring(0, 54)}
+          {subject.title.length <= 54 ? '' : '...'}
         </p>
         <div className={styles.info}> 
           {subject.status.length

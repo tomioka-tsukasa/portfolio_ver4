@@ -8,10 +8,6 @@
   @include pc {
     margin-left: 64px;
   }
-
-  @include sp {
-    margin-bottom: 80px;
-  }
 }
 
 .container {
@@ -48,4 +44,8 @@
 .footer {
   margin-top: 200px;
   padding-bottom: 40px;
+
+  @include sp {
+    padding-bottom: 9px;
+  }
 }
