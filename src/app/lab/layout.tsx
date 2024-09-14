@@ -11,11 +11,11 @@ export default function LabLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return <>
     <html lang="ja">
       <body>
         {children}
       </body>
     </html>
-  )
+  </>
 }
