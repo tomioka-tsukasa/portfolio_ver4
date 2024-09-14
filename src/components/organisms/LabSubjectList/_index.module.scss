@@ -9,8 +9,17 @@
   container-type: inline-size;
 }
 
+.item {
+  width: 330px;
+}
+
 @container (max-width: 1069px) {
   .root {
     justify-content: center;
+  }
+
+  .item {
+    width: 100%;
+    max-width: 890px;
   }
 }
