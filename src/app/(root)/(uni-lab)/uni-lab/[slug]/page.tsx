@@ -26,7 +26,7 @@ export default async function ULSubject({
         </div>
       </div>
       <div className={styles.screen}>
-        <LabScreen slug={slug} />
+        <LabScreen slug={slug} groups={subject.groups} />
       </div>
       <div className={styles.notes}>
         <TabArea subject={subject} />
