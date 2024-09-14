@@ -51,7 +51,7 @@ export default function useImportLab ({
           iframe.width = screen?.clientWidth + 'px'
           iframe.height = screen?.clientHeight+ 'px'
           iframe.style.border = 'none';
-          iframe.style.backgroundColor = '#ffffff';
+          iframe.style.backgroundColor = '#000000';
           screen?.appendChild(iframe)
           dispatch()
           console.log(doc)
