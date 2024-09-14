@@ -5,6 +5,7 @@
   display: inline-block;
   width: 100%;
   max-width: 320px;
+  min-height: 374px;
   padding: 16px 16px 20px;
   border-radius: 9px;
   background-color: map.get($mainColor, "L25");
