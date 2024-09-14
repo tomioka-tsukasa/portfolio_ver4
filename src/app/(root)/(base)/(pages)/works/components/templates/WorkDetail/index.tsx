@@ -40,7 +40,7 @@ export default function WorkDetail({
         )}
       </div>
       <div className={styles.back}>
-        <Button type={'routerBack'}>
+        <Button type={'routerBack'} typing={true}>
           BACK
         </Button>
       </div>

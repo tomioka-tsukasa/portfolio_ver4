@@ -12,6 +12,7 @@ type Props = {
   href?: string,
   tag?: 'a' | 'button',
   type?: 'routerBack' | string,
+  typing?: boolean
 }
 
 export default function Button({
@@ -19,6 +20,7 @@ export default function Button({
   href = '/',
   tag = 'a',
   type = '',
+  typing = false,
 }: Props ) {
   const router = useRouter()
   const backClickHander = () => {
@@ -29,14 +31,17 @@ export default function Button({
     setState(true)
   }
   const childNode = <div className={styles.text} onMouseEnter={mouseEnterHander}>
-    <Typing 
-      text={children} 
-      speed={4} 
-      trigger={state} 
-      endCallback={() => {
-        setState(false)
-      }}
-    />
+    {typing
+      ? <Typing 
+        text={children} 
+        speed={4} 
+        trigger={state} 
+        endCallback={() => {
+          setState(false)
+        }}
+      />
+      : <>{children}</>
+    }
   </div>
   switch (type) {
     case 'routerBack':

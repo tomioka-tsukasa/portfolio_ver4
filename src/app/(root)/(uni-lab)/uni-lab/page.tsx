@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "/public/logo/logo-unilab.png"
 import { zenOldMincho_w700 } from "@/lib/fonts";
 import Heading from "@/components/atoms/Heading";
+import Button from "@/components/atoms/Button";
 
 export default async function ULHome() {
   const subjects = await getLabSubjects()
@@ -21,7 +22,8 @@ export default async function ULHome() {
           Uni Lab.｜ハイエンドWeb制作研究所【開発途中！】
         </h1> 
       </div>
-      {labGroups.map( group => {
+      {labGroups.map( (group, index) => {
+        if (index >= 3) return 
         return <>
           <div className={`${styles.group} ${styles[group.slug]}`}>
             <Heading type="border">
@@ -29,6 +31,11 @@ export default async function ULHome() {
             </Heading>
             <div className={styles.list}>
               <LabSubjectList subjects={subjects} scope={group} />
+            </div>
+            <div className={styles.groupEnter}>
+              <Button href={`/uni-lab/lab-group/${group.slug}/`}>
+                {`全ての「${group.title}」の研究項目を見る`}
+              </Button>
             </div>
           </div>
         </>

@@ -39,7 +39,7 @@ export default function WorkUniqueCard({
         )}
       </div>
       <div className={`${styles.button} ${zenOldMincho_w700.className}`}>
-        <Button href={work.url ?? '/'}>
+        <Button href={work.url ?? '/'} typing={true}>
           {work["button-text"] || 'ENTRY'}
         </Button>
       </div>
