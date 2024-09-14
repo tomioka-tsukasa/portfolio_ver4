@@ -22,7 +22,7 @@ export default async function ULSubject({
       <div className={styles.ctrl}>
         <Draft_CtrlButton />
         <div className={styles.github}>
-          <Link href={`https://github.com/tsukasa-tomioka/portfolio_ver4/tree/main/src/app/lab/${slug}`} target="_blank">GitHubの研究ファイルページへ</Link>
+          <Link href={`https://github.com/tsukasa-tomioka/portfolio_ver4/tree/main/src/app/lab/${subject.groups?.length ? `${subject.groups?.[0].slug}/` : ''}${slug}`} target="_blank">GitHubの研究ファイルページへ</Link>
         </div>
       </div>
       <div className={styles.screen}>
