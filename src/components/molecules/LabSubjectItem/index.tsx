@@ -31,13 +31,16 @@ export default function LabSubjectItem({
           {subject.title.length <= 36 ? '' : '...'}
         </p>
         <div className={styles.info}> 
-          <ul className={styles.labels}>
-            {subject.status.map( label => (
-              <li key={label}>
-                <Label slug={label} />
-              </li>
-            ))}
-          </ul>
+          {subject.status.length
+            ? <ul className={styles.labels}>
+              {subject.status.map( label => (
+                <li key={label}>
+                  <Label slug={label} />
+                </li>
+              ))}
+            </ul>
+            : undefined
+          }
           <div className={styles.date}>
             <UpdateDate updateTime={subject._sys.raw.updatedAt} />
           </div>

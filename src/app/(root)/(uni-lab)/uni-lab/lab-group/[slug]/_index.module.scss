@@ -12,6 +12,10 @@
   }
 }
 
+.subjects {
+  container-type: inline-size;
+}
+
 * + .subjects {
   margin-top: 96px;
 }
