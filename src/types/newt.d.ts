@@ -61,7 +61,7 @@ namespace Newt {
     pickup: boolean;
     body: string;
     thumbnail: Thumbnail;
-    groups: Array<LabGroup>;
+    groups?: Array<LabGroup>;
     'dev-note': Array<Note>;
     'ui-note': Array<Note>;
   }
