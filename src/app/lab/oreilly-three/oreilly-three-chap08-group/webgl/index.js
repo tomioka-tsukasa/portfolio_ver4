@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import * as SceneUtils from 'three/addons/utils/SceneUtils.js';
 
 import * as dat from 'dat.gui';

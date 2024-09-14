@@ -69,7 +69,7 @@ export default function Canvas() {
   function initStats() {
     const stats = new Stats();
     stats.setMode(0);
-    const styles = { position: 'absolute', top: 0, left: 'unset', right: 0 };
+    const styles = { position: 'absolute', top: 0, left: 0, right: 'unset' };
     Object.keys(styles).forEach(key => {
       stats.domElement.style[key] = styles[key];
     });

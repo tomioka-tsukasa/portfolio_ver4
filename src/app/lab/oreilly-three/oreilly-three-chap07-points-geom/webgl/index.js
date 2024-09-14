@@ -1,40 +1,23 @@
-// // ========================================
-// //  npm run build
-// // ========================================
-
-// import * as THREE from 'three';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
-
-// import * as dat from '../../../../common/libs/ui/dat.gui';
-// // https://github.com/dataarts/dat.gui
-// import { Stats } from '../../../../common/libs/ui/stats';
-// // https://github.com/mrdoob/stats.js
-
-// ========================================
-//  npm run dev
-// ========================================
-
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 
 import * as dat from 'dat.gui';
 // https://github.com/dataarts/dat.gui
 import * as Stats from 'stats.js';
 // https://github.com/mrdoob/stats.js
 
-window.addEventListener('load', loadFonts);
-
 const fonts = {};
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('../../../../common/images/texture/lensflare/lensflare0_alpha.png');
+const texture = textureLoader.load('/lab/oreilly-three/images/texture/lensflare/lensflare0_alpha.png');
 const positions = [];
 const rangeX = innerWidth;
 const rangeY = innerHeight;
 const rangeZ = innerHeight;
 const textGeomPositionXYZ = {};
 const pointGeomPositionXYZ = {};
-let particleValue = 0;
-let textGeom, pointGeom;
+let textGeom, pointGeom, textLine;
 let textPointsValue = 0;
 let counter = 0;
 let degree = 0;
@@ -58,9 +41,9 @@ document.addEventListener("mousemove", (event) => {
   mouseX = event.pageX;
 });
 
-function loadFonts() {
-  const fontLoader = new THREE.FontLoader();
-  fontLoader.load('../../../../common/fonts/Roboto-Thin_Regular.json', function (Roboto) {
+export default function Canvas() {
+  const fontLoader = new FontLoader();
+  fontLoader.load('/lab/oreilly-three/fonts/Roboto-Thin_Regular.json', function (Roboto) {
     fonts['Roboto'] = Roboto;
     init();
   })
@@ -91,10 +74,10 @@ function init() {
   const scene = new THREE.Scene();
 
   const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight);
-  camera.position.set(0, 10, 100);
+  camera.position.set(0, 10, 400);
 
   const orbitControls = new OrbitControls(camera, myCanvas);
-  // orbitControls.autoRotate = true;
+  orbitControls.autoRotate = true;
   orbitControls.autoRotateSpeed = 8;
 
   // ========================================
@@ -106,7 +89,7 @@ function init() {
   function initStats() {
     const stats = new Stats();
     stats.setMode(0);
-    const styles = { position: 'absolute', left: 'unset', right: 0, top: 0 };
+    const styles = { position: 'absolute', left: 0, right: 'unset', top: 0 };
     Object.keys(styles).forEach(key => {
       stats.domElement.style[key] = styles[key];
     });
@@ -184,79 +167,42 @@ function init() {
       // steps: 1
     }
 
-    textGeom = new THREE.TextGeometry('L', options);
-    textGeom = new THREE.TextGeometry('Particle Art. / three.js', options);
+    textGeom = new TextGeometry('Particle Art. / three.js', options);
     textGeom.computeBoundingBox();
-    // textGeom.center();
+    textGeom.center();
 
     textGeom.parameters.shapes.forEach(shape => {
       textPointsValue += shape.curves.length;
     })
 
-    console.log(textGeom.parameters.shapes);
-    textGeom.parameters.shapes.forEach ( (shape, indexShape, arrayShape) => {
-      shape.curves.forEach( (curve, indexCurve, arrayCurve) => {
-        textGeomPositionXYZ[particleValue] = {x: {}, y: {}, z: {}};
-        textGeomPositionXYZ[particleValue].x = curve.v1.x;
-        textGeomPositionXYZ[particleValue].y = curve.v1.y;
-        textGeomPositionXYZ[particleValue].z = textGeom.attributes.position.getZ(particleValue);
-
-        const index = particleValue + 1;
-        textGeomPositionXYZ[index] = { x: {}, y: {}, z: {} };
-        textGeomPositionXYZ[index].x = curve.v2.x;
-        textGeomPositionXYZ[index].y = curve.v2.y;
-        textGeomPositionXYZ[index].z = textGeom.attributes.position.getZ(index);
-        particleValue += 2;
-      })
-    })
-    console.log(particleValue);
-    console.log(textGeomPositionXYZ);
-
     pointGeom = new THREE.BufferGeometry();
-    for (let i = 0; i < particleValue; i++) {
+    for (let i = 0; i < textGeom.attributes.position.count; i++) {
       positions.push(Math.random() * rangeX - rangeX / 2);
       positions.push(Math.random() * rangeY - rangeY / 2);
       positions.push(Math.random() * rangeZ - rangeZ / 2);
-    // for (let i = 0; i < particleValue / 5.1; i++) {
-      // positions.push(Math.random() * rangeX - rangeX / 2);
-      // positions.push('');
-      // positions.push('');
-      // positions.push('');
-      // positions.push('');
-      // positions.push(Math.random() * rangeY - rangeY / 2);
-      // positions.push('');
-      // positions.push('');
-      // positions.push('');
-      // positions.push('');
-      // positions.push(Math.random() * rangeZ - rangeZ / 2);
-      // positions.push('');
-      // positions.push('');
-      // positions.push('');
-      // positions.push('');
     }
     const positionArray = new Float32Array(positions);
     pointGeom.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
     const textPoints = new THREE.Points(pointGeom, mat);
     textPoints.frustumCulled = true;
-    console.log(pointGeom.attributes.position.count)
 
-    const textLine = new THREE.Mesh(
+    textLine = new THREE.Mesh(
       textGeom,
-      new THREE.MeshBasicMaterial({
+      new THREE.MeshPhongMaterial({
         transparent: true,
-        opacity: 0.7,
-        color: 0xFFFFFF
+        opacity: 0,
+        color: 0xd8a674
       })
     )
 
-    for (let i = 0; i < particleValue; i++) {
-      // textGeomPositionXYZ[i] = {};
-      // textGeomPositionXYZ[i].x = textGeom.attributes.position.getX(i);
-      // textGeomPositionXYZ[i].y = textGeom.attributes.position.getY(i);
-      // textGeomPositionXYZ[i].z = textGeom.attributes.position.getZ(i);
+    for (let i = 0; i < textGeom.attributes.position.count; i++) {
+      textGeomPositionXYZ[i] = {};
+      textGeomPositionXYZ[i].x = textGeom.attributes.position.getX(i);
+      textGeomPositionXYZ[i].y = textGeom.attributes.position.getY(i);
+      textGeomPositionXYZ[i].z = textGeom.attributes.position.getZ(i);
     }
 
-    for (let i = 0; i < particleValue; i++) {
+    for (let i = 0; i < textGeom.attributes.position.count; i++) {
       pointGeomPositionXYZ[i] = {};
       pointGeomPositionXYZ[i].x = pointGeom.attributes.position.getX(i);
       pointGeomPositionXYZ[i].y = pointGeom.attributes.position.getY(i);
@@ -274,9 +220,8 @@ function init() {
   // ========================================
   // Scene
   // ========================================
-  const ambientLight = new THREE.AmbientLight(0x000000);
-  ambientLight.position.y = 100;
-  // scene.add(ambientLight);
+  const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.4);
+  scene.add(ambientLight);
 
   const text = createFont(controls.guiFonts, texture);
   scene.add(text);
@@ -285,12 +230,14 @@ function init() {
   // Animation
   // ========================================
 
+  console.log(textLine)
+
   function renderScene() {
     // update
     // ----------------------------------------
     stats.update();
     counter += 1;
-    degree -= 0.007;
+    degree -= 0.004;
     window.addEventListener('resize', () => {
       onResize();
     });
@@ -301,6 +248,11 @@ function init() {
     pointGeom.attributes.position.needsUpdate = true;
 
     if (Math.sin(degree * Math.PI) < 0) {
+      const targetOpacity = 1;
+      let currentOpacity = textLine.material.opacity;
+      currentOpacity += (targetOpacity - currentOpacity) * 0.01;
+      textLine.material.opacity = currentOpacity;
+
       for (let i = 0; i < pointGeom.attributes.position.count; i++) {
         let currentX = pointGeom.attributes.position.getX(i);
         let currentY = pointGeom.attributes.position.getY(i);
@@ -314,6 +266,11 @@ function init() {
         pointGeom.attributes.position.setXYZ(i, currentX, currentY, currentZ);
       };
     } else {
+      const targetOpacity = 0;
+      let currentOpacity = textLine.material.opacity;
+      currentOpacity += (targetOpacity - currentOpacity) * 0.1;
+      textLine.material.opacity = currentOpacity;
+
       for (let i = 0; i < pointGeom.attributes.position.count; i++) {
         let currentX = pointGeom.attributes.position.getX(i);
         let currentY = pointGeom.attributes.position.getY(i);
@@ -329,14 +286,13 @@ function init() {
     }
 
     if (innerWidth > 768) {
-      // // マウスのX座標がステージの幅の何%の位置にあるか調べてそれを360度で乗算する
-      // targetRot = (mouseX / window.innerWidth) * 360;
-      // rot += (targetRot - rot) * 0.02;
-      // const radian = (rot * Math.PI) / 180;
-      // camera.position.x = 100 * Math.cos(radian);
-      // camera.position.z = 50 * Math.sin(radian);
-      // camera.lookAt(new THREE.Vector3(0, 0, 0));
-      orbitControls.update();
+      // マウスのX座標がステージの幅の何%の位置にあるか調べてそれを360度で乗算する
+      targetRot = (mouseX / window.innerWidth) * 360;
+      rot += (targetRot - rot) * 0.02;
+      const radian = (rot * Math.PI) / 180;
+      camera.position.x = 400 * Math.cos(radian);
+      camera.position.z = 300 * Math.sin(radian);
+      camera.lookAt(new THREE.Vector3(0, 0, 0));
     } else if (isMobie) {
       orbitControls.update();
     }

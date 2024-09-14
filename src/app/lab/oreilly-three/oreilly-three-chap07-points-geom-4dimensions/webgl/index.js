@@ -1,32 +1,16 @@
-// // ========================================
-// //  npm run build
-// // ========================================
-
-// import * as THREE from 'three';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
-
-// import * as dat from '../../../../common/libs/ui/dat.gui';
-// // https://github.com/dataarts/dat.gui
-// import { Stats } from '../../../../common/libs/ui/stats';
-// // https://github.com/mrdoob/stats.js
-
-// ========================================
-//  npm run dev
-// ========================================
-
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 
 import * as dat from 'dat.gui';
 // https://github.com/dataarts/dat.gui
 import * as Stats from 'stats.js';
 // https://github.com/mrdoob/stats.js
 
-window.addEventListener('load', loadFonts);
-
 const fonts = {};
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('../../../../common/images/texture/lensflare/lensflare0_alpha.png');
+const texture = textureLoader.load('/lab/oreilly-three/images/texture/lensflare/lensflare0_alpha.png');
 const positions = [];
 const rangeX = innerWidth;
 const rangeY = innerHeight;
@@ -57,9 +41,9 @@ document.addEventListener("mousemove", (event) => {
   mouseX = event.pageX;
 });
 
-function loadFonts() {
-  const fontLoader = new THREE.FontLoader();
-  fontLoader.load('../../../../common/fonts/Roboto-Thin_Regular.json', function (Roboto) {
+export default function Canvas() {
+  const fontLoader = new FontLoader();
+  fontLoader.load('/lab/oreilly-three/fonts/Roboto-Thin_Regular.json', function (Roboto) {
     fonts['Roboto'] = Roboto;
     init();
   })
@@ -105,7 +89,7 @@ function init() {
   function initStats() {
     const stats = new Stats();
     stats.setMode(0);
-    const styles = { position: 'absolute', left: 'unset', right: 0, top: 0 };
+    const styles = { position: 'absolute', left: 0, right: 'unset', top: 0 };
     Object.keys(styles).forEach(key => {
       stats.domElement.style[key] = styles[key];
     });
@@ -183,7 +167,7 @@ function init() {
       // steps: 1
     }
 
-    textGeom = new THREE.TextGeometry('Particle Art. / three.js', options);
+    textGeom = new TextGeometry('Particle Art. / three.js', options);
     textGeom.computeBoundingBox();
     textGeom.center();
 
@@ -192,10 +176,22 @@ function init() {
     })
 
     pointGeom = new THREE.BufferGeometry();
-    for (let i = 0; i < textGeom.attributes.position.count; i++) {
+    for (let i = 0; i < textGeom.attributes.position.count / 5.1; i++) {
       positions.push(Math.random() * rangeX - rangeX / 2);
+      positions.push('');
+      positions.push('');
+      positions.push('');
+      positions.push('');
       positions.push(Math.random() * rangeY - rangeY / 2);
+      positions.push('');
+      positions.push('');
+      positions.push('');
+      positions.push('');
       positions.push(Math.random() * rangeZ - rangeZ / 2);
+      positions.push('');
+      positions.push('');
+      positions.push('');
+      positions.push('');
     }
     const positionArray = new Float32Array(positions);
     pointGeom.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
@@ -245,8 +241,6 @@ function init() {
   // ========================================
   // Animation
   // ========================================
-
-  console.log(textLine)
 
   function renderScene() {
     // update

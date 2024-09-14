@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { ParametricGeometry } from 'three/addons/geometries/ParametricGeometry.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import * as dat from 'dat.gui';
 // https://github.com/dataarts/dat.gui

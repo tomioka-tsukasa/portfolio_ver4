@@ -1,29 +1,12 @@
-// ========================================
-//  npm run build
-// ========================================
-
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-import * as dat from '../../../../common/libs/ui/dat.gui';
+import * as dat from 'dat.gui';
 // https://github.com/dataarts/dat.gui
-import { Stats } from '../../../../common/libs/ui/stats';
+import * as Stats from 'stats.js';
 // https://github.com/mrdoob/stats.js
 
-// // ========================================
-// //  npm run dev
-// // ========================================
-
-// import * as THREE from 'three';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';;
-
-// import * as dat from 'dat.gui';
-// // https://github.com/dataarts/dat.gui
-// import * as Stats from 'stats.js';
-// // https://github.com/mrdoob/stats.js
-
-
-function init() {
+export default function Canvas() {
 
   // ========================================
   // Definition
@@ -69,7 +52,7 @@ function init() {
   function initStats() {
     const stats = new Stats();
     stats.setMode(0);
-    const styles = { position: 'absolute', left: 'unset', right: 0, top: 0 };
+    const styles = { position: 'absolute', left: 0, right: 'unset', top: 0 };
     Object.keys(styles).forEach(key => {
       stats.domElement.style[key] = styles[key];
     });
