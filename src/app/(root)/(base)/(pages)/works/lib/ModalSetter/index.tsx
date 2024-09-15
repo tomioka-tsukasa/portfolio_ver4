@@ -11,7 +11,6 @@ export default function ModalSetter({
   work
 }: Props ) {
   useModalSetter(
-    work.slug,
     'works',
     {work}
   )

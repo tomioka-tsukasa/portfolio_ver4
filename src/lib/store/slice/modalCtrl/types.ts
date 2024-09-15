@@ -1,6 +1,5 @@
 export interface ModalClass {
   id: string;
-  type: 'works' | string;
   pass?: Record<string, any>;
 }
 

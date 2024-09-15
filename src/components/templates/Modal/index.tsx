@@ -8,7 +8,7 @@ export default function Modal() {
   const modalCtrl = useAppSelector(selector => selector.modalCtrl)
   useModalPathnameClose()
   if (!modalCtrl.open) return
-  switch(modalCtrl.active.type) {
+  switch(modalCtrl.active.id) {
     case 'works':
       return <ModalLayout>
         <WorkDetail work={modalCtrl.active.pass?.work} />
