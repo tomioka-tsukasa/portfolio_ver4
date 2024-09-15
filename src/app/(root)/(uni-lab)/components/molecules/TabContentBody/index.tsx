@@ -10,7 +10,9 @@ export default function TabContentBody({
 }: Props ) {
   return <>
     <div className={styles.root}>
-      <FormatMarkdown body={body} mode='light' />
+      <div className={styles.inner}>
+        <FormatMarkdown body={body} mode='light' />
+      </div>
     </div>
   </>
 }
