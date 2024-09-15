@@ -15,13 +15,10 @@ export default async function Work({
   const works = contents['works-field']
   return <>
     {works.map( work => {
-      console.log(
-        params.slug === work.slug
-      )
       if (
         params.slug === work.slug
         && work["display-type"] === 'modal'
-      ) return <ModalSetter work={work} slug={params.slug} />
+      ) return <ModalSetter work={work} slug={params.slug} key={work.slug} />
     })}
   </>
 }

@@ -6,7 +6,6 @@ export type LayoutProps = {
 
 export type UseModalSetter = (
   id: ModalClass['id'],
-  type: ModalClass['type'],
   pass?: ModalClass['pass'],
 ) => void
 
