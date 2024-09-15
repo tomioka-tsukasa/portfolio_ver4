@@ -1,8 +1,8 @@
-import Heading from "@/components/atoms/Heading"
 import styles from "./_index.module.scss"
+import Heading from "@/components/atoms/Heading"
 import Image from "next/image"
 import FormatMarkdown from "@/components/organisms/FormatMarkdown"
-import UniqueButton from "../../atoms/UniqueButton"
+import UniqueButton from "@/app/(root)/(base)/(pages)/works/components/atoms/UniqueButton"
 import Button from "@/components/atoms/Button"
 import Figcaption from "@/components/atoms/Figcaption"
 
@@ -39,7 +39,7 @@ export default function WorkDetail({
           <FormatMarkdown body={work.body} />
         )}
       </div>
-      <div className={styles.back}>
+      <div className={styles.close}>
         <Button type={'routerBack'} typing={true}>
           BACK
         </Button>

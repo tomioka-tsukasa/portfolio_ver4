@@ -1,7 +1,7 @@
 export interface ModalClass {
   id: string;
   type: 'works' | string;
-  pass?: any;
+  pass?: Record<string, any>;
 }
 
 export interface InitialState {

@@ -6,7 +6,6 @@ const initialState: InitialState = {
   active: {
     id: '',
     type: '',
-    pass: ''
   }
 }
 
