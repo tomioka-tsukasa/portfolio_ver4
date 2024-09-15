@@ -5,4 +5,8 @@
   background-color: #000000;
   color: map.get($mainColor, "index");
   letter-spacing: 0.04em;
+
+  @include sp {
+    padding-bottom: 56px;
+  }
 }

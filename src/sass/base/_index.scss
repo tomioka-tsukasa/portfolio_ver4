@@ -14,10 +14,6 @@ button {
 }
 
 body {
-  @include sp {
-    padding-bottom: 56px;
-  }
-
   &:after {
     content: "";
     display: block;

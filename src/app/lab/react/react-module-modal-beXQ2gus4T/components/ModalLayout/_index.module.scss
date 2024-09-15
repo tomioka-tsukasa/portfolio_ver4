@@ -2,8 +2,8 @@
 @use "@setting" as *;
 
 .root {
-  width: 96%;
-  height: 70vh;
+  width: 100%;
+  min-height: 400px;
   padding: 32px;
   border: 1px solid map.get($mainColor, "L50");
   border-radius: 12px;
