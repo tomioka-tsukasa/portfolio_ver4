@@ -3,23 +3,21 @@
 import React, { useState } from "react"
 import styles from "./_index.module.scss"
 import { useRouter } from "next/navigation"
-import { zenOldMincho_w500, zenOldMincho_w700 } from "@/lib/fonts"
+import { zenOldMincho_w500 } from "@/lib/fonts"
 import Navigation from "@/modules/Navigation"
 import Typing from "../Typing"
 
 type Props = {
   children: string,
   href?: string,
-  tag?: 'a' | 'button',
-  type?: 'routerBack' | string,
+  type?: 'button' | 'routerBack',
   typing?: boolean
 }
 
 export default function Button({
   children,
   href = '/',
-  tag = 'a',
-  type = '',
+  type,
   typing = false,
 }: Props ) {
   const router = useRouter()
@@ -55,10 +53,20 @@ export default function Button({
           childNode
         )}
       </>
+    case 'button':
+      return <>
+        {React.createElement(
+          'button',
+          {
+            className: `${styles.root} ${zenOldMincho_w500.className}`,
+          },
+          childNode
+        )}
+      </>
     default:
       if (href.includes('http')) return <>
         {React.createElement(
-          tag,
+          'a',
           {
             className: `${styles.root} ${zenOldMincho_w500.className}`,
             href: href ? href : undefined,
