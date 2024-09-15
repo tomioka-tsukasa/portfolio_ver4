@@ -9,17 +9,15 @@ import { LayoutProps, UseModalClose, UseModalPathnameClose, UseModalSetter } fro
 
 export const useModalSetter: UseModalSetter = (
   id,
-  type,
   pass 
 ) => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(push({
       id,
-      type,
       pass
     }))
-  }, [dispatch, id, type, pass])
+  }, [dispatch, id, pass])
 }
 
 export const useModalClose: UseModalClose = () => {

@@ -5,7 +5,6 @@ const initialState: InitialState = {
   open: false,
   active: {
     id: '',
-    type: '',
   }
 }
 
