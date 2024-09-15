@@ -1,4 +1,5 @@
 import styles from "./_index.module.scss"
+import commonStyles from "../_common.module.scss"
 import Heading from "@/components/atoms/Heading"
 import TabContent from "@/modules/Tab/components/TabContent"
 import TabProvider from "@/modules/Tab/components/TabProvider"
@@ -8,7 +9,7 @@ import OtherTab from "./sections/OtherTab"
 
 export default function LabReactModuleTab() {
   return <>
-    <article className={styles.root}>
+    <article className={commonStyles.root}>
       <div className={styles.heading}>
         <Heading tag="h3" type={'border'}>
           {'最小限の実装'}
