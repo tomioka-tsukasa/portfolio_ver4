@@ -2,8 +2,17 @@
 @use "@setting" as *;
 
 .root {
-  padding: 24px;
+  padding: 48px 24px;
   border-radius: 9px;
   background-color: map.get($mainColor, "L95");
   color: map.get($baseColor, "index");
+
+  @include sp {
+    padding: 24px 12px;
+  }
+}
+
+.inner {
+  max-width: calc(720px + 24px * 2);
+  margin: 0 auto;
 }
