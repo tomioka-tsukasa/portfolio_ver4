@@ -43,6 +43,7 @@ const getRenderer: (
   const renderer = new THREE.WebGLRenderer()
   renderer.setSize( canvas.clientWidth, canvas.clientHeight )
   renderer.setClearColor(new THREE.Color(0xFFFFFF))
+  renderer.setPixelRatio(window.devicePixelRatio);
   canvas.appendChild( renderer.domElement )
   return renderer
 }
