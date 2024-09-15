@@ -20,14 +20,14 @@ export default function TabArea({
       content: <TabContentBody body={subject.body} />
     },
     {
-      id: 'dev',
-      name: '開発メモ',
-      content: <TabContentNotes notes={subject["dev-note"]} />
-    },
-    {
       id: 'design',
       name: 'タスク',
       content: <TabContentNotes notes={subject["task"]} />
+    },
+    {
+      id: 'dev',
+      name: '開発メモ',
+      content: <TabContentNotes notes={subject["dev-note"]} />
     },
   ]
   return <>

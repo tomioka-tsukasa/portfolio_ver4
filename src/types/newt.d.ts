@@ -62,8 +62,8 @@ namespace Newt {
     body: string;
     thumbnail: Thumbnail;
     groups?: Array<LabGroup>;
-    'dev-note': Array<Note>;
     'task': Array<Note>;
+    'dev-note': Array<Note>;
   }
   
   export interface Note {
