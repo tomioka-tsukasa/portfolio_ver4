@@ -2,6 +2,10 @@
 @use "@setting" as *;
 
 .root {
+  h3 {
+    background-color: map.get($baseColor, "L10");
+  }
+
   ul,
   ol {
     li {
