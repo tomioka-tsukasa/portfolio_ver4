@@ -4,14 +4,17 @@
 .root {
   width: 100%;
   max-width: 980px;
-  height: 100vh;
-  margin: 64px auto 0;
-  padding: 0 20px;
-  background-color: map.get($baseColor, "index");
-  color: map.get($mainColor, "index");
+  height: 100%;
+  margin: 0 auto;
+  padding: 64px 20px;
   word-break: break-all;
 
   > *:last-child {
     padding-bottom: 64px;
   }
+}
+
+.body {
+  background-color: map.get($baseColor, "index");
+  color: map.get($mainColor, "index");
 }

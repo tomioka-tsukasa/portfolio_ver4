@@ -1,4 +1,5 @@
 import "@/sass/globals.scss";
+import commonStyles from "./_common.module.scss"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export default function LabLayout({
 }>) {
   return <>
     <html lang="ja">
-      <body>
+      <body className={commonStyles.body}>
         {children}
       </body>
     </html>

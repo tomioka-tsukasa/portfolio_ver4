@@ -1,11 +1,11 @@
 'use client'
 
-import parse, { attributesToProps, DOMNode, domToReact } from 'html-react-parser';
-import { HTMLReactParserOptions, Element } from 'html-react-parser';
-import React from 'react';
 import base from "./styles/_base.module.scss"
 import code from "./styles/_code.module.scss"
+import iframe from "./styles/_iframe.module.scss"
 import lightMode from "./styles/_lightMode.module.scss"
+import parse, { attributesToProps, DOMNode, domToReact } from 'html-react-parser';
+import { HTMLReactParserOptions, Element } from 'html-react-parser';
 import ExternalLink from '¥/public/icons/icon-external-link.svg';
 import Image from 'next/image';
 import useNavigationAction from '@/lib/customHooks/useNavigationAction';
@@ -82,6 +82,14 @@ export default function FormatMarkdown({
         return <pre className={`${code.pre} prettyprint linenums`}>
           {domToReact(domNode.children as DOMNode[], options)}
         </pre>
+      }
+      if (domNode.name === 'iframe') {
+        const props = attributesToProps(domNode.attribs)
+        return <div className={iframe.wrapper}>
+          <iframe {...props} className={iframe.iframe}>
+            {domToReact(domNode.children as DOMNode[], options)}
+          </iframe>
+        </div>
       }
     },
   };
