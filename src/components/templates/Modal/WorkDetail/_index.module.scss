@@ -38,11 +38,11 @@
   margin-top: 48px;
 }
 
-.back {
+.close {
   display: flex;
   justify-content: center;
 }
 
-* + .back {
+* + .close {
   margin-top: 96px;
 }

@@ -1,5 +1,5 @@
 import { getContentsManagerBySlug } from "@/lib/newt"
-import { ModalSetter } from "../../../../../../components/templates/Modal"
+import ModalSetter from "../lib/ModalSetter"
 
 type Props = {
   params: {
@@ -15,14 +15,13 @@ export default async function Work({
   const works = contents['works-field']
   return <>
     {works.map( work => {
-      if (work.slug === params.slug && work["display-type"] === 'modal') {
-        return <ModalSetter 
-          key={work.slug} 
-          id={work.slug} 
-          type={'works'} 
-          pass={work} 
-        />
-      }
+      console.log(
+        params.slug === work.slug
+      )
+      if (
+        params.slug === work.slug
+        && work["display-type"] === 'modal'
+      ) return <ModalSetter work={work} slug={params.slug} />
     })}
   </>
 }
