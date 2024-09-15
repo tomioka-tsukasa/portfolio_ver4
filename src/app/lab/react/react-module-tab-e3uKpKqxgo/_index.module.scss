@@ -4,9 +4,15 @@
 .root {
   width: 980px;
   height: 100vh;
-  margin: 32px auto;
+  margin: 64px auto;
   padding: 0 20px;
   background-color: map.get($baseColor, "index");
+  color: map.get($mainColor, "index");
+  word-break: break-all;
+
+  > *:last-child {
+    padding-bottom: 64px;
+  }
 }
 
 .wrapper {
@@ -17,10 +23,18 @@
   background-color: map.get($mainColor, "L40");
 }
 
+.dummyArea {
+  margin: 32px 0;
+}
+
 * + .heading {
   margin-top: 96px;
 }
 
 * + .tabArea {
+  margin-top: 24px;
+}
+
+* + .p {
   margin-top: 24px;
 }
