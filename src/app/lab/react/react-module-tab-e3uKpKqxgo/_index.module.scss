@@ -1,20 +1,6 @@
 @use "sass:map";
 @use "@setting" as *;
 
-.root {
-  width: 980px;
-  height: 100vh;
-  margin: 64px auto;
-  padding: 0 20px;
-  background-color: map.get($baseColor, "index");
-  color: map.get($mainColor, "index");
-  word-break: break-all;
-
-  > *:last-child {
-    padding-bottom: 64px;
-  }
-}
-
 .wrapper {
   padding: 12px;
   border-top-right-radius: 9px;
