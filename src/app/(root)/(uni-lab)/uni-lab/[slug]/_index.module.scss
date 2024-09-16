@@ -3,30 +3,46 @@
 
 .root {
   margin: 32px auto auto;
+
+  @include sp {
+    margin: 64px auto auto;
+  }
 }
 
-* + .screen,
-* + .notes {
-  margin-top: 32px;
+.head {
+  @include sp {
+    padding: 0 12px;
+  }
+}
+
+* + .info {
+  margin-top: 9px;
+}
+
+* + .screen {
+  margin-top: 64px;
 }
 
 .ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 48px;
+
   @include sp {
+    flex-direction: column;
     padding: 0 20px;
   }
 }
 
-.github {
-  a {
-    display: inline-block;
-    padding: 12px 48px 13px;
-    border-radius: 9px;
-    background-color: map.get($mainColor, "L95");
-    color: map.get($baseColor, "index");
-    text-decoration: underline;
-  }
+* + .ctrl {
+  margin-top: 32px;
 }
 
 * + .github {
   margin-top: 12px;
+}
+
+* + .notes {
+  margin-top: 64px;
 }

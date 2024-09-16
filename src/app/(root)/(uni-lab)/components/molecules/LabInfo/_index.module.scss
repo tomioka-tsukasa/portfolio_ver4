@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px 16px;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  gap: 6px 12px;
+}

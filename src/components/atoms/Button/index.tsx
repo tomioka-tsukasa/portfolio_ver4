@@ -11,7 +11,8 @@ type Props = {
   children: string,
   href?: string,
   type?: 'button' | 'routerBack',
-  typing?: boolean
+  typing?: boolean,
+  external?: boolean,
 }
 
 export default function Button({
@@ -19,6 +20,7 @@ export default function Button({
   href = '/',
   type,
   typing = false,
+  external = false
 }: Props ) {
   const router = useRouter()
   const backClickHander = () => {
@@ -64,13 +66,16 @@ export default function Button({
         )}
       </>
     default:
-      if (href.includes('http')) return <>
+      if (
+        href.includes('http')
+        || external
+      ) return <>
         {React.createElement(
           'a',
           {
             className: `${styles.root} ${zenOldMincho_w500.className}`,
             href: href ? href : undefined,
-            target: href.includes('http') ? '_blank' : undefined
+            target: '_blank'
           },
           childNode
         )}

@@ -32,21 +32,8 @@
   font-size: 14px;
 }
 
-.info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 9px 16px;
-}
-
 * + .info {
   margin-top: 9px;
-}
-
-.labels {
-  display: flex;
-  align-items: center;
-  gap: 6px 12px;
 }
 
 * + .cont {

@@ -1,10 +1,9 @@
 import styles from "./_index.module.scss"
-import Label from "@/components/atoms/Label";
-import UpdateDate from "../UpdateDate";
 import Image from "next/image";
 import { zenKakuGothicNew_w400, zenKakuGothicNew_w700 } from "@/lib/fonts";
 import parse from 'html-react-parser';
 import Navigation from "@/modules/Navigation";
+import LabInfo from "@/app/(root)/(uni-lab)/components/molecules/LabInfo";
 
 type Props = {
   subject: Newt.LabSubject,
@@ -31,19 +30,7 @@ export default function LabSubjectItem({
           {subject.title.length <= 54 ? '' : '...'}
         </p>
         <div className={styles.info}> 
-          {subject.status.length
-            ? <ul className={styles.labels}>
-              {subject.status.map( label => (
-                <li key={label}>
-                  <Label slug={label} />
-                </li>
-              ))}
-            </ul>
-            : undefined
-          }
-          <div className={styles.date}>
-            <UpdateDate updateTime={subject._sys.raw.updatedAt} />
-          </div>
+          <LabInfo subject={subject} />
         </div>
       </div>
       <div className={styles.cont}>
