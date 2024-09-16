@@ -6,6 +6,7 @@ import Heading from "@/components/atoms/Heading";
 import { zenKakuGothicNew_w700 } from "@/lib/fonts";
 import LabInfo from "../../components/molecules/LabInfo";
 import Button from "@/components/atoms/Button";
+import BackButton from "../../components/molecules/BackButton";
 
 type Props = {
   params: {
@@ -21,6 +22,9 @@ export default async function ULSubject({
   if (!subject) return
   return <>
     <main className={styles.root}>
+      <div className={styles.back}>
+        <BackButton />
+      </div>
       <div className={styles.head}>
         <div className={`${styles.title} ${zenKakuGothicNew_w700.className}`}> 
           <Heading>

@@ -2,7 +2,7 @@
 @use "@setting" as *;
 
 .root {
-  margin: 32px auto auto;
+  margin: 64px auto auto;
 
   @include sp {
     margin: 64px auto auto;

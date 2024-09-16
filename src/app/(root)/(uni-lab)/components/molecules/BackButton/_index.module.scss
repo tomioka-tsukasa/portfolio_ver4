@@ -1,0 +1,43 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  position: fixed;
+  z-index: 999;
+  top: 26px;
+  left: 94px;
+
+  @include sp {
+    left: 12px;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 3px 12px;
+  transition: all 0.5s ease 0s;
+  border: 1px solid map.get($mainColor, "L20");
+  border-radius: 3px;
+  background-color: map.get($baseColor, "L70");
+  gap: 0 6px;
+
+  &:hover {
+    @include pc {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+.arrow {
+  transform: rotate(180deg);
+}
+
+.text {
+  font-size: 15px;
+
+  @include sp {
+    font-size: 13px;
+  }
+}
