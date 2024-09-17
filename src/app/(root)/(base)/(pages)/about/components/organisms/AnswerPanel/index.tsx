@@ -2,7 +2,7 @@ import { getContentsManagerBySlug } from "@/lib/newt";
 import styles from "./_index.module.scss"
 import AnswerMessage from "../../atoms/AnswerMessage";
 import Image from "next/image";
-import ProfileIcon from "¥/public/imgs/img-profile-icon-tomioka-tsukasa.jpg"
+import ProfileIcon from "¥/public/assets/imgs/img-profile-icon-tomioka-tsukasa.jpg"
 
 export default async function AnswerPanel() {
   const contents = await getContentsManagerBySlug('portfolio-talkme');

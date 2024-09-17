@@ -6,7 +6,7 @@ import iframe from "./styles/_iframe.module.scss"
 import lightMode from "./styles/_lightMode.module.scss"
 import parse, { attributesToProps, DOMNode, domToReact } from 'html-react-parser';
 import { HTMLReactParserOptions, Element } from 'html-react-parser';
-import ExternalLink from '¥/public/icons/icon-external-link.svg';
+import ExternalLink from '¥/public/assets/icons/icon-external-link.svg';
 import Image from 'next/image';
 import useNavigationAction from '@/lib/customHooks/useNavigationAction';
 import injectCodePrettify from '@/lib/utils/injectCodePrettify';

@@ -1,6 +1,6 @@
 import styles from "./_index.module.scss"
 import Image from "next/image";
-import logo from "/public/logo/logo-unilab.png"
+import logo from "¥/public/assets/logo/logo-unilab.png"
 import { zenOldMincho_w700 } from "@/lib/fonts";
 import LabNav from "../components/organisms/LabNav/_index";
 
