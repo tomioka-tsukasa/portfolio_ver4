@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./_index.module.scss"
-import icon from "¥/public/icons/icon-github-logo.svg"
+import icon from "¥/public/assets/icons/icon-github-logo.svg"
 
 type Props = {
   href?: string
