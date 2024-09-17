@@ -3,7 +3,6 @@ import LabGroupHead from "@/app/(root)/(uni-lab)/components/molecules/LabGroupHe
 import Button from "@/components/atoms/Button"
 import LabSubjectList from "@/components/organisms/LabSubjectList"
 import { getLabGroup, getLabGroupBySlug, getLabSubjects } from "@/lib/newt"
-import { Metadata } from "next"
 
 type StaticParams = {
   slug: string
@@ -42,13 +41,4 @@ export async function generateStaticParams() {
       slug: group.slug
     }
   ))
-}
-
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    robots: {
-      index: false,
-      follow: false
-    },
-  }
 }

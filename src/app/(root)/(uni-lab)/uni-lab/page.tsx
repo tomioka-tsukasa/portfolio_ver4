@@ -3,7 +3,6 @@ import Image from "next/image";
 import logo from "¥/public/assets/logo/logo-unilab.png"
 import { zenOldMincho_w700 } from "@/lib/fonts";
 import LabNav from "../components/organisms/LabNav/_index";
-import { Metadata } from "next";
 
 export default function ULHome() {
   return <>
@@ -21,13 +20,4 @@ export default function ULHome() {
       <LabNav />
     </main>
   </>
-}
-
-export async function generateMetadata(): Promise<Metadata> {
-  return {
-    robots: {
-      index: false,
-      follow: false
-    },
-  }
 }
