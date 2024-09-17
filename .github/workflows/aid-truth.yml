@@ -7,7 +7,7 @@ on:
     types: [closed]
 
   repository_dispatch:
-    types: [AT_Newt_Manual_Deploy]
+    types: [AT_UniLab_Newt_Manual_Deploy]
 
 jobs:
   ftp-deploy:
