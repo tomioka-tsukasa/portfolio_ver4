@@ -42,6 +42,7 @@ jobs:
           mkdir -p ./upload
           rsync -av --progress ./out/_next/ ./upload/_next/
           rsync -av --progress ./out/uni-lab/ ./upload/uni-lab/
+          rsync -av --progress ./out/assets/ ./upload/assets/
           rsync -av --progress ./out/lab/ ./upload/lab/
 
       - name: Sync files
