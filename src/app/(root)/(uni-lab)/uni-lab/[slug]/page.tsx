@@ -7,6 +7,7 @@ import { zenKakuGothicNew_w700 } from "@/lib/fonts";
 import LabInfo from "../../components/molecules/LabInfo";
 import Button from "@/components/atoms/Button";
 import BackButton from "../../components/molecules/BackButton";
+import { Metadata } from "next";
 
 type Props = {
   params: {
@@ -69,4 +70,13 @@ export async function generateStaticParams() {
       slug: item.slug
     }
   ))
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    robots: {
+      index: false,
+      follow: false
+    },
+  }
 }
