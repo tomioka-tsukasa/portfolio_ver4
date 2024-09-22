@@ -1,4 +1,4 @@
-import { setHover } from "../hover"
+import { setHover } from "../attachments/setHover"
 import { setCurrent, setTarget } from "./statics"
 import { CursorOption } from "./types"
 
