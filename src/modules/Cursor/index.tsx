@@ -6,7 +6,7 @@ type Props = {
   body: React.ReactNode,
 }
 
-export default function Cusor({
+export default function Cursor({
   body,
 }: Props ) {
   return <>
