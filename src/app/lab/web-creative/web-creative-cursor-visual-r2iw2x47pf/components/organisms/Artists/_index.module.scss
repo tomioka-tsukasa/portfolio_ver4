@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  gap: 64px;
+  justify-content: center;
+
+  @include sp {
+    flex-direction: column;
+  }
+}
+
+.list {
+  @include pc {
+    min-width: 40%;
+    margin-top: 40px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px 0;
+
+  @include pc {
+    width: max-content;
+  }
+}
+
+.title {
+  font-size: 36px;
+
+  @include sp {
+    font-size: 24px;
+  }
+}
+
+.en {
+  font-size: 16px;
+
+  @include sp {
+    font-size: 14px;
+  }
+}
+
+.jp {
+  font-size: 14px;
+  line-height: 2;
+
+  @include sp {
+    font-size: 12px;
+  }
+}

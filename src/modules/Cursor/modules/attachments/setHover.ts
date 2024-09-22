@@ -46,7 +46,6 @@ const setHover = (
   cursors?: string,
   triggers: string = 'a',
 ) => {
-  console.log(cursors)
   const triggerNodes = document.querySelectorAll(triggers) as NodeListOf<HTMLElement>
   triggerNodes.forEach( node => {
     enterHandler(
