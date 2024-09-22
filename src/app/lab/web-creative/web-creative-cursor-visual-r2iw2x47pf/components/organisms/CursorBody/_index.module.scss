@@ -1,12 +1,12 @@
 @use "sass:map";
 @use "@setting" as *;
 
-$transition: all 0.5s ease 0s;
+$transition: all 1s ease 0s;
 
 .inner {
   position: absolute;
-  width: 26vw;
-  height: 54vh;
+  width: 385px;
+  aspect-ratio: 9 / 14;
   border: 1px solid transparent;
 }
 
@@ -26,7 +26,7 @@ $transition: all 0.5s ease 0s;
   @include bgGradient;
 }
 
-.item {
+.items {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,7 +36,7 @@ $transition: all 0.5s ease 0s;
 
 [data-mod-cursor-ishover="active"] {
   .innerDesign {
-    transform: translate(24px, 24px);
+    transform: translate(-24px, -24px);
     opacity: 1;
   }
 }

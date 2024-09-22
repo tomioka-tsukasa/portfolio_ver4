@@ -3,6 +3,7 @@
 import { Cursor } from "@/modules/Cursor/modules/basic"
 import styles from "./_index.module.scss"
 import { useEffect } from "react"
+import Items from "../../molecules/Items"
 
 export default function CursorBody() {
   useEffect(() => {
@@ -17,7 +18,8 @@ export default function CursorBody() {
   return <>
     <div className={`${styles.inner}`} data-mod-cursor="body-inner">
       <div className={`${styles.innerDesign}`}>
-        <div className={`${styles.item}`}> 
+        <div className={`${styles.items}`}>
+          <Items />
         </div>
       </div>
     </div>

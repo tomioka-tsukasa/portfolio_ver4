@@ -3,10 +3,14 @@
 
 .root {
   height: 100vh;
-  padding: 80px 0;
+  padding: 80px 32px;
   overflow-y: scroll;
   border: 1px solid map.get($mainColor, "index");
   color: map.get($mainColor, "index");
+
+  @include sp {
+    padding: 40px 16px;
+  }
 
   a {
     &:hover {
