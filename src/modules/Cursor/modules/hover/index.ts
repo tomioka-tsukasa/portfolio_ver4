@@ -1,31 +1,65 @@
-type SetHover = (
-  cursors?: string,
-  triggers?: string,
-) => void
+const setCursorStatus = (
+  statusName: string,
+  cursors: string,
+) => {
+  if (cursors) {
+    const cursorNodes = document.querySelectorAll(cursors) as NodeListOf<HTMLElement>
+    cursorNodes && (cursorNodes.forEach( cursor => {
+      cursor.dataset.modCursorIshover = statusName
+    }))
+  }
+}
 
-export const setHover: SetHover = (
-  cursors,
-  triggers = 'a',
+const enterHandler = (
+  statusName: string,
+  target: HTMLElement,
+  cursors?: string,
+) => {
+  const handler = (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+    target.dataset.modCursorIshover = statusName
+    if (cursors) setCursorStatus(
+      statusName,
+      cursors,
+    )
+  }
+  target.addEventListener('mouseenter', handler)
+}
+
+const leaveHandler = (
+  statusName: string,
+  target: HTMLElement,
+  cursors?: string,
+) => {
+  const handler = (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+    target.dataset.modCursorIshover = statusName
+    if (cursors) setCursorStatus(
+      statusName,
+      cursors,
+    )
+  }
+  target.addEventListener('mouseleave', handler) 
+}
+
+const setHover = (
+  cursors?: string,
+  triggers: string = 'a',
 ) => {
   console.log(cursors)
   const triggerNodes = document.querySelectorAll(triggers) as NodeListOf<HTMLElement>
-  const cursorNodes = cursors && document.querySelectorAll(cursors) as NodeListOf<HTMLElement>
   triggerNodes.forEach( node => {
-    const enterHandler = (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-      target.dataset.modCursorIshover = 'active'
-      cursorNodes && (cursorNodes.forEach( cursor => {
-        cursor.dataset.modCursorIshover = 'active'
-      }))
-    }
-    const leaveHandler = (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-      target.dataset.modCursorIshover = 'unactive'
-      cursorNodes && (cursorNodes.forEach( cursor => {
-        cursor.dataset.modCursorIshover = 'unactive'
-      }))
-    }
-    node.addEventListener('mouseenter', enterHandler)
-    node.addEventListener('mouseleave', leaveHandler)
+    enterHandler(
+      'active',
+      node,
+      cursors
+    )
+    leaveHandler(
+      'unactive',
+      node,
+      cursors
+    )
   })
 }
+
+export { setHover }
