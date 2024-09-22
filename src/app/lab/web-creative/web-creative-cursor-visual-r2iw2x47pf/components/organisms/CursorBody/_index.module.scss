@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "@setting" as *;
+
+$transition: all 0.5s ease 0s;
+
+.inner {
+  position: absolute;
+  width: 26vw;
+  height: 54vh;
+  border: 1px solid transparent;
+}
+
+.innerDesign {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: $transition;
+  border-top-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  opacity: 0;
+
+  @include bgGradient;
+}
+
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+[data-mod-cursor-ishover="active"] {
+  .innerDesign {
+    transform: translate(24px, 24px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  height: 100vh;
+  padding: 80px 0;
+  overflow-y: scroll;
+  border: 1px solid map.get($mainColor, "index");
+  color: map.get($mainColor, "index");
+
+  a {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
