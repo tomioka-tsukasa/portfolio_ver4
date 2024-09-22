@@ -5,6 +5,7 @@ import { CursorOption } from "./types"
 export class Cursor {
   constructor(
     bodys: Array<CursorOption>,
+    hovers?: string,
     attachment?: any,
   ) {
     bodys.map( body => {
@@ -13,7 +14,10 @@ export class Cursor {
         body.duration
       )
     })
-    setHover(bodys.map( body => body.bodyName).join(','))
+    setHover(
+      bodys.map( body => body.bodyName).join(','),
+      hovers
+    )
     attachment && attachment()
   }
 
