@@ -8,12 +8,12 @@ export default function CursorBody() {
   useEffect(() => {
     new Cursor([
       {
-        bodyName: '[data-mod-cursor="body-outter"]',
-        duration: 0.08
+        name: '[data-mod-cursor="body-outter"]',
+        duration: 0.08,
       },
       {
-        bodyName: '[data-mod-cursor="body-inner"]',
-        duration: 0.2
+        name: '[data-mod-cursor="body-inner"]',
+        duration: 0.2,
       },
     ], 'a, [data-mod-cursor-item="hover"]')
   }, [])
