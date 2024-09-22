@@ -1,3 +1,5 @@
+import { BodyMember } from "./types"
+
 const setTarget = (
   target = {x: 0, y: 0},
 ) => {
@@ -9,16 +11,20 @@ const setTarget = (
 }
 
 const setCurrent = (
-  target = {x: 0, y: 0},
-  current = {x: 0, y: 0},
+  pos = {
+    target: {x: 0, y: 0},
+    current: {x: 0, y: 0},
+  },
   node: HTMLElement,
-  duration: number,
+  body: BodyMember
 ) => {
+  const duration = body.duration ?? 1
+  const gap = body.gap ?? 1
   const tick: () => number = () => {
-    current.x += (target.x - current.x) * duration
-    current.y += (target.y - current.y) * duration
-    const top = `${Math.floor(current.y) - node.clientHeight / 2}px`
-    const left = `${Math.floor(current.x) - node.clientWidth / 2}px`
+    pos.current.x += (pos.target.x - pos.current.x) * duration * gap
+    pos.current.y += (pos.target.y - pos.current.y) * duration * gap
+    const top = `${Math.floor(pos.current.y) - node.clientHeight / 2}px`
+    const left = `${Math.floor(pos.current.x) - node.clientWidth / 2}px`
     node.style.top = top
     node.style.left = left
     requestAnimationFrame(tick)

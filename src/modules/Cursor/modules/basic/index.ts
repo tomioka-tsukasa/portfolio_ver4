@@ -1,41 +1,35 @@
 import { setHover } from "../attachments/setHover"
 import { setCurrent, setTarget } from "./statics"
-import { CursorOption } from "./types"
+import { BodyMember } from "./types"
 
 export class Cursor {
   constructor(
-    bodys: Array<CursorOption>,
+    bodys: Array<BodyMember>,
     hovers?: string,
     attachment?: any,
   ) {
     bodys.map( body => {
-      this.setPointer(
-        body.bodyName,
-        body.duration
-      )
+      this.setPointer(body)
     })
     setHover(
-      bodys.map( body => body.bodyName).join(','),
+      bodys.map( body => body.name).join(','),
       hovers
     )
     attachment && attachment()
   }
 
-  private setPointer(
-    bodyName: string,
-    duration: number,
-  ) {
-    const node: HTMLElement | null = document.querySelector(bodyName)
+  private setPointer(body: BodyMember) {
+    const node: HTMLElement | null = document.querySelector(body.name)
     if (!node) return
-    this.mover(node, duration)
+    this.mover(node, body)
   }
 
   private mover: (
     node: HTMLElement,
-    duration: number,
+    body: BodyMember
   ) => void = (
     node,
-    duration,
+    body,
   ) => {
     const posTarget = {
       x: 0,
@@ -49,10 +43,12 @@ export class Cursor {
       posTarget,
     )
     setCurrent(
-      posTarget,
-      posCurrent,
+      {
+        target: posTarget,
+        current: posCurrent,
+      },
       node,
-      duration
+      body
     )
   }
 }

@@ -1,6 +1,7 @@
-export type CursorOption = {
-  bodyName: string,
-  duration: number,
+export type BodyMember = {
+  name: string,
+  duration?: number,
+  gap?: number,
 }
 
 export type ProxySet = (
@@ -9,7 +10,3 @@ export type ProxySet = (
   value: string,
   receiver: any
 ) => boolean;
-
-export type ProxyHandler = (
-  
-)
