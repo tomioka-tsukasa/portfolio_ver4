@@ -13,9 +13,9 @@ export default function CursorBody() {
       },
       {
         bodyName: '[data-mod-cursor="body-inner"]',
-        duration: 0.1
+        duration: 0.2
       },
-    ])
+    ], 'a, [data-mod-cursor-item="hover"]')
   }, [])
   return <>
     <div className={`${styles.outter}`} data-mod-cursor="body-outter">
