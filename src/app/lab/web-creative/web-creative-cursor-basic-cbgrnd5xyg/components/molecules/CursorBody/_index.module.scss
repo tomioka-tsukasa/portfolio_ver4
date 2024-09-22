@@ -1,0 +1,55 @@
+@use "sass:map";
+@use "@setting" as *;
+
+$size: 65px;
+$transition: all 0.5s ease 0s;
+
+.outter {
+  position: absolute;
+  width: $size;
+  height: $size;
+}
+
+.outterDesign {
+  width: 100%;
+  height: 100%;
+  transition: $transition;
+  border: 1px solid map.get($mainColor, "L50");
+  border-radius: 50%;
+}
+
+.inner {
+  position: absolute;
+  width: $size;
+  height: $size;
+  border: 1px solid transparent;
+}
+
+.innerDesign {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: $transition;
+
+  &:before {
+    content: "";
+    display: block;
+    width: calc($size / 100 * 40);
+    height: calc($size / 100 * 40);
+    border-radius: 50%;
+    backdrop-filter: invert(100%);
+  }
+}
+
+[data-mod-cursor-ishover="active"] {
+  .innerDesign {
+    transform: scale(2);
+  }
+
+  .outterDesign {
+    transform: scale(2);
+  }
+}

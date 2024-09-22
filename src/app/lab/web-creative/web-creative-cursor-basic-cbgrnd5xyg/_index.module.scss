@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  width: 100%;
+  height: 100vh;
+  cursor: none;
+
+  * {
+    cursor: none;
+  }
+}
