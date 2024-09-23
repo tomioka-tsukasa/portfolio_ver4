@@ -35,7 +35,10 @@ jobs:
           echo "${{ secrets.ENV_LOCAL }}" > $GITHUB_WORKSPACE/.env.local
 
       - name: Build
-        run: yarn build
+        run: |
+          rm -rf .next
+          yarn clean
+          yarn build
 
       - name: Setup Temporary Upload Directory
         run: |
