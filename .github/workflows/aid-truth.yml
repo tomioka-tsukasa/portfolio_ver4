@@ -39,6 +39,7 @@ jobs:
 
       - name: Setup Temporary Upload Directory
         run: |
+          rm -rf ./upload
           mkdir -p ./upload
           rsync -av --progress ./out/_next/ ./upload/_next/
           rsync -av --progress ./out/uni-lab/ ./upload/uni-lab/
