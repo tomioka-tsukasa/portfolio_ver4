@@ -4,7 +4,7 @@ import { getCamera, getControls, getLight, getRenderer } from './module'
 
 export default function Canvas() {
   const loader = new GLTFLoader()
-  loader.load('/lab/webgl/webgl-3dmodel-try-wssyr74yrp/tv-cabinet.glb', (model) => {
+  loader.load('/lab/webgl/webgl-3dmodel-try-001/tv-cabinet.glb', (model) => {
     Init(model)
   })
 }
