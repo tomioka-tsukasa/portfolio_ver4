@@ -35,9 +35,10 @@ jobs:
           echo "${{ secrets.ENV_LOCAL }}" > $GITHUB_WORKSPACE/.env.local
 
       - name: Build
-        run: rm -rf .next
-        run: yarn build
-
+        run: |
+          rm -rf .next
+          yarn build
+          
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
