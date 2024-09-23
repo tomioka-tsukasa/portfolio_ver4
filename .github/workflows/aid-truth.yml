@@ -26,6 +26,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
+          
+      - name: Clear Cache
+        run: |
+          rm -rf ~/.cache
+          rm -rf node_modules
+          rm -f yarn.lock
 
       - name: Install Dependencies
         run: yarn install
@@ -35,7 +41,9 @@ jobs:
           echo "${{ secrets.ENV_LOCAL }}" > $GITHUB_WORKSPACE/.env.local
 
       - name: Build
-        run: yarn build
+        run: |
+          rm -rf .next
+          yarn build
 
       - name: Setup Temporary Upload Directory
         run: |
