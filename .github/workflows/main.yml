@@ -26,6 +26,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
+          
+      - name: Clear Cache
+        run: |
+          rm -rf ~/.cache
+          rm -rf node_modules
+          rm -f yarn.lock
 
       - name: Install Dependencies
         run: yarn install
@@ -38,7 +44,7 @@ jobs:
         run: |
           rm -rf .next
           yarn build
-          
+
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
