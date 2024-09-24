@@ -22,18 +22,19 @@ export default function ArtistList() {
     })
   }
   return <>
-    <div className={`${styles.root}`}> 
-      {artists.map( artist => <a 
-        href="" 
-        className={`${styles.item}`} 
-        onMouseEnter={enterHandler} 
-        onMouseLeave={leaveHandler}
-        data-artist-id={artist.id}
-        key={artist.id}
-      >
-        <ListStyle active={status.active === artist.id} />
-        <ListName text={artist.name} active={status.active === artist.id} />
-      </a>)}
-    </div>
+    <ul className={`${styles.root}`}> 
+      {artists.map( artist => <li className={`${styles.item}`} key={artist.id}>
+        <a 
+          href="./" 
+          className={styles.link}
+          onMouseEnter={enterHandler} 
+          onMouseLeave={leaveHandler}
+          data-artist-id={artist.id}
+        >
+          <ListStyle active={status.active === artist.id} />
+          <ListName text={artist.name} active={status.active === artist.id} />
+        </a>
+      </li>)}
+    </ul>
   </>
 }

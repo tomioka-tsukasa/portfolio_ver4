@@ -8,14 +8,16 @@
 }
 
 .item {
+  &:not(:last-child) {
+    border-bottom: 1px solid map.get($mainColor, "L50");
+  }
+}
+
+.link {
   display: flex;
   align-items: center;
   width: 100%;
   padding: 40px 0 64px;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid map.get($mainColor, "L50");
-  }
 
   * {
     pointer-events: none;
