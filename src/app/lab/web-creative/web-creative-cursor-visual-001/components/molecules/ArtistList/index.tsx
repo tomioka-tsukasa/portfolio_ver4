@@ -2,6 +2,8 @@
 
 import { useChangeContext, useStateContext } from "../../../store"
 import { artists } from "../../../store/artists"
+import ListName from "../../atoms/ListName"
+import ListStyle from "../../atoms/ListStyle"
 import styles from "./_index.module.scss"
 
 export default function ArtistList() {
@@ -29,10 +31,8 @@ export default function ArtistList() {
         data-artist-id={artist.id}
         key={artist.id}
       >
-        <span className={`${styles.listStyle} ${status.active === artist.id ? styles.listStyleIsActive : ''}`}></span>
-        <span className={`${styles.name} ${status.active === artist.id ? styles.nameIsActive : ''}`}>
-          {artist.name}
-        </span>
+        <ListStyle active={status.active === artist.id} />
+        <ListName text={artist.name} active={status.active === artist.id} />
       </a>)}
     </div>
   </>
