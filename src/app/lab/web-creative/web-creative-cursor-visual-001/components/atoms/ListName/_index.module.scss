@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: block;
+  transition: all 0.5s ease 0s;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+.isActive {
+  background-color: map.get($mainColor, "index");
+  color: map.get($baseColor, "index");
+}
