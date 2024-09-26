@@ -23,6 +23,6 @@
       "@setting": ["./src/sass/setting/_index.scss"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/types/unilab.d.ts", "app/types/newt.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/types/unilab.d.ts", "app/types/newt.d.ts", "node_modules/gsap/types/index.d.ts"],
   "exclude": ["node_modules"]
 }

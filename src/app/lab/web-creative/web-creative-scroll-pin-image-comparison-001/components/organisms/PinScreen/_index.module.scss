@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+
+  @include pc {
+    margin: 96px 40px 40px 64px;
+  }
+
+  @include sp {
+    margin: 96px 20px 20px 20px;
+  }
+}
+
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.before {
+  z-index: 1;
+
+  &[data-gsap-item="before"] {
+    filter: grayscale(100%) brightness(160%);
+  }
+}
+
+.after {
+  z-index: 0;
+
+  &[data-gsap-item="after"] {
+    filter: brightness(120%);
+  }
+}

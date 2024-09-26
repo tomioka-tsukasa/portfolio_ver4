@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  max-width: 1080px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #ffffff;
+}
