@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.content {
+  position: absolute;
+  z-index: 2;
+  background-color: map.get($mainColor, "index");
+
+  @include pc {
+    top: 20%;
+    left: 88%;
+    min-width: 400px;
+    padding: 40px;
+  }
+
+  @include sp {
+    top: 94%;
+    left: 10%;
+    width: calc(90% - 20px);
+    padding: 20px;
+  }
+}
+
+.paragraph {
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include sp {
+    font-size: 10px;
+  }
+}
+
+.copy {
+  position: absolute;
+  z-index: -1;
+  top: -120px;
+  left: -180px;
+  opacity: 0.05;
+  font-size: 120px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
