@@ -1,0 +1,46 @@
+.COMP_screenTable {
+  display: flex;
+  align-items: center;
+}
+
+.COMP_screenTable .label {
+  width: 30px;
+  height: 30px;
+}
+
+.COMP_screenTable .panels {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(30px * 15);
+}
+
+.COMP_screenTable .panel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.COMP_ballPanel {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: #ffffff;
+}
+
+.COMP_ballPanel .isActive {
+  background-color: rgba(255, 255, 0, .3);
+}
+
+.COMP_ballPanel .number {
+  display: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.COMP_ballPanel .number .isActive {
+  display: inline-block;
+}
