@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+
+  > * {
+    &:first-child {
+      transform: scaleX(-1);
+    }
+  }
+}

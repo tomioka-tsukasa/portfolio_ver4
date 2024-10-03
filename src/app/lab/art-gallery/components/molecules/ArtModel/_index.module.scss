@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 16px 0;
+}
+
+.image {
+  display: inline-flex;
+  box-shadow: 0 0 16px rgba(#ffffff, 0.32);
+
+  img {
+    flex-shrink: 0;
+    height: auto;
+  }
+}

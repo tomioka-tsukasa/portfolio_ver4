@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.html {
+  background-color: #cccccc;
+}
+
+.body {
+  aspect-ratio: 390 / 844;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 64px;
+  overflow: hidden;
+  background-color: #000000;
+  color: #000000;
+}
+
+.gallery {
+  padding: 20px 0 0 0;
+}
+
+.nav {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 50%;
+  width: calc(100vh * (390 / 844));
+  height: 64px;
+  transform: translate(-50%);
+}
