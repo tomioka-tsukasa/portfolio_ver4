@@ -8,8 +8,8 @@ type Props = {
   scrollObserve?: boolean
 }
 
-const getBodyLeft = () => {
-  return innerHeight * (390 / 844)
+const bodyMarginLeft = () => {
+  return (innerWidth - document.body.clientWidth) / 2
 }
 
 const observe: (
@@ -19,7 +19,7 @@ const observe: (
 ) => {
   const rect = e?.getBoundingClientRect()
   if (!rect || !e) return false
-  return rect.x - getBodyLeft() < document.body.clientWidth / 1.8
+  return rect.x - bodyMarginLeft() < document.body.clientWidth / 1.8
 }
 
 const scrollTrigger = (
@@ -40,12 +40,10 @@ export default function ArtModel({
 }: Props ) {
   const [isView, setView] = useState<boolean>(true)
   useEffect(() => {
-    setTimeout(() => {
-      scrollTrigger(
-        artModel,
-        setView
-      )
-    }, 1000);
+    scrollTrigger(
+      artModel,
+      setView
+    )
   }, [artModel, isView, setView])
   return <>
     <div className={styles.root}>
