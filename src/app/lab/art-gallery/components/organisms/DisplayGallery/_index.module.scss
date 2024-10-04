@@ -4,6 +4,12 @@
 .root {
   overflow-x: scroll;
   overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.root::-webkit-scrollbar {
+  display: none;
 }
 
 .content {
@@ -13,7 +19,7 @@
 }
 
 .artModel {
-  width: calc((294 / 390) * (100vh * (390 / 844)));
+  width: calc((264 / 390) * (100vh * (390 / 844)));
 
   &:nth-child(6n + 1) {
     transform: translate(0, 28px);

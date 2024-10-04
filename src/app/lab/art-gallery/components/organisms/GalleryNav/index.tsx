@@ -9,10 +9,10 @@ export default function GalleryNav({
   return <>
     <div className={styles.root}>
       <div className={styles.buttons}>
-        <button>
+        <button id='scroll-left'>
           <ProgressArrow />
         </button>
-        <button>
+        <button id='scroll-right'>
           <ProgressArrow />
         </button>
       </div>
