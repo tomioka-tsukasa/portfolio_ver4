@@ -1,17 +1,8 @@
-import { useEffect } from "react"
 import { ArtSampleModels } from "../../../data/art-sample-models"
 import ArtModel from "../../molecules/ArtModel"
 import styles from "./_index.module.scss"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/all"
 
-type Props = {
-}
-
-export default function DisplayGallery({
-}: Props ) {
-  useEffect(() => {
-  }, [])
+export default function DisplayGallery() {
   return <>
     <div className={`${styles.root}`} id='scroll-container'>
       <div className={`${styles.content}`} id='scroll-content'>
