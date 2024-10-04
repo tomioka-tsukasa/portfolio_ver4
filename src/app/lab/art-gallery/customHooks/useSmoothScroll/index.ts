@@ -1,4 +1,4 @@
-import { easeOutQuart } from "./easing";
+import { easeInOutQuart, easeOutQuart } from "./easing";
 import { smoothScroll, smoothScrollAuto, startAutoScroll, touchCtrl } from "./statics"
 import { ScrollDirection } from "./types";
 
@@ -32,11 +32,11 @@ const useSmoothScroll = () => {
       status.onEaseOut.active = false
       smoothScrollAuto(
         container,
-        direction === 'next' ? 9 : -9,
+        direction === 'next' ? 7.5 : -7.5,
         status.onTouch,
         () => smoothScroll(
           container,
-          direction === 'next' ? 100 : -100,
+          direction === 'next' ? 75 : -75,
           1000,
           easeOutQuart,
           status.onEaseOut,
@@ -48,6 +48,11 @@ const useSmoothScroll = () => {
     if (status.onTouch.active) {
       status.onTouch.active = false
       status.onEaseOut.active = true
+      status.auto.active = true
+      startAutoScroll(
+        container,
+        status
+      )
     }
   }
   touchCtrl(
@@ -62,9 +67,21 @@ const useSmoothScroll = () => {
     onTouchStart,
     onTouchEnd
   )
-  startAutoScroll(
+  container.scrollLeft = container.scrollWidth - container.clientWidth
+  smoothScroll(
     container,
-    status
+    -(container.scrollWidth - container.clientWidth),
+    3000,
+    easeInOutQuart,
+    {
+      active: true
+    },
+    () => {
+      startAutoScroll(
+        container,
+        status
+      )
+    }
   )
 }
 
