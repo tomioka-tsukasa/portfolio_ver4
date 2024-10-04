@@ -17,6 +17,18 @@ export const useSmoothScroll = () => {
   const onTouchScroll = {
     active: false, 
   }
+  const startAutoScroll = (
+    autoScroll: {
+      active: boolean
+    }
+  ) => {
+    autoScroll.active = true
+    smoothScrollAuto(
+      container,
+      0.5,
+      autoScroll
+    )
+  }
   const onTouchStart = (
     direction: ScrollDirection
   ) => {
@@ -35,12 +47,7 @@ export const useSmoothScroll = () => {
   ) => {
     if (onTouchScroll.active) {
       onTouchScroll.active = false
-      autoScroll.active = true
-      smoothScrollAuto(
-        container,
-        0.5,
-        autoScroll
-      )
+      startAutoScroll(autoScroll)
       smoothScroll(
         container,
         direction === 'next' ? 36 : -36,
@@ -62,9 +69,5 @@ export const useSmoothScroll = () => {
     onTouchStart,
     onTouchEnd
   )
-  smoothScrollAuto(
-    container,
-    0.5,
-    autoScroll
-  )
+  startAutoScroll(autoScroll)
 }

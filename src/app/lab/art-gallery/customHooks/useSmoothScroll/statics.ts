@@ -21,16 +21,19 @@ const smoothScroll: Scroll = (
   target = ctrlTarget(element, element.scrollLeft + target)
   const distance = target - start
   let startTime: number | null = null
+  let requestID: number = 0
   const animation = (currentTime: number) => {
     if (startTime === null) startTime = currentTime
     const timeElapsed = currentTime - startTime
     const run = easingFunction(timeElapsed, duration, distance, start)
     element.scrollLeft = run
     if (timeElapsed < duration && !status.active) {
-      requestAnimationFrame(animation)
+      requestID = requestAnimationFrame(animation)
+    } else {
+      cancelAnimationFrame(requestID)
     }
   }
-  requestAnimationFrame(animation)
+  requestID = requestAnimationFrame(animation)
 }
 
 const smoothScrollAuto: ScrollAuto = (
@@ -40,15 +43,18 @@ const smoothScrollAuto: ScrollAuto = (
   easeInTime = 300,
 ) => {
   let startTime: number | null = null
+  let requestID: number = 0
   const animation = (currentTime: number) => {
     if (startTime === null) startTime = currentTime
     const timeElapsed = currentTime - startTime
     element.scrollLeft += Math.min(1, easeIn(timeElapsed, easeInTime)) * speed
     if (status.active) {
-      requestAnimationFrame(animation)
+      requestID= requestAnimationFrame(animation)
+    } else {
+      cancelAnimationFrame(requestID)
     }
   }
-  requestAnimationFrame(animation)
+  requestID = requestAnimationFrame(animation)
 }
 
 const touchCtrl: TouchCtrl = (
