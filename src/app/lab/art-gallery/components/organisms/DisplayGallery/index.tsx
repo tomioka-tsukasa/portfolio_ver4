@@ -8,7 +8,7 @@ type Props = {
 export default function DisplayGallery({
 }: Props ) {
   return <>
-    <div className={`${styles.root}`}>
+    <div className={`${styles.root}`} id='scroll-container'>
       <div className={`${styles.content}`}>
         {ArtSampleModels.map( artModel => <div 
           key={artModel.slug}
