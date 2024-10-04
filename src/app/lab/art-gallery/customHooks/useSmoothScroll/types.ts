@@ -15,14 +15,27 @@ export type Scroll = (
   target: number,
   duration: number,
   easingFunction: EasingFunction,
-  status: Record<string, boolean>
+  status?: {
+    active: boolean
+  },
+  callback?: () => void,
 ) => void
 
 export type ScrollAuto = (
   element: HTMLElement,
   speed: number,
-  status: Record<string, boolean>,
+  status: {
+    active: boolean
+  },
+  callback?: () => void,
   easeInTime?: number,
+) => void
+
+export type StartAutoScroll = (
+  element: HTMLElement,
+  status: Record<string, {
+    active: boolean
+  }>
 ) => void
 
 export type CtrlTarget = (
