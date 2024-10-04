@@ -32,7 +32,7 @@ const useSmoothScroll = () => {
       status.onEaseOut.active = false
       smoothScrollAuto(
         container,
-        direction === 'next' ? 7.5 : -7.5,
+        direction === 'next' ? 5 : -5,
         status.onTouch,
         () => smoothScroll(
           container,

@@ -25,7 +25,7 @@
     left: -1px;
     width: calc(100% + 2px);
     height: calc(100% + 2px);
-    transition: all 1.2s ease 0s;
+    transition: all 0.9s ease 0s;
     background-color: #000000;
   }
 
@@ -40,7 +40,7 @@
 
 .plate {
   position: relative;
-  transition: all 1.2s ease 0s;
+  transition: all 0.9s ease 0s;
   transition-delay: 0.3s;
   opacity: 0;
 
