@@ -1,6 +1,6 @@
 import { typeInTag } from "./statics/typeInTag"
 import { Ctrl, TypeSegments } from "./types"
-import { nextSegment } from "./utils"
+import { nextSegment } from "./statics"
 
 const ctrl: Ctrl = {
   char: '',

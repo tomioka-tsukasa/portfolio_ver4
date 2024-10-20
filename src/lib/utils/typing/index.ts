@@ -6,9 +6,7 @@ export class Typing {
 
   store: Store = {
     stop: false,
-    status: {
-      type: ''
-    }
+    status: {}
   }
 
   exec: Exec = (

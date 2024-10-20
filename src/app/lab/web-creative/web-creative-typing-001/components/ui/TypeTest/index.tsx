@@ -30,7 +30,7 @@ export default function TypeTest() {
     <div className={styles.root}>
       <div className={styles.status} data-typing-id="end"></div>
       <div className={styles.samples}>
-        <span className={styles.type} data-typing="target" data-typing-id="test"></span>
+        <span className={styles.type} data-typing-id="test"></span>
       </div>
     </div>
   </>

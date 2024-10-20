@@ -12,7 +12,8 @@ export type Animate = () => void
 export type Store = {
   stop: boolean,
   status: {
-    type: string
+    type?: string,
+    interaction?: string,
   }
 }
 

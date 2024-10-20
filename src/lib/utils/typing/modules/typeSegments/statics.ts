@@ -6,13 +6,16 @@ export const nextSegment = (
   ctrl.segment.index++
 }
 
-export const isConvert: IsConvert = () => {
+export const isConvert: IsConvert = (
+  store
+) => {
   return {
     start(element) {
       if (
         element
         && element.dataset.typingInteraction === 'convert'
       ) {
+        store.status.interaction = 'convert'
         element.dataset.typingStatus = 'isConvert'
       }
     },
@@ -21,6 +24,7 @@ export const isConvert: IsConvert = () => {
         element
         && element.dataset.typingInteraction === 'convert'
       ) {
+        store.status.interaction = ''
         element.dataset.typingStatus = 'isDone'
       }
     }
