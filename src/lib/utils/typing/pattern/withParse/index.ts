@@ -1,11 +1,9 @@
 import { parseHTML } from "../../modules/parseHTML"
-import { TypeAhead } from "../../modules/typeAhead"
+import { typeAhead } from "../../modules/typeAhead"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeSegments } from "../../modules/typeSegments"
 import { TypingPattern } from "../../types"
-
-let timestamp: number = 0
-let segment: ReturnType<typeof typeSegments> = null
+import { Ctrl } from "../../modules/typeSegments/types"
 
 export const withParse: TypingPattern = (
   types,
@@ -13,6 +11,8 @@ export const withParse: TypingPattern = (
   store,
   option
 ) => {
+  let timestamp: number = 0
+  let segment: ReturnType<typeof typeSegments> = null
   if (target) {
     target.appendChild(getBodyElm('body'))
     target.appendChild(getAheadElm('ahead'))
@@ -20,13 +20,23 @@ export const withParse: TypingPattern = (
   const body = target?.querySelector('[data-typing-id="body"]') as HTMLElement
   const ahead = target?.querySelector('[data-typing-id="ahead"]') as HTMLElement
   const segments = parseHTML(types)
-  const typeAhead = new TypeAhead(
+  const _typeAhead = typeAhead(
     ahead
   )
+  const ctrl: Ctrl = {
+    char: '',
+    segment: {
+      current: undefined,
+      index: 0
+    },
+    isInTag: false,
+    tagElement: null,
+    types: types
+  }
   const typeFunc = () => {
     if (
       !target
-      || !typeAhead
+      || !_typeAhead
     ) return false
     timestamp++
     if (timestamp % (option?.speed ?? 1) !== 0) return true
@@ -36,13 +46,14 @@ export const withParse: TypingPattern = (
     segment = typeSegments(
       segments,
       body,
-      store
+      store,
+      ctrl,
     )
     if (segment) {
-      typeAhead.exec(segment.content)
+      _typeAhead.exec(segment.content)
       return true
     } else {
-      typeAhead.reset()
+      _typeAhead.reset()
       return false
     }
   }

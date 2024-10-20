@@ -4,7 +4,8 @@ import { Segment } from "../parseHTML/types";
 export type TypeSegments = (
   segments: Array<Segment>,
   target: HTMLElement | null,
-  store: Store
+  store: Store,
+  ctrl: Ctrl
 ) => Segment | null
 
 export type Ctrl = {
@@ -13,6 +14,9 @@ export type Ctrl = {
     current: Segment | undefined,
     index: number
   },
+  isInTag: boolean,
+  tagElement: HTMLElement | null,
+  types: string
 }
 
 export type IsConvert = (

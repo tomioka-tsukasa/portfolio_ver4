@@ -14,7 +14,7 @@ export default function TypeTest() {
     sample01.exec(
       'sample01',
       withParse(
-        types.sample,
+        types.sample01,
         document.querySelector<HTMLElement>('[data-typing-id="sample01"]'),
         sample01.store,
         {
@@ -27,7 +27,7 @@ export default function TypeTest() {
     sample02.exec(
       'sample02',
       withParse(
-        types.sample,
+        types.sample02,
         document.querySelector<HTMLElement>('[data-typing-id="sample02"]'),
         sample02.store,
         {
