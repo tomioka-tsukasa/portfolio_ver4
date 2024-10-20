@@ -1,14 +1,12 @@
 import { ParseHTML, Segment } from "./types";
 
-const regex = /(<[^\/>][^>]*>)([^<]*)(<\/[^>]+>)|(<[^\/>]*\/>)|([^<]+)/g
-const selfTagRegex = /[^\/>][^>]*\/?>/;
-let match
-let index: number = 0
-const segments: Array<Segment> = []
-
 export const parseHTML: ParseHTML = (
   type
 ) => {
+  const regex = /(<[^\/>][^>]*>)([^<]*)(<\/[^>]+>)|(<[^\/>]*\/>)|([^<]+)/g
+  let match
+  let index: number = 0
+  const segments: Array<Segment> = []
   while ((match = regex.exec(type)) !== null) {
     if (match[1] && match[2] && match[3]) {
       segments.push({
