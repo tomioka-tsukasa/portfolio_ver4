@@ -10,31 +10,39 @@ import { withParse } from "@/lib/utils/typing/pattern/withParse"
 
 export default function TypeTest() {
   useEffect(() => {
-    const test = new Typing()
-    const endFunc = () => {
-      const endArea = document.querySelector<HTMLElement>('[data-typing-id="end"]')
-      if (!endArea) return
-      endArea.innerHTML = 'END!'
-    }
-    test.exec(
-      'test',
+    const sample01 = new Typing()
+    sample01.exec(
+      'sample01',
       withParse(
         types.sample,
-        document.querySelector<HTMLElement>('[data-typing-id="test"]'),
-        test.store,
+        document.querySelector<HTMLElement>('[data-typing-id="sample01"]'),
+        sample01.store,
         {
           speed: 2,
           convertSpeed: 5
         }
       ).typeFunc,
-      () => endFunc()
+    )
+    const sample02 = new Typing()
+    sample02.exec(
+      'sample02',
+      withParse(
+        types.sample,
+        document.querySelector<HTMLElement>('[data-typing-id="sample02"]'),
+        sample02.store,
+        {
+          speed: 2,
+          convertSpeed: 5
+        }
+      ).typeFunc,
     )
   })
   return <>
     <div className={styles.root}>
       <div className={styles.status} data-typing-id="end"></div>
-      <div className={styles.samples}>
-        <span className={styles.type} data-typing-id="test"></span>
+      <div className={styles.typeArea}>
+        <span className={styles.type} data-typing-id="sample01"></span>
+        <span className={styles.type} data-typing-id="sample02"></span>
       </div>
     </div>
   </>

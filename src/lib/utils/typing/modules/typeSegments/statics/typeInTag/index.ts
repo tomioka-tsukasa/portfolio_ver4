@@ -16,7 +16,7 @@ export const typeInTag: TypeInTag = (
   ) return
   if (!isInTag) {
     target.innerHTML += `${ctrl.segment.current.startTag}${ctrl.segment.current.endTag ?? ''}`
-    tagElement = document.querySelector(`[data-typing-id="${ctrl.segment.current.id}"]`)
+    tagElement = target.querySelector(`[data-typing-id="${ctrl.segment.current.id}"]`)
     if (ctrl.segment.current.endTag) ifNaturalTag(
       tagElement,
       ctrl,
