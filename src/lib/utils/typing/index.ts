@@ -5,7 +5,10 @@ export class Typing {
   }
 
   store: Store = {
-    stop: false
+    stop: false,
+    status: {
+      type: ''
+    }
   }
 
   exec: Exec = (

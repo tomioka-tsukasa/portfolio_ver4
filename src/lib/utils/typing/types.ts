@@ -10,7 +10,10 @@ export type SetType = {
 export type Animate = () => void
 
 export type Store = {
-  stop: boolean
+  stop: boolean,
+  status: {
+    type: string
+  }
 }
 
 export type Exec = (
