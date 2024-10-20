@@ -1,4 +1,4 @@
-import { Segment } from "../../../../modules/parseHTML/types";
+import { Segment } from "../parseHTML/types";
 
 export type TypeSegments = (
   segments: Array<Segment>,
