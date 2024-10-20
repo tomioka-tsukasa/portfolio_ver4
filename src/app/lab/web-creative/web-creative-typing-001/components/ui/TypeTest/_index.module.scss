@@ -6,15 +6,12 @@
 }
 
 .typeArea {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
 }
 
 .type {
   display: inline-block;
   width: 100%;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 51px;
   word-break: break-all;
 
@@ -27,7 +24,7 @@
 
   [data-typing-style="strong"] {
     color: rgba(#000000, 0.8);
-    font-size: 54px;
+    font-size: 48px;
     font-weight: bold;
   }
 
@@ -38,7 +35,7 @@
 
   [data-typing-status="isConvert"] {
     background-color: rgba(#b4d7fe, 0.8);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: normal;
   }
 }
