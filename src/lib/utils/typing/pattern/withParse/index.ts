@@ -1,9 +1,8 @@
 import { parseHTML } from "../../modules/parseHTML"
-import { typeAhead } from "../../modules/typeAhead"
+import { typeAheadInit } from "../../modules/typeAheadInit"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
-import { typeSegments } from "../../modules/typeSegments"
+import { typeSegmentsInit } from "../../modules/typeSegmentsInit"
 import { TypingPattern } from "../../types"
-import { Ctrl } from "../../modules/typeSegments/types"
 
 export const withParse: TypingPattern = (
   types,
@@ -12,7 +11,7 @@ export const withParse: TypingPattern = (
   option
 ) => {
   let timestamp: number = 0
-  let segment: ReturnType<typeof typeSegments> = null
+  let segment: ReturnType<ReturnType<typeof typeSegmentsInit>['typeFunc']> = null
   if (target) {
     target.appendChild(getBodyElm('body'))
     target.appendChild(getAheadElm('ahead'))
@@ -20,40 +19,30 @@ export const withParse: TypingPattern = (
   const body = target?.querySelector('[data-typing-id="body"]') as HTMLElement
   const ahead = target?.querySelector('[data-typing-id="ahead"]') as HTMLElement
   const segments = parseHTML(types)
-  const _typeAhead = typeAhead(
+  const typeAhead = typeAheadInit(
     ahead
   )
-  const ctrl: Ctrl = {
-    char: '',
-    segment: {
-      current: undefined,
-      index: 0
-    },
-    isInTag: false,
-    tagElement: null,
-    types: types
-  }
+  const typeSegments = typeSegmentsInit(
+    segments,
+    body,
+    store,
+  )
   const typeFunc = () => {
     if (
       !target
-      || !_typeAhead
+      || !typeAhead
     ) return false
     timestamp++
     if (timestamp % (option?.speed ?? 1) !== 0) return true
     if (store.status.interaction === 'convert') {
       if (timestamp % (option?.convertSpeed ?? 1) !== 0) return true
     }
-    segment = typeSegments(
-      segments,
-      body,
-      store,
-      ctrl,
-    )
+    segment = typeSegments.typeFunc()
     if (segment) {
-      _typeAhead.exec(segment.content)
+      typeAhead.exec(segment.content)
       return true
     } else {
-      _typeAhead.reset()
+      typeAhead.reset()
       return false
     }
   }

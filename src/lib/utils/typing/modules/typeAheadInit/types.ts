@@ -1,4 +1,4 @@
-export type TypeAhead = (
+export type TypeAheadInit = (
   setTarget: HTMLElement | null,
 ) => {
   exec: Exec,

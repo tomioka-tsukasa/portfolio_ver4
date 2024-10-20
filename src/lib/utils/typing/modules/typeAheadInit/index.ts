@@ -1,7 +1,7 @@
 import { getRandomLetter } from "../randomLetter"
-import { TypeAhead } from "./types"
+import { TypeAheadInit } from "./types"
 
-export const typeAhead: TypeAhead = (
+export const typeAheadInit: TypeAheadInit = (
   setTarget
 ) => {
   let target: HTMLElement | null = setTarget
