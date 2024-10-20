@@ -26,7 +26,7 @@ export default function TypeTest() {
         sample01.store,
         {
           speed: 2,
-          convertSpeed: 5
+          convertSpeed: 3
         }
       ).typeFunc,
     )
@@ -39,7 +39,7 @@ export default function TypeTest() {
         sample02.store,
         {
           speed: 2,
-          convertSpeed: 5
+          convertSpeed: 3
         }
       ).typeFunc,
       () => endFunc()

@@ -12,8 +12,12 @@
   display: inline-block;
   width: 100%;
   font-size: 28px;
-  line-height: 51px;
+  line-height: calc(51 / 28);
   word-break: break-all;
+
+  @include sp {
+    font-size: 14px;
+  }
 
   a {
     transition: all 0.5s ease 0s;
@@ -26,6 +30,10 @@
     color: rgba(#000000, 0.8);
     font-size: 48px;
     font-weight: bold;
+
+    @include sp {
+      font-size: 24px;
+    }
   }
 
   [data-typing-style="decoration"] {
@@ -37,5 +45,9 @@
     background-color: rgba(#b4d7fe, 0.8);
     font-size: 28px;
     font-weight: normal;
+
+    @include sp {
+      font-size: 14px;
+    }
   }
 }
