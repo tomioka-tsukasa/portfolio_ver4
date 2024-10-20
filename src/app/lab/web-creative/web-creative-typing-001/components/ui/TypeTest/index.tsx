@@ -6,6 +6,7 @@ import { Typing } from "@/lib/utils/typing"
 import types from "../../../store/types.json"
 import { typingBasic } from "@/lib/utils/typing/modules/typingBasic"
 import { typingLookahead } from "@/lib/utils/typing/modules/typingLookahead"
+import { typingWithParse } from "@/lib/utils/typing/modules/typingWithParse"
 
 export default function TypeTest() {
   useEffect(() => {
@@ -17,9 +18,10 @@ export default function TypeTest() {
     }
     test.exec(
       'test',
-      typingLookahead(
+      typingWithParse(
         types.sample,
         document.querySelector<HTMLElement>('[data-typing-id="test"]'),
+        test.store
       ).typeFunc,
       () => endFunc()
     )
