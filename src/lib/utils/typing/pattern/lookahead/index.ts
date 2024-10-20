@@ -15,8 +15,8 @@ export const lookahead: TypingPattern = (
     target.appendChild(getBodyElm('body'))
     target.appendChild(getAheadElm('ahead'))
   }
-  const body = document.querySelector('[data-typing-id="body"]') as HTMLElement
-  const ahead = document.querySelector('[data-typing-id="ahead"]') as HTMLElement
+  const body = target?.querySelector('[data-typing-id="body"]') as HTMLElement
+  const ahead = target?.querySelector('[data-typing-id="ahead"]') as HTMLElement
   let typeList: Array<string> = types.split('')
   const typeAhead = new TypeAhead(
     ahead
