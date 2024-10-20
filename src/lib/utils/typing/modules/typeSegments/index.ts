@@ -1,19 +1,12 @@
 import { typeInTag } from "./statics/typeInTag"
-import { Ctrl, TypeSegments } from "./types"
+import { TypeSegments } from "./types"
 import { nextSegment } from "./statics"
-
-const ctrl: Ctrl = {
-  char: '',
-  segment: {
-    current: undefined,
-    index: 0
-  },
-}
 
 export const typeSegments: TypeSegments = (
   segments,
   target,
-  store
+  store,
+  ctrl
 ) => {
   if (!target) return null
 
