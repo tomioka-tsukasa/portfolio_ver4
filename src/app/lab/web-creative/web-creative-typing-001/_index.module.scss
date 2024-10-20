@@ -3,7 +3,7 @@
 
 .root {
   min-height: 100vh;
-  padding: 60px 40px;
+  padding: 30px 40px;
   background-color: map.get($mainColor, "index");
   color: map.get($baseColor, "index");
 }

@@ -8,6 +8,13 @@ import { basic } from "@/lib/utils/typing/pattern/basic"
 import { lookahead } from "@/lib/utils/typing/pattern/lookahead"
 import { withParse } from "@/lib/utils/typing/pattern/withParse"
 
+const endFunc = () => {
+  if (!document) return
+  const target = document.querySelector<HTMLElement>('[data-typing-id="end"]')
+  if (!target) return
+  target.innerHTML = 'END!'
+}
+
 export default function TypeTest() {
   useEffect(() => {
     const sample01 = new Typing()
@@ -35,13 +42,15 @@ export default function TypeTest() {
           convertSpeed: 5
         }
       ).typeFunc,
+      () => endFunc()
     )
   })
   return <>
     <div className={styles.root}>
       <div className={styles.status} data-typing-id="end"></div>
       <div className={styles.typeArea}>
-        <span className={styles.type} data-typing-id="sample01"></span>
+        <span className={styles.type} data-typing-id="sample01"></span><br />
+        <br />
         <span className={styles.type} data-typing-id="sample02"></span>
       </div>
     </div>
