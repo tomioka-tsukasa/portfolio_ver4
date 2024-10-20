@@ -4,6 +4,9 @@ import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeSegments } from "../../modules/typeSegments"
 import { WithParse } from "./types"
 
+let timestamp: number = 0
+let segment: ReturnType<typeof typeSegments> = null
+
 export const withParse: WithParse = (
   types,
   target,
@@ -15,17 +18,10 @@ export const withParse: WithParse = (
   }
   const body = document.querySelector('[data-typing-id="body"]') as HTMLElement
   const ahead = document.querySelector('[data-typing-id="ahead"]') as HTMLElement
-  let timestamp: number = 0
-  let working: boolean = true
   const segments = parseHTML(types)
   const typeAhead = new TypeAhead(
     ahead
   )
-  // let typeList: Array<string> = types.split('')
-  let typeList: Array<string> = segments.map( segment => {
-    return segment.content.join('')
-  }).join('').split('')
-  console.log(typeList)
   const typeFunc = () => {
     if (
       !target
@@ -35,17 +31,17 @@ export const withParse: WithParse = (
     if (store.status.type === 'tag') {
       if (timestamp % 3 !== 0) return true
     }
-    typeAhead.exec(typeList)
-    typeList.shift()
-    working = typeSegments(
+    segment = typeSegments(
       segments,
       body,
       store
     )
-    if (working) return working
-    else {
+    if (segment) {
+      typeAhead.exec(segment.content)
+      return true
+    } else {
       ahead.innerHTML = ''
-      return working
+      return false
     }
   }
 
