@@ -1,4 +1,4 @@
-import { typeAhead } from "../../modules/typeAhead"
+import { typeAheadInit } from "../../modules/typeAheadInit"
 import { TypingPattern } from "../../types"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeBody } from "./statics/typeBody"
@@ -18,7 +18,7 @@ export const lookahead: TypingPattern = (
   const body = target?.querySelector('[data-typing-id="body"]') as HTMLElement
   const ahead = target?.querySelector('[data-typing-id="ahead"]') as HTMLElement
   let typeList: Array<string> = types.split('')
-  const _typeAhead = typeAhead(
+  const typeAhead = typeAheadInit(
     ahead
   )
   const typeFunc = () => {
@@ -28,7 +28,7 @@ export const lookahead: TypingPattern = (
     ) return false
     if (typeList.length) {
       timestamp++
-      _typeAhead.exec(typeList)
+      typeAhead.exec(typeList)
       typeList = typeBody(
         typeList,
         body,
@@ -36,7 +36,7 @@ export const lookahead: TypingPattern = (
       )
       return true
     } else {
-      _typeAhead.reset()
+      typeAhead.reset()
       return false
     }
   }
