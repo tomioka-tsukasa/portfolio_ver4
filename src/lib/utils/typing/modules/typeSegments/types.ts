@@ -14,3 +14,12 @@ export type Ctrl = {
     index: number
   },
 }
+
+export type IsConvert = () => {
+  start: (
+    element: HTMLElement | null,
+  ) => void,
+  end: (
+    element: HTMLElement | null,
+  ) => void,
+}
