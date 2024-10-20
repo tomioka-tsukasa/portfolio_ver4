@@ -1,9 +1,9 @@
-import { TypeItem } from "../../types"
+import { Store, TypeItem } from "../../types"
 
 export type WithParse = (
   types: string,
   target: HTMLElement | null,
-  store: Record<string, any>
+  store: Store
 ) => {
   typeFunc: TypeItem['typeFunc']
 }

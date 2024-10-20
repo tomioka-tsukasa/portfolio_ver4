@@ -32,7 +32,7 @@ export const withParse: WithParse = (
       || !typeAhead
     ) return false
     timestamp++
-    if (store.whatType === 'tag') {
+    if (store.status.type === 'tag') {
       if (timestamp % 3 !== 0) return true
     }
     typeAhead.exec(typeList)

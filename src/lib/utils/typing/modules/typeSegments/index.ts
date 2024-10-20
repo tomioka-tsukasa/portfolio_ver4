@@ -1,52 +1,37 @@
-import { Segment } from "../parseHTML/types"
-import { TypeSegments } from "./types"
+import { typeInTag } from "./statics/typeInTag"
+import { Ctrl, TypeSegments } from "./types"
+import { nextSegment } from "./utils"
 
-let currentIndex: number = 0
-let currentSegment: Segment
-let isInTag: boolean = false
-let tagElemment: HTMLElement | null = null
+const ctrl: Ctrl = {
+  char: '',
+  segment: {
+    current: undefined,
+    index: 0
+  },
+}
 
 export const typeSegments: TypeSegments = (
   segments,
   target,
   store
 ) => {
-  currentSegment = segments[currentIndex]
-  if (!target || !currentSegment) return false;
+  ctrl.segment.current = segments[ctrl.segment.index]
+  if (!target || !ctrl.segment.current) return false
 
-  const char = currentSegment.content.shift()
+  ctrl.char = ctrl.segment.current.content.shift() + ''
 
-  if (currentSegment.type === 'tag') {
-    if (!isInTag) {
-      target.innerHTML += `${currentSegment.startTag}${currentSegment.endTag ?? ''}`
-      if (currentSegment.endTag) {
-        tagElemment = document.querySelector(`[data-typing-id="${currentSegment.id}"]`)
-        if (tagElemment) {
-          tagElemment.dataset.typingStatus = 'isTyping'
-        }
-        isInTag = true
-        store.whatType = 'tag'
-      } else {
-        currentIndex++
-      }
-    }
-    if (tagElemment && char) {
-      tagElemment.innerHTML += char
-    }
-    if (currentSegment.content.length === 0) {
-      isInTag = false
-      store.whatType = 'text'
-      currentIndex++
-      if (tagElemment) {
-        tagElemment.dataset.typingStatus = 'isDone'
-      }
-    }
+  if (ctrl.segment.current.type === 'tag') {
+    typeInTag(
+      target,
+      ctrl,
+      store
+    )
   } else {
-    if (char) {
-      target.innerHTML += char
+    if (ctrl.char) {
+      target.innerHTML += ctrl.char
     }
-    if (currentSegment.content.length === 0) {
-      currentIndex++
+    if (ctrl.segment.current.content.length === 0) {
+      nextSegment(ctrl)
     }
   }
 
