@@ -1,8 +1,10 @@
-import { Basic } from "./types"
+import { TypingPattern } from "../../types"
 
-export const basic: Basic = (
+export const basic: TypingPattern = (
   types,
   target,
+  store,
+  option
 ) => {
   const typeList: Array<string> = types.split('')
   let type: string = ''

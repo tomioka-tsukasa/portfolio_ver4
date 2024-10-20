@@ -1,13 +1,11 @@
-export type SetTypes = (
-  setters: Array<SetType>
-) => void
-
-export type SetType = {
-  type: string,
-  target: HTMLElement | null
+export type TypingPattern = (
+  types: string,
+  target: HTMLElement | null,
+  store: Store,
+  option: Record<string, any>
+) => {
+  typeFunc: TypeItem['typeFunc']
 }
-
-export type Animate = () => void
 
 export type Store = {
   stop: boolean,
@@ -16,6 +14,8 @@ export type Store = {
     interaction?: string,
   }
 }
+
+export type Animate = () => void
 
 export type Exec = (
   name: string,

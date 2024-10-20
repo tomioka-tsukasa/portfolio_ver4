@@ -2,15 +2,16 @@ import { parseHTML } from "../../modules/parseHTML"
 import { TypeAhead } from "../../modules/typeAhead"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeSegments } from "../../modules/typeSegments"
-import { WithParse } from "./types"
+import { TypingPattern } from "../../types"
 
 let timestamp: number = 0
 let segment: ReturnType<typeof typeSegments> = null
 
-export const withParse: WithParse = (
+export const withParse: TypingPattern = (
   types,
   target,
-  store
+  store,
+  option
 ) => {
   if (target) {
     target.appendChild(getBodyElm('body'))
