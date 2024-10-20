@@ -3,3 +3,5 @@ export type Exec = (
 ) => Array<string>
 
 export type Update = () => void
+
+export type Reset = () => void
