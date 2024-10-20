@@ -1,5 +1,5 @@
+import { TypeAhead } from "../../modules/typeAhead"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
-import { typeAhead } from "./statics/typeAhead"
 import { typeBody } from "./statics/typeBody"
 import { Lookahead } from "./types"
 
@@ -15,32 +15,22 @@ export const lookahead: Lookahead = (
   const ahead = document.querySelector('[data-typing-id="ahead"]') as HTMLElement
   let timestamp: number = 0
   let typeList: Array<string> = types.split('')
-  const ta = typeAhead(
+  const typeAhead = new TypeAhead(
     ahead
   )
   const typeFunc = () => {
     if (
       !target
-      || !ta
+      || !typeAhead
     ) return false
     if (typeList.length) {
       timestamp++
-      if (
-        timestamp === 20
-        || timestamp === 0
-      ) {
-        ta.set(
-          typeList.filter((l, i) => i < 20)
-        )
-        ta.exec()
-        timestamp = 0
-      }
+      typeAhead.exec(typeList)
       typeList = typeBody(
         typeList,
         body,
         timestamp
       )
-      ta.exec()
       return true
     } else {
       ahead.innerHTML = ''

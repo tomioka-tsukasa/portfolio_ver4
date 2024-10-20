@@ -1,8 +1,7 @@
 import { parseHTML } from "../../modules/parseHTML"
+import { TypeAhead } from "../../modules/typeAhead"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
-import { typeAhead } from "./statics/typeAhead"
-import { typeBody } from "./statics/typeBody"
-import { typeSegments } from "./statics/typeSegments"
+import { typeSegments } from "../../modules/typeSegments"
 import { WithParse } from "./types"
 
 export const withParse: WithParse = (
@@ -19,7 +18,7 @@ export const withParse: WithParse = (
   let timestamp: number = 0
   let working: boolean = true
   const segments = parseHTML(types)
-  const ta = typeAhead(
+  const typeAhead = new TypeAhead(
     ahead
   )
   // let typeList: Array<string> = types.split('')
@@ -30,19 +29,13 @@ export const withParse: WithParse = (
   const typeFunc = () => {
     if (
       !target
-      || !ta
+      || !typeAhead
     ) return false
     timestamp++
     if (store.whatType === 'tag') {
-      if (timestamp % 4 !== 0) return true
+      if (timestamp % 3 !== 0) return true
     }
-    if (
-      !ta.exec().length
-    ) {
-      ta.set(
-        typeList.filter((l, i) => i < 30)
-      )
-    }
+    typeAhead.exec(typeList)
     typeList.shift()
     working = typeSegments(
       segments,

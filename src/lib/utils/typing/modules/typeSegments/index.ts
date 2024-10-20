@@ -1,4 +1,4 @@
-import { Segment } from "../../../../modules/parseHTML/types"
+import { Segment } from "../parseHTML/types"
 import { TypeSegments } from "./types"
 
 let currentIndex: number = 0
