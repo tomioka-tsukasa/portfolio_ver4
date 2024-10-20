@@ -23,8 +23,8 @@ export default function TypeTest() {
         document.querySelector<HTMLElement>('[data-typing-id="test"]'),
         test.store,
         {
-          speed: 3,
-          convertSpeed: 7
+          speed: 2,
+          convertSpeed: 5
         }
       ).typeFunc,
       () => endFunc()
