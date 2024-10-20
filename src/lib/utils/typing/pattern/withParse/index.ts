@@ -40,7 +40,7 @@ export const withParse: WithParse = (
       typeAhead.exec(segment.content)
       return true
     } else {
-      ahead.innerHTML = ''
+      typeAhead.reset()
       return false
     }
   }

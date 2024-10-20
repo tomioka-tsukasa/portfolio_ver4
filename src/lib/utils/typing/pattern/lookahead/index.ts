@@ -3,9 +3,12 @@ import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeBody } from "./statics/typeBody"
 import { Lookahead } from "./types"
 
+let timestamp: number = 0
+
 export const lookahead: Lookahead = (
   types,
   target,
+  store
 ) => {
   if (target) {
     target.appendChild(getBodyElm('body'))
@@ -13,7 +16,6 @@ export const lookahead: Lookahead = (
   }
   const body = document.querySelector('[data-typing-id="body"]') as HTMLElement
   const ahead = document.querySelector('[data-typing-id="ahead"]') as HTMLElement
-  let timestamp: number = 0
   let typeList: Array<string> = types.split('')
   const typeAhead = new TypeAhead(
     ahead
@@ -33,7 +35,7 @@ export const lookahead: Lookahead = (
       )
       return true
     } else {
-      ahead.innerHTML = ''
+      typeAhead.reset()
       return false
     }
   }

@@ -1,4 +1,5 @@
-import { Exec, Update } from "./types"
+import { getRandomLetter } from "../randomLetter"
+import { Exec, Reset, Update } from "./types"
 
 let list: Array<string> = ['']
 let target: HTMLElement | null = null
@@ -13,8 +14,8 @@ export class TypeAhead {
 
   update: Update = () => {
     if (!target) return
-    target.innerHTML = list.join('')
     list.shift()
+    target.innerHTML = [getRandomLetter(), ...list].join('')
   }
 
   exec: Exec = (
@@ -28,5 +29,10 @@ export class TypeAhead {
       this.update()
     }
     return list
+  }
+
+  reset: Reset = () => {
+    if (!target) return
+    target.innerHTML = ''
   }
 }
