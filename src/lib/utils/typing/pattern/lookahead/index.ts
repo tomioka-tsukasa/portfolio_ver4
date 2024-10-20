@@ -1,14 +1,15 @@
 import { TypeAhead } from "../../modules/typeAhead"
+import { TypingPattern } from "../../types"
 import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeBody } from "./statics/typeBody"
-import { Lookahead } from "./types"
 
 let timestamp: number = 0
 
-export const lookahead: Lookahead = (
+export const lookahead: TypingPattern = (
   types,
   target,
-  store
+  store,
+  option
 ) => {
   if (target) {
     target.appendChild(getBodyElm('body'))
