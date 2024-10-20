@@ -2,7 +2,7 @@ export type TypingPattern = (
   types: string,
   target: HTMLElement | null,
   store: Store,
-  option: Record<string, any>
+  option?: Record<string, any>
 ) => {
   typeFunc: TypeItem['typeFunc']
 }
