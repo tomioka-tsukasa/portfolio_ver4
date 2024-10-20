@@ -9,18 +9,17 @@ import { typingLookahead } from "@/lib/utils/typing/modules/typingLookahead"
 
 export default function TypeTest() {
   useEffect(() => {
-    const sample01 = new Typing()
-    const sample02 = new Typing()
+    const test = new Typing()
     const endFunc = () => {
       const endArea = document.querySelector<HTMLElement>('[data-typing-id="end"]')
       if (!endArea) return
       endArea.innerHTML = 'END!'
     }
-    sample01.exec(
-      'sample01',
+    test.exec(
+      'test',
       typingLookahead(
-        types.hello,
-        document.querySelector<HTMLElement>('[data-typing-id="sample01"]'),
+        types.sample,
+        document.querySelector<HTMLElement>('[data-typing-id="test"]'),
       ).typeFunc,
       () => endFunc()
     )
@@ -29,7 +28,7 @@ export default function TypeTest() {
     <div className={styles.root}>
       <div className={styles.status} data-typing-id="end"></div>
       <div className={styles.samples}>
-        <span className={styles.type} data-typing="target" data-typing-id="sample01"></span>
+        <span className={styles.type} data-typing="target" data-typing-id="test"></span>
       </div>
     </div>
   </>
