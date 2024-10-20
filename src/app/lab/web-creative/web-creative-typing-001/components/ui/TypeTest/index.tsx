@@ -21,7 +21,11 @@ export default function TypeTest() {
       withParse(
         types.sample,
         document.querySelector<HTMLElement>('[data-typing-id="test"]'),
-        test.store
+        test.store,
+        {
+          speed: 3,
+          convertSpeed: 7
+        }
       ).typeFunc,
       () => endFunc()
     )

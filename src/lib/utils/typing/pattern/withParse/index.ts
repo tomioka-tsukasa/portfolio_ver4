@@ -29,8 +29,9 @@ export const withParse: TypingPattern = (
       || !typeAhead
     ) return false
     timestamp++
+    if (timestamp % (option?.speed ?? 1) !== 0) return true
     if (store.status.interaction === 'convert') {
-      if (timestamp % 5 !== 0) return true
+      if (timestamp % (option?.convertSpeed ?? 1) !== 0) return true
     }
     segment = typeSegments(
       segments,
