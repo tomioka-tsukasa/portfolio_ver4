@@ -1,6 +1,6 @@
-import { TypingBasic } from "./types"
+import { Basic } from "./types"
 
-export const typingBasic: TypingBasic = (
+export const basic: Basic = (
   types,
   target,
 ) => {

@@ -1,9 +1,9 @@
 import { getAheadElm, getBodyElm } from "./statics/getElm"
 import { typeAhead } from "./statics/typeAhead"
 import { typeBody } from "./statics/typeBody"
-import { TypingLookahead } from "./types"
+import { Lookahead } from "./types"
 
-export const typingLookahead: TypingLookahead = (
+export const lookahead: Lookahead = (
   types,
   target,
 ) => {
@@ -24,6 +24,7 @@ export const typingLookahead: TypingLookahead = (
       || !ta
     ) return false
     if (typeList.length) {
+      timestamp++
       if (
         timestamp === 20
         || timestamp === 0
@@ -40,7 +41,6 @@ export const typingLookahead: TypingLookahead = (
         timestamp
       )
       ta.exec()
-      timestamp++
       return true
     } else {
       ahead.innerHTML = ''

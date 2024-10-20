@@ -4,9 +4,9 @@ import { useEffect } from "react"
 import styles from "./_index.module.scss"
 import { Typing } from "@/lib/utils/typing"
 import types from "../../../store/types.json"
-import { typingBasic } from "@/lib/utils/typing/modules/typingBasic"
-import { typingLookahead } from "@/lib/utils/typing/modules/typingLookahead"
-import { typingWithParse } from "@/lib/utils/typing/modules/typingWithParse"
+import { basic } from "@/lib/utils/typing/pattern/basic"
+import { lookahead } from "@/lib/utils/typing/pattern/lookahead"
+import { withParse } from "@/lib/utils/typing/pattern/withParse"
 
 export default function TypeTest() {
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function TypeTest() {
     }
     test.exec(
       'test',
-      typingWithParse(
+      withParse(
         types.sample,
         document.querySelector<HTMLElement>('[data-typing-id="test"]'),
         test.store

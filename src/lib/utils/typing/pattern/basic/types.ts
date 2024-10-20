@@ -1,6 +1,6 @@
 import { TypeItem } from "../../types"
 
-export type TypingBasic = (
+export type Basic = (
   types: string,
   target: HTMLElement | null,
 ) => {
