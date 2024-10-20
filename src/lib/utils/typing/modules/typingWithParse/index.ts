@@ -20,6 +20,9 @@ export const typingWithParse: TypingWithParse = (
       !target
     ) return false
     timestamp++
+    if (store.whatType === 'tag') {
+      if (timestamp % 4 !== 0) return true
+    }
     return typeSegments(
       segments,
       body,

@@ -17,7 +17,11 @@
   line-height: 51px;
   word-break: break-all;
 
-  [data-typing-style="strong"] {
+  [data-typing-status="isTyping"] {
+    background-color: rgba(#b4d7fe, 0.8);
+  }
+
+  [data-typing-style="strong"][data-typing-status="isDone"] {
     color: rgba(#000000, 0.8);
     font-family: "seif";
     font-size: 54px;
