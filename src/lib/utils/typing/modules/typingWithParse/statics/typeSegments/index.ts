@@ -21,6 +21,9 @@ export const typeSegments: TypeSegments = (
       target.innerHTML += `${currentSegment.startTag}${currentSegment.endTag ?? ''}`
       if (currentSegment.endTag) {
         tagElemment = document.querySelector(`[data-typing-id="${currentSegment.id}"]`)
+        if (tagElemment) {
+          tagElemment.dataset.typingStatus = 'isTyping'
+        }
         isInTag = true
         store.whatType = 'tag'
       } else {
@@ -34,6 +37,9 @@ export const typeSegments: TypeSegments = (
       isInTag = false
       store.whatType = 'text'
       currentIndex++
+      if (tagElemment) {
+        tagElemment.dataset.typingStatus = 'isDone'
+      }
     }
   } else {
     if (char) {
