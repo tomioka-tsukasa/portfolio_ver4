@@ -5,7 +5,7 @@ export type TypeSegments = (
   segments: Array<Segment>,
   target: HTMLElement | null,
   store: Store
-) => boolean
+) => Segment | null
 
 export type Ctrl = {
   char: string,

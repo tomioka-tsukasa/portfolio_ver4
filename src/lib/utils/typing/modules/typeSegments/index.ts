@@ -15,8 +15,10 @@ export const typeSegments: TypeSegments = (
   target,
   store
 ) => {
+  if (!target) return null
+
   ctrl.segment.current = segments[ctrl.segment.index]
-  if (!target || !ctrl.segment.current) return false
+  if (!ctrl.segment.current) return null
 
   ctrl.char = ctrl.segment.current.content.shift() + ''
 
@@ -35,5 +37,5 @@ export const typeSegments: TypeSegments = (
     }
   }
 
-  return true
+  return ctrl.segment.current
 }
