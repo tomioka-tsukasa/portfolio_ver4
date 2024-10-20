@@ -1,4 +1,4 @@
-import { nextSegment } from "../../utils"
+import { isConvert, nextSegment } from "../../utils"
 import { Common } from "./types"
 
 export const ifNaturalTag: Common = (
@@ -7,9 +7,7 @@ export const ifNaturalTag: Common = (
   store
 ) => {
   if (!ctrl.segment.current) return false
-  if (tagElement) {
-    tagElement.dataset.typingStatus = 'isTyping'
-  }
+  isConvert().start(tagElement)
   store.status.type = 'tag'
   return true
 }

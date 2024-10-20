@@ -1,3 +1,4 @@
+import { isConvert } from "../../utils"
 import { ifNaturalTag, ifSelfTag, typeTagElement } from "./statics"
 import { TypeInTag } from "./types"
 
@@ -36,8 +37,6 @@ export const typeInTag: TypeInTag = (
     isInTag = false
     store.status.type = 'text'
     ctrl.segment.index++
-    if (tagElement) {
-      tagElement.dataset.typingStatus = 'isDone'
-    }
+    isConvert().end(tagElement)
   }
 }
