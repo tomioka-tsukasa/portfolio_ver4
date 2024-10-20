@@ -15,7 +15,9 @@ export type Ctrl = {
   },
 }
 
-export type IsConvert = () => {
+export type IsConvert = (
+  store: Store
+) => {
   start: (
     element: HTMLElement | null,
   ) => void,

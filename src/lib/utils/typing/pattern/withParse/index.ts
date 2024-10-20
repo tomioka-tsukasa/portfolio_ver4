@@ -28,8 +28,8 @@ export const withParse: WithParse = (
       || !typeAhead
     ) return false
     timestamp++
-    if (store.status.type === 'tag') {
-      if (timestamp % 3 !== 0) return true
+    if (store.status.interaction === 'convert') {
+      if (timestamp % 5 !== 0) return true
     }
     segment = typeSegments(
       segments,
