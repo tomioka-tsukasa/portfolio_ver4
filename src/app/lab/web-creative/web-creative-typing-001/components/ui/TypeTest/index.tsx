@@ -7,6 +7,7 @@ import types from "../../../store/types.json"
 import { basic } from "@/lib/utils/typing/pattern/basic"
 import { lookahead } from "@/lib/utils/typing/pattern/lookahead"
 import { withParse } from "@/lib/utils/typing/pattern/withParse"
+import { zenKakuGothicNew_w500 } from "@/lib/fonts"
 
 const endFunc = () => {
   if (!document) return
@@ -49,9 +50,9 @@ export default function TypeTest() {
     <div className={styles.root}>
       <div className={styles.status} data-typing-id="end"></div>
       <div className={styles.typeArea}>
-        <span className={styles.type} data-typing-id="sample01"></span><br />
+        <span className={`${styles.type} ${zenKakuGothicNew_w500.className}`} data-typing-id="sample01"></span><br />
         <br />
-        <span className={styles.type} data-typing-id="sample02"></span>
+        <span className={`${styles.type} ${zenKakuGothicNew_w500.className}`} data-typing-id="sample02"></span>
       </div>
     </div>
   </>
