@@ -1,10 +1,10 @@
-import { Ctrl, Doms, Progress } from "../../types"
+import { Ctrl, Doms, Store } from "../../types"
 
 export type UpdateContentInit = (
   doms: Doms,
   ctrl: Ctrl | undefined
 ) => {
   inAnimate: (
-    progress: Progress
-  ) => Progress
+    store: Store
+  ) => Store
 }

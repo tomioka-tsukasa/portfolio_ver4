@@ -10,7 +10,7 @@ type Props = {
 }
 
 export default function SliderInfiniteUi({
-  content = <div>'HELLO WORLD.'</div>
+  content = <div>HELLO WORLD.</div>
 }: Props ) {
   const rootRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function SliderInfiniteUi({
       if (!rootRef.current) return
       rootRef.current.dataset.gsapId = 'init'
     }, 10);
-  }, [])
+  }, [content, rootRef])
   return <>
     <div className={styles.root} ref={rootRef}>
       <div className={styles.wrapper} data-slider-ifnt-id="wrapper">
