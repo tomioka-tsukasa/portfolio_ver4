@@ -1,6 +1,6 @@
 import { parseHTML } from "../../modules/parseHTML"
 import { typeAheadInit } from "../../modules/typeAheadInit"
-import { getAheadElm, getBodyElm } from "./statics/getElm"
+import { getAheadElm, getBodyElm, getCursorElm } from "./statics/getElm"
 import { typeSegmentsInit } from "../../modules/typeSegmentsInit"
 import { TypingPattern } from "../../types"
 
@@ -14,6 +14,7 @@ export const withParse: TypingPattern = (
   let segment: ReturnType<ReturnType<typeof typeSegmentsInit>['typeFunc']> = null
   if (target) {
     target.appendChild(getBodyElm('body'))
+    if (option?.cursor === false ? false : true) target.appendChild(getCursorElm('cursor'))
     target.appendChild(getAheadElm('ahead'))
   }
   const body = target?.querySelector('[data-typing-id="body"]') as HTMLElement

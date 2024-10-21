@@ -27,7 +27,8 @@ export default function TypeTest() {
         sample01.store,
         {
           speed: 2,
-          convertSpeed: 3
+          convertSpeed: 3,
+          cursor: false
         }
       ).typeFunc,
     )
