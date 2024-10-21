@@ -10,7 +10,7 @@ export const typeAheadInit: TypeAheadInit = (
     update() {
       if (!target) return
       list.shift()
-      target.innerHTML = [getRandomLetter(), ...list].join('')
+      target.innerHTML = [`<span style="display: inline-block; width: 1em;">${getRandomLetter()}</span>`, ...list].join('')
     },
     exec(
       setList 
