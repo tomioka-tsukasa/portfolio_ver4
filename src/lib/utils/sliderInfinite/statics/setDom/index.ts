@@ -35,6 +35,7 @@ export const setItem: SetItem = (
 ) => {
   if (!item || !content || !container) return null
   let count: number = 0
+  let htmlString: string = ''
   const appendItem = (
     item: HTMLElement,
     content: HTMLElement,
@@ -42,8 +43,7 @@ export const setItem: SetItem = (
   ) => {
     count++
     if (content.clientWidth < container.clientWidth * 1.5 && count < 1000) {
-      const cloneItem = item.cloneNode(true) as HTMLElement
-      content.appendChild(cloneItem)
+      htmlString += item.outerHTML
       appendItem(
         item,
         content,
@@ -56,5 +56,6 @@ export const setItem: SetItem = (
     content,
     container
   )
+  content.innerHTML = htmlString
   return item
 }
