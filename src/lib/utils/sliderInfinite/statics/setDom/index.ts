@@ -34,28 +34,11 @@ export const setItem: SetItem = (
   option
 ) => {
   if (!item || !content || !container) return null
-  let count: number = 0
   let htmlString: string = ''
-  const appendItem = (
-    item: HTMLElement,
-    content: HTMLElement,
-    container: HTMLElement
-  ) => {
-    count++
-    if (content.clientWidth < container.clientWidth * 1.5 && count < 1000) {
-      htmlString += item.outerHTML
-      appendItem(
-        item,
-        content,
-        container
-      )
-    }
+  const itemWidth = item.clientWidth
+  for (let i = 0; i < Math.ceil((innerWidth * 1.5) / itemWidth); i++) {
+    htmlString += item.outerHTML
   }
-  appendItem(
-    item,
-    content,
-    container
-  )
   content.innerHTML = htmlString
   return item
 }
