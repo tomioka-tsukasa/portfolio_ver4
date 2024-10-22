@@ -2,11 +2,11 @@
 
 import { useEffect } from "react"
 import styles from "./_index.module.scss"
-import { Typing } from "@/lib/utils/typing"
+import { Typing } from "@/modules/Typing"
 import types from "../../../store/types.json"
-import { basic } from "@/lib/utils/typing/pattern/basic"
-import { lookahead } from "@/lib/utils/typing/pattern/lookahead"
-import { withParse } from "@/lib/utils/typing/pattern/withParse"
+import { basic } from "@/modules/Typing/pattern/basic"
+import { lookahead } from "@/modules/Typing/pattern/lookahead"
+import { withParse } from "@/modules/Typing/pattern/withParse"
 import { zenKakuGothicNew_w500 } from "@/lib/fonts"
 
 const endFunc = () => {

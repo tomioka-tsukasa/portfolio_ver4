@@ -1,4 +1,4 @@
-import { Store } from "@/lib/utils/typing/types";
+import { Store } from "@/modules/Typing/types";
 import { Ctrl } from "../../types";
 
 export type TypeInTagInit = (
