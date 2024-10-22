@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import styles from "./_index.module.scss"
-import { SliderInfinite } from "@/lib/utils/sliderInfinite/"
+import { SliderInfinite } from "@/modules/SliderInfinite"
 import gsap from "gsap"
 
 type Props = {
