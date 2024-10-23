@@ -8,7 +8,20 @@ import { GridVisual } from "@/modules/GridVisual"
 export default function UiGrid() {
   const rootRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    const gridVisual = new GridVisual(rootRef.current)
+    const gridVisual = new GridVisual(
+      rootRef.current,
+      (
+        innerWidth < 500
+        ? {
+          itemInRowTotal: 6,
+          itemHeight: 236,
+        }
+        : {
+          itemInRowTotal: 8,
+          itemHeight: 150,
+        }
+      )
+    )
     gridVisual.set()
     if (!rootRef.current) return
     const items = rootRef.current.querySelectorAll('[data-grid-visual-id="container"] [data-grid-visual-id="item"]');
