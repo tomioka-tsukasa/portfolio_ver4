@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: map.get($baseColor, "index");
+}
+
+.gridBg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: map.get($mainColor, "index");
+}
+
+.dummy {
+  opacity: 0.1;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 2;
+}
