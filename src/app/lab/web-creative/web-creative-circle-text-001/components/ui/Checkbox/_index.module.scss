@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 0 12px;
+  font-weight: bold;
+
+  > *:first-child {
+    width: 120px;
+  }
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* カスタムチェックボックスのスタイル */
+.checkboxLabel::before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* 幅 */
+  height: 20px; /* 高さ */
+  transition:
+    background-color 0.2s,
+    border-color 0.2s; /* アニメーション */
+  border: 1px solid rgba(0, 0, 0, 0.7); /* ボーダーの色 */
+  border-radius: 4px; /* 角を丸く */
+}
+
+/* チェックボックスがチェックされている場合のスタイル */
+.inputCheckbox:checked + .checkboxLabel::before {
+  border-color: #007bff; /* チェック時のボーダー色 */
+  background-color: #007bff; /* チェック時の背景色 */
+}
+
+/* チェックマークを表示 */
+.inputCheckbox:checked + .checkboxLabel::after {
+  content: "✔"; /* チェックマーク */
+  position: absolute; /* ラベルの上に配置 */
+  top: 0; /* 上に配置 */
+  left: 4px; /* 左に移動 */
+  color: white; /* チェックマークの色 */
+  font-size: 16px; /* チェックマークのサイズ */
+}

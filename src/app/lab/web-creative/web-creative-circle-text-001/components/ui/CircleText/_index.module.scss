@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.container {
+  display: flex;
+  position: relative;
+  box-sizing: content-box;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  span {
+    position: absolute;
+    transform-origin: center center;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}

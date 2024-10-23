@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "@setting" as *;
+
+.root {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px;
+  background-color: map.get($mainColor, "index");
+  color: map.get($baseColor, "index");
+  gap: 32px 64px;
+
+  @include sp {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px 0 80px;
+  }
+}
+
+.panel {
+  width: 100%;
+}
+
+.visual {
+  width: 100%;
+}
